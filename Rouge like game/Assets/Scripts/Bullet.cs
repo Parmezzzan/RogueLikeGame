@@ -4,41 +4,65 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    private Transform target;
+
     public float speed = 10f;
-    public int damage = 20;
-    public Rigidbody2D rb;
+    public float lifeTime = 2f;
+    public int damage = 30;
 
-    private Transform enemy;
-    private Vector2 target;
-    // Start is called before the first frame update
-    void Start()
-    {
-        enemy = GameObject.FindGameObjectWithTag("Enemy").transform;
-        target = new Vector2(enemy.position.x, enemy.position.y);
-    }
+    public GameObject impactEffect;
 
-    // Update is called once per frame
-    void Update()
+    public void Seek(Transform _target)
     {
-        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
-        if (transform.position.x == target.x && transform.position.y == target.y)
-		{
-            DestroyBullet();
-		}
+        target = _target;
     }
-	void OnTriggerEnter2D(Collider2D hitInfo)
+	public void Start()
 	{
-        Enemy_HP enemy = hitInfo.GetComponent<Enemy_HP>();
-		if (enemy != null)
-		{
-            enemy.TakeDamage(damage);
-            DestroyBullet();
-        }            
+        Invoke("HitTarget", lifeTime);
 	}
-	void DestroyBullet()
-	{
+
+	// Update is called once per frame
+	void Update()
+    {
+        if (target == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Vector2 dir = target.position - transform.position;
+        float distanceThisFrame = speed * Time.deltaTime;
+
+        if (dir.magnitude <= distanceThisFrame)
+        {
+            HitTarget();
+            return;
+        }
+
+        transform.Translate(dir.normalized * distanceThisFrame, Space.World);
+    }
+
+
+
+	void HitTarget()
+    {
+        GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, Quaternion.identity);
+        Destroy(effectIns, 2f);
+
+        Damage(target);
+
         Destroy(gameObject);
-	}
+    }
+
+    void Damage (Transform enemy)
+	{
+        Enemy_HP e = enemy.GetComponent<Enemy_HP>();
+        if (e != null)
+		{
+           e.TakeDamage(damage);
+        }
+        
+    }
+
+   
 }
-
-

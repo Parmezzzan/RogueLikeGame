@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
+    public static int Money;
+    public int startMoney;
+
+
     public int maxHealth = 100;
-    public int currentHealth;
+    public static int currentHealth;
 
     public HealthBar healthBar;
 
@@ -13,6 +17,7 @@ public class PlayerData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Money = startMoney;
         currentHealth = maxHealth;
         healthBar.SetHealth(maxHealth);
     }
