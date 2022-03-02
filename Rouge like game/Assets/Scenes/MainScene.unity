@@ -1873,8 +1873,8 @@ MonoBehaviour:
   trackingTarget: {fileID: 317430831}
   trasholdTileRedraw: 2
   chankCol: {x: 5, y: 5}
-  chankSize: {x: 9, y: 9}
-  tileUnitSize: {x: 1, y: 1}
+  chankSize: {x: 5, y: 5}
+  tileUnitSize: {x: 4, y: 4}
   generateOnZero: 1
   _startMapPosition: {x: 0, y: 0}
 --- !u!4 &1745738353

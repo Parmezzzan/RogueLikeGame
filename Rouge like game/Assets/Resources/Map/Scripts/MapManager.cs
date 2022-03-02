@@ -241,6 +241,7 @@ public class MapManager : MonoBehaviour
                     int ind = i * (int)_size.x + j;
                     _gameObjectsTile[ind] = Instantiate(prefab, position, Quaternion.identity, root);
                     _gameObjectsTile[ind].GetComponent<SpriteRenderer>().sprite = _spriteSet[ind];
+                    _gameObjectsTile[ind].transform.localScale = new Vector3(_tileSize.x, _tileSize.y);
                 }
             }
         }
