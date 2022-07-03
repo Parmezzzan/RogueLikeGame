@@ -2,7 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
+/// <summary>
+/// It's so hard Item generator
+/// writen in July 2022 by Ivan Proc
+/// it's a new text for commit on GitHub/Parmezan
+/// </summary>
 public class ItemGenerator : MonoBehaviour
 {
     [Header("generator option")]
