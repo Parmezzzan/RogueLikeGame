@@ -8,8 +8,6 @@ public class Enemy : MonoBehaviour
 
     public Sprite spriteImage;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         spriteImage = enemy.sprite;
