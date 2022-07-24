@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//new commit message for Git Bash
 public class EnemiesGeneratorV2 : MonoBehaviour
 {
     [SerializeField]
