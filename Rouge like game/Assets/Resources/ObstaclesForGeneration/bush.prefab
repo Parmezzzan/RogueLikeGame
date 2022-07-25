@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1284472988727861389}
   - component: {fileID: 1284472988727861386}
-  - component: {fileID: 1284472988727861388}
+  - component: {fileID: 431597213322188552}
   m_Layer: 6
   m_Name: bush
   m_TagString: Untagged
@@ -83,8 +83,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1284472988727861388
-BoxCollider2D:
+--- !u!58 &431597213322188552
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -96,16 +96,6 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.15022922, y: -0.23840344}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.8125, y: 1.5}
-    newSize: {x: 1.8125, y: 1.5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.10284364, y: -0.18211865}
   serializedVersion: 2
-  m_Size: {x: 0.9187083, y: 0.7881639}
-  m_EdgeRadius: 0
+  m_Radius: 0.4584521

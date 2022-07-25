@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1506964742660542405}
   - component: {fileID: 1506964742660542402}
-  - component: {fileID: 1506964742660542404}
+  - component: {fileID: 1809434153232296087}
   m_Layer: 6
   m_Name: tree-dried
   m_TagString: Untagged
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1379562427
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 11
   m_Sprite: {fileID: 21300000, guid: db07cc93e21f1457d9a1364618027fbb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -83,8 +83,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1506964742660542404
-BoxCollider2D:
+--- !u!70 &1809434153232296087
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -96,16 +96,6 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.016855001, y: -1.1950305}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.15625, y: 3.3125}
-    newSize: {x: 6.3125, y: 6.625}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.44556093, y: 0.47526824}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0.026956558, y: -1.1140027}
+  m_Size: {x: 0.39134312, y: 0.6840067}
+  m_Direction: 0
