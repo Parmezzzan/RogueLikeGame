@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1074902583411596318}
   - component: {fileID: 1074902583411596315}
   - component: {fileID: 1074902583411596314}
-  - component: {fileID: 8039969530360616087}
+  - component: {fileID: 8747731470068041987}
   m_Layer: 0
   m_Name: Enemy_crab
   m_TagString: Enemy
@@ -191,8 +191,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 11400000, guid: 9fce6ee49c39ee84489bc3fed6e489d2, type: 2}
   spriteImage: {fileID: 21300000, guid: 92dc5fd35ad07452cbb4501123046b43, type: 3}
---- !u!70 &8039969530360616087
-CapsuleCollider2D:
+--- !u!58 &8747731470068041987
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -204,9 +204,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.053002447, y: -0.00722754}
-  m_Size: {x: 0.4662711, y: 0.58561707}
-  m_Direction: 0
+  m_Offset: {x: -0.053097248, y: 0.0024135113}
+  serializedVersion: 2
+  m_Radius: 0.25382185
 --- !u!1 &1074902583931648004
 GameObject:
   m_ObjectHideFlags: 0

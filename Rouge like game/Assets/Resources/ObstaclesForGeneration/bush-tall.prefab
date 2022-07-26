@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9007184397687708976}
   - component: {fileID: 9007184397687708975}
-  - component: {fileID: 278184176225762732}
+  - component: {fileID: 6605232217820593609}
   m_Layer: 6
   m_Name: bush-tall
   m_TagString: Untagged
@@ -83,8 +83,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &278184176225762732
-CapsuleCollider2D:
+--- !u!58 &6605232217820593609
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -96,6 +96,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0078783035, y: -0.20634091}
-  m_Size: {x: 0.2670765, y: 0.37539887}
-  m_Direction: 0
+  m_Offset: {x: 0, y: -0.2264911}
+  serializedVersion: 2
+  m_Radius: 0.19118321

@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 545270015455217959}
   - component: {fileID: 545270015455217954}
   - component: {fileID: 545270015455217955}
-  - component: {fileID: 8086068483971278928}
+  - component: {fileID: 4453797737655899682}
   m_Layer: 0
   m_Name: Enemy_jumper
   m_TagString: Enemy
@@ -287,8 +287,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 11400000, guid: 9fce6ee49c39ee84489bc3fed6e489d2, type: 2}
   spriteImage: {fileID: 21300000, guid: 2f933e65ab55a416590f7d39ec8a800d, type: 3}
---- !u!70 &8086068483971278928
-CapsuleCollider2D:
+--- !u!58 &4453797737655899682
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -300,6 +300,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0015680393, y: -0.01538046}
-  m_Size: {x: 0.15317595, y: 0.19354737}
-  m_Direction: 0
+  m_Offset: {x: 0, y: -0.020144504}
+  serializedVersion: 2
+  m_Radius: 0.10081804

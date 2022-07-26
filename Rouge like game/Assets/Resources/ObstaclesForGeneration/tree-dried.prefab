@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1506964742660542405}
   - component: {fileID: 1506964742660542402}
-  - component: {fileID: 1809434153232296087}
+  - component: {fileID: 5149308420070973048}
   m_Layer: 6
   m_Name: tree-dried
   m_TagString: Untagged
@@ -83,8 +83,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &1809434153232296087
-CapsuleCollider2D:
+--- !u!58 &5149308420070973048
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -96,6 +96,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.026956558, y: -1.1140027}
-  m_Size: {x: 0.39134312, y: 0.6840067}
-  m_Direction: 0
+  m_Offset: {x: 0, y: -1.1071696}
+  serializedVersion: 2
+  m_Radius: 0.32533166
