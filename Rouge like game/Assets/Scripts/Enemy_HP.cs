@@ -21,6 +21,7 @@ public class Enemy_HP : MonoBehaviour
     void Die ()
 	{
         Destroy(gameObject);
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
-	}
+        GameObject deathEffectIns = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(deathEffectIns, 2f);
+    }
 }
