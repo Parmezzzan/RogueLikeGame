@@ -36,4 +36,11 @@ public class PlayerData : MonoBehaviour
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
 	}
+    public void Heal(int healPower)
+    {
+        if (healPower > 0)
+            currentHealth += healPower;
+
+        healthBar.SetHealth(currentHealth);
+    }
 }

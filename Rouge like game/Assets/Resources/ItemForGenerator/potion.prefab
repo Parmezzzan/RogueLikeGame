@@ -83,6 +83,9 @@ GameObject:
   - component: {fileID: 2234651043012772976}
   - component: {fileID: 2234651043012772977}
   - component: {fileID: 2234651043012772982}
+  - component: {fileID: 8133361920736520850}
+  - component: {fileID: 6546182625054297011}
+  - component: {fileID: 5448356321548747087}
   m_Layer: 0
   m_Name: potion
   m_TagString: Untagged
@@ -143,7 +146,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2057531769
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: c5eceadfabbf8214abff1dad1b45500c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -175,3 +178,62 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8133361920736520850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2234651043012772983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41759adc2c95ed247bb25d167ed23713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupTag: Player
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6546182625054297011}
+        m_TargetAssemblyTypeName: PoisonHP, Assembly-CSharp
+        m_MethodName: Heal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6546182625054297011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2234651043012772983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16d955d238b1bd2478d6ffc5571b8618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healPower: 20
+  radius: 1
+  targetTag: Player
+--- !u!58 &5448356321548747087
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2234651043012772983}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.67
