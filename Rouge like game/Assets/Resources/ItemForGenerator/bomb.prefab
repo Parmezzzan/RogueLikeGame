@@ -133,6 +133,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  destroyAfterPickUping: 1
 --- !u!114 &5665029566216304008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eachDemage: 100
-  radius: 5
+  radius: 4.25
   targetTag: Enemy
 --- !u!58 &2596762606793176257
 CircleCollider2D:
