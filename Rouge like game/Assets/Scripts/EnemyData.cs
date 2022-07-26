@@ -10,6 +10,8 @@ public class EnemyData : ScriptableObject
     public int speed;
     public int attack;
     public int health;
+    public float repeatDamageTime;
+    public float closeDistance;
 
     public Sprite sprite;
 }

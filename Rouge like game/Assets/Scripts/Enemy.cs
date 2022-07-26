@@ -10,10 +10,6 @@ public class Enemy : MonoBehaviour
 
     [SerializeField]
     string targetTag = "Player";
-    [SerializeField]
-    private float repeatTime = 5.0f;
-    [SerializeField]
-    private float distance = 1.0f;
 
     private Transform target = null;
     void Start()
@@ -26,12 +22,12 @@ public class Enemy : MonoBehaviour
         {
             target = collision.transform;
             collision.gameObject.GetComponent<PlayerData>().TakeDamage(enemy.attack);
-            InvokeRepeating("TakeDamage", repeatTime, repeatTime);
+            InvokeRepeating("TakeDamage", enemy.repeatDamageTime, enemy.repeatDamageTime);
         }
     }
     private void TakeDamage()
     {
-        if(Vector3.Distance(transform.position, target.position) < distance)
+        if(Vector3.Distance(transform.position, target.position) < enemy.closeDistance)
         {
             target.gameObject.GetComponent<PlayerData>().TakeDamage(enemy.attack);
         }
