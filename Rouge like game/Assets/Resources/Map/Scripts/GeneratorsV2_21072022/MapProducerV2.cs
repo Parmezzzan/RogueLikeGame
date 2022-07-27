@@ -2,10 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public struct MapTile
+{
+    public Sprite sprite;
+    public float rare;
+}
 public class MapProducerV2 : MonoBehaviour
 {
     [SerializeField]
-    Sprite[] sprites;
+    MapTile[] sprites;
     [SerializeField]
     Transform objectRoot;
     [SerializeField]
@@ -25,8 +31,9 @@ public class MapProducerV2 : MonoBehaviour
         {
             for (int i = 0; i < tileNumX; i++)
             {
+                Sprite sprite = sprites[Random.Range(0, sprites.Length)].sprite;
                 var obj = generateTile(new Vector2() { x = posX, y = posY },
-                            sprites[Random.Range(0, sprites.Length)],
+                            sprite,
                             new Vector2(config.TileSize, config.TileSize));
                 obj.name = i.ToString() + j.ToString();
                 posX += config.TileSize;
