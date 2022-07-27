@@ -1066,11 +1066,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: f987aefa00ecac346ae4f0238392c9b4, type: 3}
-  - {fileID: 21300000, guid: eff5be1a243a6fe439c919deffe8d090, type: 3}
-  - {fileID: 21300000, guid: 3882c99fbbfd3b243a98e759905845b5, type: 3}
-  - {fileID: 21300000, guid: 3882c99fbbfd3b243a98e759905845b5, type: 3}
-  - {fileID: 21300000, guid: f987aefa00ecac346ae4f0238392c9b4, type: 3}
+  - {fileID: 21300000, guid: 1c9ed9d1200c29d4cbfd2071028c1cd5, type: 3}
+  - {fileID: 21300006, guid: 1c9ed9d1200c29d4cbfd2071028c1cd5, type: 3}
+  - {fileID: 21300020, guid: 1c9ed9d1200c29d4cbfd2071028c1cd5, type: 3}
+  - {fileID: 21300034, guid: 1c9ed9d1200c29d4cbfd2071028c1cd5, type: 3}
+  - {fileID: 21300038, guid: 1c9ed9d1200c29d4cbfd2071028c1cd5, type: 3}
+  - {fileID: 21300052, guid: 1c9ed9d1200c29d4cbfd2071028c1cd5, type: 3}
+  - {fileID: 21300028, guid: 1c9ed9d1200c29d4cbfd2071028c1cd5, type: 3}
+  - {fileID: 21300056, guid: 1c9ed9d1200c29d4cbfd2071028c1cd5, type: 3}
+  - {fileID: 21300060, guid: 1c9ed9d1200c29d4cbfd2071028c1cd5, type: 3}
+  - {fileID: 21300062, guid: 1c9ed9d1200c29d4cbfd2071028c1cd5, type: 3}
+  - {fileID: 21300096, guid: 1c9ed9d1200c29d4cbfd2071028c1cd5, type: 3}
+  - {fileID: 21300112, guid: 1c9ed9d1200c29d4cbfd2071028c1cd5, type: 3}
+  - {fileID: 21300114, guid: 1c9ed9d1200c29d4cbfd2071028c1cd5, type: 3}
+  - {fileID: 21300066, guid: 1c9ed9d1200c29d4cbfd2071028c1cd5, type: 3}
   objectRoot: {fileID: 724419090}
   anableRandomMirroring_X: 1
   anableRandomMirroring_Y: 1
@@ -1145,15 +1154,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacles:
-  - {fileID: 9007184397687708974, guid: e6f91492a3530c04cab80696f566796e, type: 3}
-  - {fileID: 1284472988727861387, guid: 573b9d59ca147c44492bca5301854019, type: 3}
-  - {fileID: 2531746314040309323, guid: edadf4849e41e9a49b5584f741ca5cdf, type: 3}
-  - {fileID: 4264038905812668570, guid: 383ddd87bad176e4f9758e6b47d1a6c1, type: 3}
-  - {fileID: 3432802192299943813, guid: 4add50f7ba05dd44e9355a65fac6c6a6, type: 3}
+  - {fileID: 3067587326924003671, guid: a0a66c9b152e801409fc26c4ca493d18, type: 3}
+  - {fileID: 4527656619116180701, guid: 403080d7568a4f949b4bfc7128477a8c, type: 3}
+  - {fileID: 4331307297609962461, guid: fd980c817c63af4458df40a61e529e93, type: 3}
+  - {fileID: 4064746625110277272, guid: 1dc4948f20ddc324f84c815af63aa6a9, type: 3}
+  - {fileID: 2055102311959635369, guid: 4bd7b41600416b54395bf9936a05dc8e, type: 3}
+  - {fileID: 2055102311959635369, guid: 9fb66d8c9d3b5194a82e9eed65a54afb, type: 3}
+  - {fileID: 2055102311959635369, guid: 39562e88b536753438a3153c5fbdf7b8, type: 3}
+  - {fileID: 2055102311959635369, guid: f681a54372d73d74785b9c9d4ac477e8, type: 3}
+  - {fileID: 2055102311959635369, guid: 7277dd75e907b27448ec1de08238d0bb, type: 3}
+  - {fileID: 2055102311959635369, guid: 9e7797bb065982d4497d030f065d6e2f, type: 3}
   root: {fileID: 1492627234}
-  obstaclesNum: 50
+  obstaclesNum: 100
   tryingNum: 3000
-  distance: 8
+  distance: 5
 --- !u!114 &1915491057
 MonoBehaviour:
   m_ObjectHideFlags: 0
