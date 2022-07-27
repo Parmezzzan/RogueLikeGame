@@ -6,7 +6,6 @@ using UnityEngine;
 public struct MapTile
 {
     public Sprite sprite;
-    [HideInInspector]
     public float rare;
 }
 public class MapProducerV2 : MonoBehaviour
