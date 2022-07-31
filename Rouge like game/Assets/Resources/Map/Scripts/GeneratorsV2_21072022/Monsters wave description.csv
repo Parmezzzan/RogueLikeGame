@@ -1,5 +1,5 @@
-волна, №;начало волны, мин;точки спавна, шт;спавн раз, шт;спавн монстров, шт;типы монстров, Mtype;Сложность волны, %;block list, Mname
-1;1;1;1;5;fly,berserk;20;
-2;3;3;2;5;fly;15;
-3;5;3;5;7;fly,tank;30;Skelet
-4;7;2;1;7;tank,mage;20;Skelet,Broozer
+waveNum;waveBeginSec;spawnPointAmount;spawnEachSec;monstersAmount;monstersName
+1;1;1;1;5;
+2;3;3;2;5;
+3;5;3;5;7;
+4;7;2;1;7;

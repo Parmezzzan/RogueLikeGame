@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-//new commit message for Git Bash
 public class EnemiesGeneratorV2 : MonoBehaviour
 {
     [SerializeField]
@@ -49,7 +46,7 @@ public class EnemiesGeneratorV2 : MonoBehaviour
             {
                 int j = Random.Range(0, enemies.Length);
                 var obj = Instantiate(enemies[j], new Vector3(X, Y, 0.0f), Quaternion.identity, root);
-                obj.GetComponent<Pathfinding.AIDestinationSetter>().target = targetTransform;
+                obj.GetComponent<Pathfinding.AIDestinationSetter>().target = targetTransform;  //heh kek but it's no error
             }
         }
     }
