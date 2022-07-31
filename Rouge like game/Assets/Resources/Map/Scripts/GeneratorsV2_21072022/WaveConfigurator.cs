@@ -19,6 +19,8 @@ public class WaveConfigurator : MonoBehaviour
     [SerializeField]
     public string monstersName = "ent;spider";
 
+    private static string csvPath = "Assets/Resources/Map/Scripts/GeneratorsV2_21072022/Monsters wave description.csv";
+    private string[] csvLines;
     public class WaveData
     { 
         public int waveNum { get; set; }
@@ -30,17 +32,6 @@ public class WaveConfigurator : MonoBehaviour
     }
     private void Start()
     {
-        /*
-        using (var reader = new StreamReader("Assets/Resources/Map/Scripts/GeneratorsV2_21072022/Monsters wave description.csv"))
-        using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-        {
-            var records = csv.GetRecords<WaveData>();
-
-            foreach (var item in records)
-            {
-                print(item.waveNum + " __ " + item.waveBeginSec + " sec.");
-            }
-        }
-        */
+        //csvLines = File.ReadAllLines()
     }
 }
