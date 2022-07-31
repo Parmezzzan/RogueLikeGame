@@ -272,6 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2e6b4bd8edf4b4890f2e325be6f287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  expSoulSphere: {fileID: 290223870701032407, guid: 34ef9369fd198e8419b0a69da728c631, type: 3}
   health: 100
   deathEffect: {fileID: 418484241527079742, guid: 8e1a58a2c737fe04eb79c95f09ffebcf, type: 3}
 --- !u!114 &5027927298345789760
@@ -289,8 +290,6 @@ MonoBehaviour:
   enemy: {fileID: 11400000, guid: 9fce6ee49c39ee84489bc3fed6e489d2, type: 2}
   spriteImage: {fileID: 21300000, guid: 4dbf9e4cb148c4dc991ed1bfc861e5e9, type: 3}
   targetTag: Player
-  repeatTime: 5
-  distance: 2
 --- !u!212 &1370465081
 SpriteRenderer:
   m_ObjectHideFlags: 0

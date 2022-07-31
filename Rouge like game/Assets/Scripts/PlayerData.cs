@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerData : MonoBehaviour
 {
@@ -10,11 +12,18 @@ public class PlayerData : MonoBehaviour
     private int startMoney = 10;
     [SerializeField]
     private int expiriense = 0;
-
+    [SerializeField]
     public int maxHealth = 100;
-    public static int currentHealth;
-
+    [SerializeField]
     public HealthBar healthBar;
+    [SerializeField]
+    private Slider expSlider;
+    [SerializeField]
+    private TextMeshProUGUI expText;
+
+    public static int currentHealth = 0;
+    private int currentLevel = 1;
+
 
 
     // Start is called before the first frame update
@@ -23,6 +32,7 @@ public class PlayerData : MonoBehaviour
         Money = startMoney;
         currentHealth = maxHealth;
         healthBar.SetHealth(maxHealth);
+        expText.text = "Level " + currentLevel; 
     }
     public void TakeDamage (int damage)
 	{
@@ -39,5 +49,16 @@ public class PlayerData : MonoBehaviour
     public void AddEXP(int exp)
     {
         expiriense += exp;
+        if(expiriense >= 100)
+        {
+            expiriense -= 100;
+            LevelUP();
+        }
+        expSlider.value = expiriense / 100.0f;
+    }
+    private void LevelUP()
+    {
+        currentLevel++;
+        expText.text = "Level " + currentLevel;
     }
 }
