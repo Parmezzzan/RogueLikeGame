@@ -47,9 +47,9 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.404
   m_Color: {r: 0.70980394, g: 0.95294124, b: 0.1137255, a: 1}
-  m_Intensity: 0.4
+  m_Intensity: 0.41
   m_LightVolumeOpacity: 0.121
-  m_ApplyToSortingLayers: 00000000455dd35c63cea9ff458cc5ad
+  m_ApplyToSortingLayers: 00000000455dd35c63cea9ff458cc5ad7971a37a
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
