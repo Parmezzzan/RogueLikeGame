@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
-    public static int Money;
-    public int startMoney;
-
+    [SerializeField]
+    private int Money;
+    [SerializeField]
+    private int startMoney = 10;
+    [SerializeField]
+    private int expiriense = 0;
 
     public int maxHealth = 100;
     public static int currentHealth;
@@ -32,5 +35,9 @@ public class PlayerData : MonoBehaviour
             currentHealth += healPower;
 
         healthBar.SetHealth(currentHealth);
+    }
+    public void AddEXP(int exp)
+    {
+        expiriense += exp;
     }
 }

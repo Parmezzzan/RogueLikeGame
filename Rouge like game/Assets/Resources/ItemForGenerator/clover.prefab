@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 7294878928616424286}
   - component: {fileID: 7294878928616424287}
   - component: {fileID: 7294878928616424285}
+  - component: {fileID: 1174839534299444803}
+  - component: {fileID: 2107621750963287556}
+  - component: {fileID: 5728659453945529760}
   m_Layer: 0
   m_Name: clover
   m_TagString: Untagged
@@ -102,3 +105,64 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &1174839534299444803
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7294878928616424256}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.58
+--- !u!114 &2107621750963287556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7294878928616424256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6e4ad79dd4df954c8107c07e8b036aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRateBoost: 20
+  time: 5
+  radius: 1.5
+  targetTag: Player
+--- !u!114 &5728659453945529760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7294878928616424256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41759adc2c95ed247bb25d167ed23713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupTag: Player
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2107621750963287556}
+        m_TargetAssemblyTypeName: ClowerBoostAtack, Assembly-CSharp
+        m_MethodName: AttackRate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  destroyAfterPickUping: 1

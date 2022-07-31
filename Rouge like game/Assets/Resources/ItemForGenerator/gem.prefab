@@ -83,6 +83,9 @@ GameObject:
   - component: {fileID: 115303509387921097}
   - component: {fileID: 115303509387921098}
   - component: {fileID: 115303509387921096}
+  - component: {fileID: 9114200700886351957}
+  - component: {fileID: 3731745665521658059}
+  - component: {fileID: 225763231163873430}
   m_Layer: 0
   m_Name: gem
   m_TagString: Untagged
@@ -143,7 +146,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2057531769
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 1b4ab323c3684824c8c12d284b4688de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -175,3 +178,51 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &9114200700886351957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115303509387921099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41759adc2c95ed247bb25d167ed23713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupTag: Player
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+  destroyAfterPickUping: 1
+--- !u!114 &3731745665521658059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115303509387921099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 626432cf5eaa27a4f8def5f73be1b925, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EXPboost: 20
+  radius: 1.5
+  targetTag: Player
+--- !u!58 &225763231163873430
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115303509387921099}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.76

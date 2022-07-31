@@ -1034,6 +1034,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 237589469487508451, guid: 83ef43e4a8384e145a136d77f44710af, type: 3}
   m_PrefabInstance: {fileID: 237589470518921153}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1209599198 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3731745665521658059, guid: f4bcfbb4c675fd14f9077996b3c897cf, type: 3}
+  m_PrefabInstance: {fileID: 2119251249}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 626432cf5eaa27a4f8def5f73be1b925, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1371189265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1944,6 +1955,34 @@ PrefabInstance:
     - target: {fileID: 115303509387921099, guid: f4bcfbb4c675fd14f9077996b3c897cf, type: 3}
       propertyPath: m_Name
       value: gem
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114200700886351957, guid: f4bcfbb4c675fd14f9077996b3c897cf, type: 3}
+      propertyPath: OnPickUp.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114200700886351957, guid: f4bcfbb4c675fd14f9077996b3c897cf, type: 3}
+      propertyPath: OnPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114200700886351957, guid: f4bcfbb4c675fd14f9077996b3c897cf, type: 3}
+      propertyPath: OnPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1209599198}
+    - target: {fileID: 9114200700886351957, guid: f4bcfbb4c675fd14f9077996b3c897cf, type: 3}
+      propertyPath: OnPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114200700886351957, guid: f4bcfbb4c675fd14f9077996b3c897cf, type: 3}
+      propertyPath: OnPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GetEXP
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114200700886351957, guid: f4bcfbb4c675fd14f9077996b3c897cf, type: 3}
+      propertyPath: OnPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ExprienseGem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114200700886351957, guid: f4bcfbb4c675fd14f9077996b3c897cf, type: 3}
+      propertyPath: OnPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4bcfbb4c675fd14f9077996b3c897cf, type: 3}

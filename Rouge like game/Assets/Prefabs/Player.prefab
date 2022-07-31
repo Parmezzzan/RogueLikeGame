@@ -360,6 +360,7 @@ GameObject:
   - component: {fileID: 2803398506396595012}
   - component: {fileID: 2803398506396595015}
   - component: {fileID: 2803398506396595016}
+  - component: {fileID: 461757802133080644}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -518,7 +519,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab0f2fe0dd8baa34eb2d23d121a3572b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 0
+  Money: 0
+  startMoney: 10
+  expiriense: 10
   maxHealth: 100
   healthBar: {fileID: 2803398506851509495}
 --- !u!114 &2803398506396595016
@@ -539,6 +542,18 @@ MonoBehaviour:
   enemyTag: Enemy
   bulletPrefab: {fileID: 6348529544546483862, guid: 3d624b9df4878164e962b84c90ccd649, type: 3}
   firePont: {fileID: 2803398507791910531}
+--- !u!114 &461757802133080644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2803398506396595039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16aef9b2b77d2774c8b5d832a79e27a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2803398506851509493
 GameObject:
   m_ObjectHideFlags: 0
