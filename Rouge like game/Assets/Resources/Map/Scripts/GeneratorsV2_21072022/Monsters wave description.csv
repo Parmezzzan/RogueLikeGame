@@ -1,5 +1,5 @@
 waveNum;waveBeginSec;spawnPointAmount;spawnEachSec;monstersAmount;monstersName
-1;1;1;1;5;
-2;3;3;2;5;
-3;5;3;5;7;
-4;7;2;1;7;
+1;1;1;1;5;ent,spider
+2;3;3;2;5;spider,ent
+3;5;3;5;7;skeleton
+4;7;2;1;7;skeleton,spider
