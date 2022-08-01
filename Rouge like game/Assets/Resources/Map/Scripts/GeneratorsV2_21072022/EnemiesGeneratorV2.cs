@@ -1,40 +1,49 @@
+using System.Collections.Generic;
 using UnityEngine;
 public class EnemiesGeneratorV2 : MonoBehaviour
 {
     [SerializeField]
-    float durationTime = 2.0f;
-    [SerializeField]
-    float preparationTime = 3.0f;
-    [SerializeField]
-    int pointOfSpawn = 2;
-    [SerializeField]
-    int count = 3;
-    [SerializeField]
     float distanse = 15.0f;
-    [Space(20)]
-    [SerializeField]
-    GameObject[] enemies;
     [SerializeField]
     Transform root;
     [SerializeField]
     Transform targetTransform;
+
+    private float durationTime = 5.0f;
+    private int pointOfSpawn = 1;
+    int monstersCount = 0;
+    private string[] monstersName;
+    private List<GameObject> enemies;
 
     private bool generationOn = false;
 
     public void Run()
     {
         generationOn = true;
-        InvokeRepeating("Generation", preparationTime, durationTime);
+        InvokeRepeating("Generation", 0.0f, durationTime);
     }
     public void Stop()
     {
         generationOn = false;
-        targetTransform = null;
         StopAllCoroutines();
+    }
+    public void SetWaveData(WaveData wd)
+    {
+        pointOfSpawn = wd.spawnPointAmount;
+        durationTime = wd.spawnEachSec;
+        monstersCount = wd.monstersAmount;
+
+        monstersName = wd.monstersName;
+        enemies = new List<GameObject>();
+        foreach (var item in monstersName)
+        {
+            enemies.Add((GameObject)Resources.Load("Enemies/" + item));
+            print(enemies.ToString());
+        }
     }
     private void Generation()
     {
-        int countOnPoint = count / pointOfSpawn;
+        int countOnPoint = monstersCount / pointOfSpawn;
 
         for (int k = 0; k < pointOfSpawn; k++)
         {
@@ -44,7 +53,7 @@ public class EnemiesGeneratorV2 : MonoBehaviour
 
             for (int i = 0; i < countOnPoint; i++)
             {
-                int j = Random.Range(0, enemies.Length);
+                int j = Random.Range(0, enemies.Count);
                 var obj = Instantiate(enemies[j], new Vector3(X, Y, 0.0f), Quaternion.identity, root);
                 obj.GetComponent<Pathfinding.AIDestinationSetter>().target = targetTransform;  //heh kek but it's no error
             }

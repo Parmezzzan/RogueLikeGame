@@ -2895,7 +2895,6 @@ MonoBehaviour:
   ObstacleProducer: {fileID: 1915491056}
   ItemProducer: {fileID: 1915491055}
   worldProvider: {fileID: 1915491057}
-  enemiesGeneratorV2: {fileID: 1915491058}
 --- !u!114 &1915491054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2993,16 +2992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8925b80a6f1142648a1c8a9bb1b65e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  durationTime: 5
-  preparationTime: 3
-  pointOfSpawn: 10
-  count: 12
   distanse: 15
-  enemies:
-  - {fileID: 1074902583411596309, guid: 06bf14df3f52991499330f90333e99da, type: 3}
-  - {fileID: 545270015455217964, guid: c87275eba013f77449a92d2369f8ceb0, type: 3}
-  - {fileID: 5444722163609851175, guid: 1ac727ec8e83f2e4b993e876502d76f7, type: 3}
-  - {fileID: 5027927298345789754, guid: 499ea1fbe1ed3b44180a614745cd4422, type: 3}
   root: {fileID: 1560861778}
   targetTransform: {fileID: 317430833}
 --- !u!114 &1915491059
@@ -3017,12 +3007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beeacfbf176a28a43a621c42f9a6c133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numWave: 0
-  startTimeSec: 1
-  spawnPointCount: 2
-  spawnEachSec: 2
-  monstersCount: 6
-  monstersName: ent;spider
+  enemiesGenerator: {fileID: 1915491058}
 --- !u!1001 &1930836566
 PrefabInstance:
   m_ObjectHideFlags: 0

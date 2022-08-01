@@ -14,8 +14,6 @@ public class MapManagerV2 : MonoBehaviour
     ItemProducerV2 ItemProducer;
     [SerializeField]
     WorldProvider worldProvider;
-    [SerializeField]
-    EnemiesGeneratorV2 enemiesGeneratorV2;
 
     void Start()
     {
@@ -23,6 +21,5 @@ public class MapManagerV2 : MonoBehaviour
         ObstacleProducer.GenerateObstacle(mapConfig);
         ItemProducer.GenerateItems(mapConfig);
         worldProvider.Run();
-        enemiesGeneratorV2.Run();
     }
 }
