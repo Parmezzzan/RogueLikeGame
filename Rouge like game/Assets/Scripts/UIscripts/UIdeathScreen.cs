@@ -1,0 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class UIdeathScreen : MonoBehaviour
+{
+    [SerializeField]
+    private float splashScreenTime = 3.0f;
+    public void Death()
+    {
+        Invoke("Hide", splashScreenTime);
+    }
+    private void Hide()
+    {
+        gameObject.SetActive(false);
+    }
+}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class PlayerData : MonoBehaviour
@@ -20,6 +21,8 @@ public class PlayerData : MonoBehaviour
     private Slider expSlider;
     [SerializeField]
     private TextMeshProUGUI expText;
+    [SerializeField]
+    public UnityEvent OnLVLup;
 
     public static int currentHealth = 0;
     private int currentLevel = 1;
@@ -58,6 +61,7 @@ public class PlayerData : MonoBehaviour
     }
     private void LevelUP()
     {
+        OnLVLup.Invoke();
         currentLevel++;
         expText.text = "Level " + currentLevel;
     }
