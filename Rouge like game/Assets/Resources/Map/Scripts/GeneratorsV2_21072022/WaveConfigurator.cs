@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using System.Globalization;
 using System;
 public class WaveData
 {
     public int waveNum { get; set; }
-    public int waveBeginSec { get; set; }
+    public int waveDeltaSec { get; set; }
     public int spawnPointAmount { get; set; }
     public int spawnEachSec { get; set; }
     public int monstersAmount { get; set; }
@@ -16,7 +13,7 @@ public class WaveData
     public override string ToString()
     {
         return string.Format("#:{0},{1},{2},{3},{4},{5}",
-                        waveNum, waveBeginSec, spawnPointAmount, spawnEachSec, monstersAmount, monstersName);
+                        waveNum, waveDeltaSec, spawnPointAmount, spawnEachSec, monstersAmount, monstersName);
     }
 }
 public class WaveConfigurator : MonoBehaviour
@@ -28,6 +25,7 @@ public class WaveConfigurator : MonoBehaviour
     private string[] csvLines;
     private WaveData[] waveDatas;
     private int nextWaveNum = 0;
+    private DateTime scenceStart;
 
     private void Start()
     {
@@ -39,21 +37,32 @@ public class WaveConfigurator : MonoBehaviour
             waveDatas[i] = new WaveData();
             string[] dataString = csvLines[i + 1].Split(';');
             waveDatas[i].waveNum = Int32.Parse(dataString[0]);
-            waveDatas[i].waveBeginSec = Int32.Parse(dataString[1]);
+            //preparing a BEGIN time into DELTA via waves
+            int sum = 0;
+            for (int j = 0; j < i-1; j++)
+                sum += waveDatas[j].waveDeltaSec;
+            waveDatas[i].waveDeltaSec = Int32.Parse(dataString[1]) - sum;
+
             waveDatas[i].spawnPointAmount = Int32.Parse(dataString[2]);
             waveDatas[i].spawnEachSec = Int32.Parse(dataString[3]);
             waveDatas[i].monstersAmount = Int32.Parse(dataString[4]);
             waveDatas[i].monstersName = dataString[5].Split(',');
         }
 
+        scenceStart = DateTime.Now;
+        Invoke("NextWave", waveDatas[nextWaveNum].waveDeltaSec);
+    }
+    private void NextWave()
+    {
         SendDataToWaveProducer();
+        nextWaveNum++;
+        Invoke("NextWave", waveDatas[nextWaveNum].waveDeltaSec);
     }
     private void SendDataToWaveProducer()
     {
         enemiesGenerator.Stop();
         enemiesGenerator.SetWaveData(waveDatas[nextWaveNum]);
         enemiesGenerator.Run();
-        nextWaveNum++;
     }
     public void Stop()
     {

@@ -516,7 +516,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.89420843, y: 0.7913333}
   m_AnchorMax: {x: 1, y: 0.94074094}
-  m_AnchoredPosition: {x: -9.6149, y: 1.8699951}
+  m_AnchoredPosition: {x: -9.614868, y: 1.8699951}
   m_SizeDelta: {x: -21.48, y: 4.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &303129915
@@ -4210,7 +4210,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50.85
+  m_fontSize: 50.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5314,7 +5314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: OnLVLup.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: OnLVLup.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -5322,6 +5322,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: OnLVLup.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: OnLVLup.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
@@ -5333,11 +5337,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1480983400}
     - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: OnLVLup.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1915491059}
+    - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: OnLVLup.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: OnLVLup.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: OnLVLup.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
@@ -5349,12 +5361,20 @@ PrefabInstance:
       value: onLVLup
       objectReference: {fileID: 0}
     - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: OnLVLup.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Stop
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: OnLVLup.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: OnLVLup.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: PauseMenuLVLup, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: OnLVLup.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: WaveConfigurator, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: OnLVLup.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
@@ -5366,6 +5386,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: OnLVLup.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: OnLVLup.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2803398506396595039, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
