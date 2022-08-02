@@ -7,7 +7,11 @@ public class PauseMenuLVLup : MonoBehaviour
     int? skill = null;
     public void onLVLup()
     {
-        Time.timeScale = 0.3f;
+        Invoke("Stop", 1.6f);
+    }
+    private void Stop()
+    {
+        Time.timeScale = 0.0f;
     }
     public void SkkillChoise(int N)
     {
