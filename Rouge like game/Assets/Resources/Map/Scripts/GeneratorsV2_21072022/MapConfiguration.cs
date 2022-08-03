@@ -12,6 +12,11 @@ public class MapConfiguration : MonoBehaviour
     public float TileSize;
     [SerializeField]
     public Vector2 CenterStartPosition;
+    [Space(10)]
+    [SerializeField]
+    public bool isChankGeneration = false;
+    [SerializeField]
+    public int chankSize = 5;
 
     public Vector2 CurrentCentralPosition;
 

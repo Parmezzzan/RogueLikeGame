@@ -3075,6 +3075,9 @@ MonoBehaviour:
   startTimeSec: 300
   isIncriment: 0
   timerText: {fileID: 1204870494}
+  OnReachZero:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1209599198 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3731745665521658059, guid: f4bcfbb4c675fd14f9077996b3c897cf, type: 3}
@@ -5087,6 +5090,15 @@ MonoBehaviour:
   objectRoot: {fileID: 724419090}
   anableRandomMirroring_X: 1
   anableRandomMirroring_Y: 1
+  chankCollection:
+  - {fileID: 11400000, guid: ccecf2dc169396d4ba7a7699fd087d1e, type: 2}
+  - {fileID: 11400000, guid: 6de6c60737fc4f945add20fbe2bd4696, type: 2}
+  - {fileID: 11400000, guid: aa509672cfe32bd498b6a99890bbf0d1, type: 2}
+  - {fileID: 11400000, guid: ccecf2dc169396d4ba7a7699fd087d1e, type: 2}
+  - {fileID: 11400000, guid: aa509672cfe32bd498b6a99890bbf0d1, type: 2}
+  - {fileID: 11400000, guid: 8edb0e91bbcebdd4fb4fcea842358246, type: 2}
+  - {fileID: 11400000, guid: 6de6c60737fc4f945add20fbe2bd4696, type: 2}
+  - {fileID: 11400000, guid: 6de6c60737fc4f945add20fbe2bd4696, type: 2}
 --- !u!114 &1915491053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5116,10 +5128,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99010ae3aeb3f1e42a037d9b6a80b38c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MapUnit_Width: 50
-  MapUnit_Height: 50
-  TileSize: 0.5
+  MapUnit_Width: 54
+  MapUnit_Height: 54
+  TileSize: 1
   CenterStartPosition: {x: 0, y: 0}
+  isChankGeneration: 1
+  chankSize: 6
   CurrentCentralPosition: {x: 0, y: 0}
 --- !u!114 &1915491055
 MonoBehaviour:

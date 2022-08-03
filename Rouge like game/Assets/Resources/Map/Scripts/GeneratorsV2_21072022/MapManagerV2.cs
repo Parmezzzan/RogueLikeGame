@@ -17,7 +17,11 @@ public class MapManagerV2 : MonoBehaviour
 
     void Start()
     {
-        mapProducer.GenerateMap(mapConfig);
+        if (mapConfig.isChankGeneration)
+            mapProducer.GenerateChankMap(mapConfig);
+        else
+            mapProducer.GenerateMap(mapConfig);
+
         ObstacleProducer.GenerateObstacle(mapConfig);
         ItemProducer.GenerateItems(mapConfig);
         worldProvider.Run();
