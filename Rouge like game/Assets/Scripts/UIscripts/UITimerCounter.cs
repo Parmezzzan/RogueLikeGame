@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class UITimerCounter : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class UITimerCounter : MonoBehaviour
     private bool isIncriment = true;
     [SerializeField]
     private TextMeshProUGUI timerText;
+    [SerializeField]
+    public UnityEvent OnReachZero;
 
     private void Start()
     {
@@ -16,9 +19,26 @@ public class UITimerCounter : MonoBehaviour
     }
     void UpdateTimerText()
     {
-        startTimeSec++;
+        startTimeSec = isIncriment ? ++startTimeSec: --startTimeSec;
+
+        if (startTimeSec == 0)
+            OnReachZero.Invoke();
+
         int minutes = startTimeSec / 60;
         int seconds = startTimeSec % 60;
-        timerText.text = $"{minutes}:{seconds}";
+
+        string text = "";
+        if (minutes > 9)
+            text += minutes;
+        else 
+            text += $"0{minutes}";
+
+        text += ":";
+        if (seconds > 9)
+            text += seconds;
+        else
+            text += $"0{seconds}";
+
+        timerText.text = text;
     }
 }
