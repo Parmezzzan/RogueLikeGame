@@ -3,7 +3,6 @@ using UnityEngine;
 public class PauseMenuLVLup : MonoBehaviour
 {
     int? skill = null;
-    //fake commit
     public void onLVLup()
     {
         Invoke("Stop", 1.6f);
