@@ -1,5 +1,5 @@
 waveNum;waveBeginSec;spawnPointAmount;spawnEachSec;monstersAmount;monstersName
 1;1;5;2;15;Spider,Octopus,Crab
-2;7;5;2;15;Spider
+2;7;5;2;15;Spider,Crab
 3;10;5;2;15;Spider
 4;15;5;2;15;Spider

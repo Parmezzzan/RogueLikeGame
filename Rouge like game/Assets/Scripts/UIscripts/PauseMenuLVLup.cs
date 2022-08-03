@@ -1,16 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PauseMenuLVLup : MonoBehaviour
 {
     int? skill = null;
-    //fake commit
+	
     public void onLVLup()
     {
-        Invoke("Stop", 1.6f);
+        Invoke("Pause", 0.8f);
     }
-    private void Stop()
+    private void Pause()
     {
         Time.timeScale = 0.0f;
     }
