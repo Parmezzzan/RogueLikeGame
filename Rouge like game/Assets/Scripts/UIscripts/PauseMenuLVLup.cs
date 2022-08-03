@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PauseMenuLVLup : MonoBehaviour
@@ -8,10 +10,6 @@ public class PauseMenuLVLup : MonoBehaviour
         Invoke("Stop", 1.6f);
     }
     private void Stop()
-	{
-        Invoke("Pause", 0.8f);
-    }
-    private void Pause()
     {
         Time.timeScale = 0.0f;
     }
