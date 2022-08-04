@@ -5202,6 +5202,11 @@ MonoBehaviour:
   scrollRoots:
   - {fileID: 724419090}
   - {fileID: 1492627234}
+  scrolRootsWitsDeleting:
+  - {fileID: 12046524}
+  OnDestroyInAria:
+    m_PersistentCalls:
+      m_Calls: []
   mapConfig: {fileID: 1915491054}
 --- !u!114 &1915491058
 MonoBehaviour:

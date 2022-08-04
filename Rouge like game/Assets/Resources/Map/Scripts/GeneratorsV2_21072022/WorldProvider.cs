@@ -1,6 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public enum TranslationType
 {
@@ -19,7 +19,12 @@ public class WorldProvider : MonoBehaviour
     [SerializeField]
     Transform[] scrollRoots;
     [SerializeField]
+    Transform[] scrolRootsWitsDeleting;
+    [SerializeField]
+    UnityEvent OnDestroyInAria;
+    [SerializeField]
     MapConfiguration mapConfig;
+    
 
     private bool scrolEnable = false;
     private Vector2 windowCentralPoint;
