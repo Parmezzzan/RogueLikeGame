@@ -21,7 +21,7 @@ public class WorldProvider : MonoBehaviour
     [SerializeField]
     Transform[] scrolRootsWitsDeleting;
     [SerializeField]
-    UnityEvent OnDestroyInAria;
+    ItemProducerV2 itemProducerV2;
     [SerializeField]
     MapConfiguration mapConfig;
     
@@ -41,14 +41,30 @@ public class WorldProvider : MonoBehaviour
                 {
                     var transformArray = new List<Transform>();
                     for (int k = 0; k < scrollRoots[j].childCount; k++)
-                    {
                         transformArray.Add(scrollRoots[j].GetChild(k));
-                    }
+
                     for (int i = 0; i < transformArray.Count; i++)
                     {
                         if (transformArray[i].position.x > translation.x)
                             transformArray[i].Translate(-mapConfig.MapUnit_Width, 0.0f, 0.0f, Space.World);
                     }
+                }
+                if (scrolRootsWitsDeleting.Length > 0)
+                {
+                    for (int m = 0; m < scrolRootsWitsDeleting.Length; m++)
+                    {
+                        var transformArray = new List<Transform>();
+                        for (int k = 0; k < scrolRootsWitsDeleting[m].childCount; k++)
+                            transformArray.Add(scrolRootsWitsDeleting[m].GetChild(k));
+
+                        for (int i = 0; i < transformArray.Count; i++)
+                            if (transformArray[i].position.x > translation.x)
+                                Destroy(transformArray[i].gameObject);
+                    }
+                    var pos = new Vector2(target.transform.position.x - mapConfig.MapUnit_Width/2.0f - windowsSize.x,
+                                        target.transform.position.y + mapConfig.MapUnit_Height/2.0f);
+                    var size = new Vector2(windowsSize.x, mapConfig.MapUnit_Height);
+                    itemProducerV2.GenerateInAria(pos, size);
                 }
             }
             if (transType == TranslationType.right)
@@ -66,6 +82,23 @@ public class WorldProvider : MonoBehaviour
                             transformArray[i].Translate(mapConfig.MapUnit_Width, 0.0f, 0.0f, Space.World);
                     }
                 }
+                if (scrolRootsWitsDeleting.Length > 0)
+                {
+                    for (int m = 0; m < scrolRootsWitsDeleting.Length; m++)
+                    {
+                        var transformArray = new List<Transform>();
+                        for (int k = 0; k < scrolRootsWitsDeleting[m].childCount; k++)
+                            transformArray.Add(scrolRootsWitsDeleting[m].GetChild(k));
+
+                        for (int i = 0; i < transformArray.Count; i++)
+                            if (transformArray[i].position.x < translation.x)
+                                Destroy(transformArray[i].gameObject);
+                    }
+                    var pos = new Vector2(target.transform.position.x + mapConfig.MapUnit_Width / 2.0f - windowsSize.x,
+                                        target.transform.position.y + mapConfig.MapUnit_Height / 2.0f);
+                    var size = new Vector2(windowsSize.x, mapConfig.MapUnit_Height);
+                    itemProducerV2.GenerateInAria(pos, size);
+                }
             }
             if (transType == TranslationType.up)
             {
@@ -82,6 +115,23 @@ public class WorldProvider : MonoBehaviour
                             transformArray[i].Translate(0.0f, mapConfig.MapUnit_Height, 0.0f, Space.World);
                     }
                 }
+                if (scrolRootsWitsDeleting.Length > 0)
+                {
+                    for (int m = 0; m < scrolRootsWitsDeleting.Length; m++)
+                    {
+                        var transformArray = new List<Transform>();
+                        for (int k = 0; k < scrolRootsWitsDeleting[m].childCount; k++)
+                            transformArray.Add(scrolRootsWitsDeleting[m].GetChild(k));
+
+                        for (int i = 0; i < transformArray.Count; i++)
+                            if (transformArray[i].position.y < translation.y)
+                                Destroy(transformArray[i].gameObject);
+                    }
+                    var pos = new Vector2(target.transform.position.x - mapConfig.MapUnit_Width / 2.0f,
+                                        target.transform.position.y + mapConfig.MapUnit_Height - windowsSize.y);
+                    var size = new Vector2(mapConfig.MapUnit_Width, windowsSize.y);
+                    itemProducerV2.GenerateInAria(pos, size);
+                }
             }
             if (transType == TranslationType.down)
             {
@@ -97,6 +147,23 @@ public class WorldProvider : MonoBehaviour
                         if (transformArray[i].position.y > translation.y)
                             transformArray[i].Translate(0.0f, -mapConfig.MapUnit_Height, 0.0f, Space.World);
                     }
+                }
+                if (scrolRootsWitsDeleting.Length > 0)
+                {
+                    for (int m = 0; m < scrolRootsWitsDeleting.Length; m++)
+                    {
+                        var transformArray = new List<Transform>();
+                        for (int k = 0; k < scrolRootsWitsDeleting[m].childCount; k++)
+                            transformArray.Add(scrolRootsWitsDeleting[m].GetChild(k));
+
+                        for (int i = 0; i < transformArray.Count; i++)
+                            if (transformArray[i].position.y > translation.y)
+                                Destroy(transformArray[i].gameObject);
+                    }
+                    var pos = new Vector2(target.transform.position.x - mapConfig.MapUnit_Width / 2.0f,
+                                        target.transform.position.y - mapConfig.MapUnit_Height / 2.0f + windowsSize.y);
+                    var size = new Vector2(mapConfig.MapUnit_Width, windowsSize.y);
+                    itemProducerV2.GenerateInAria(pos, size);
                 }
             }
         }
@@ -144,13 +211,4 @@ public class WorldProvider : MonoBehaviour
         transType = TranslationType.none;
         return transType;
     }
-    /*
-    void OnDrawGizmos()
-    {
-        // Draw a yellow sphere at the transform's position
-        Gizmos.color = Color.yellow; 
-        Gizmos.DrawCube(new Vector3(windowCentralPoint.x, windowCentralPoint.y, 0.0f), 
-                        new Vector3(windowsSize.x, windowsSize.y, 1));
-    }
-    */
 }
