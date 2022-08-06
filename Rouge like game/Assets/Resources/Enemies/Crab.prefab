@@ -97,7 +97,7 @@ MonoBehaviour:
   radius: 0.3
   height: 0.01
   canMove: 1
-  maxSpeed: 0.6
+  maxSpeed: 1
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56f67c80dfbaf0c4b8c9efbf23679ba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 11400000, guid: 9fce6ee49c39ee84489bc3fed6e489d2, type: 2}
+  enemy: {fileID: 11400000, guid: 008a233f53af8fa418c5ecef99987304, type: 2}
   spriteImage: {fileID: 21300000, guid: 92dc5fd35ad07452cbb4501123046b43, type: 3}
   targetTag: Player
 --- !u!58 &8747731470068041987

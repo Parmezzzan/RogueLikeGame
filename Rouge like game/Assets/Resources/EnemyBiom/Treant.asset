@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Treant
   speed: 10
-  attack: 10
+  attack: 5
   health: 100
   repeatDamageTime: 1
   closeDistance: 3
