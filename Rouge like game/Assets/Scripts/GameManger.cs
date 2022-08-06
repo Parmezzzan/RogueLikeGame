@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameManger : MonoBehaviour
 {
@@ -16,5 +17,16 @@ public class GameManger : MonoBehaviour
 	{
         gameEnded = true;
         gameOver.Invoke();
+        Invoke("StopTime", 2.0f);
+    }
+    public void RestartLevel()
+    {
+        var scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+        Time.timeScale = 1.0f;
+    }
+    private void StopTime()
+    {
+        Time.timeScale = 0.0f;
     }
 }

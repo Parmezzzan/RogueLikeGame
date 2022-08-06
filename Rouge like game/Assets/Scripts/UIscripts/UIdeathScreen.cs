@@ -8,8 +8,4 @@ public class UIdeathScreen : MonoBehaviour
     {
         Invoke("Hide", splashScreenTime);
     }
-    private void Hide()
-    {
-        gameObject.SetActive(false);
-    }
 }

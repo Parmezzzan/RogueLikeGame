@@ -31,7 +31,7 @@ public class WorldProvider : MonoBehaviour
     private Vector2 forbiddenZone;
     private Vector2 translation;
     TranslationType transType;
-    void Update()
+    void FixedUpdate()
     {
         if (scrolEnable && IsTargetWayout() != TranslationType.none)
         {
@@ -66,6 +66,7 @@ public class WorldProvider : MonoBehaviour
                     var size = new Vector2(windowsSize.x, mapConfig.MapUnit_Height);
                     itemProducerV2.GenerateInAria(pos, size);
                 }
+                return;
             }
             if (transType == TranslationType.right)
             {
@@ -99,6 +100,7 @@ public class WorldProvider : MonoBehaviour
                     var size = new Vector2(windowsSize.x, mapConfig.MapUnit_Height);
                     itemProducerV2.GenerateInAria(pos, size);
                 }
+                return;
             }
             if (transType == TranslationType.up)
             {
@@ -132,6 +134,7 @@ public class WorldProvider : MonoBehaviour
                     var size = new Vector2(mapConfig.MapUnit_Width, windowsSize.y);
                     itemProducerV2.GenerateInAria(pos, size);
                 }
+                return;
             }
             if (transType == TranslationType.down)
             {
@@ -165,6 +168,7 @@ public class WorldProvider : MonoBehaviour
                     var size = new Vector2(mapConfig.MapUnit_Width, windowsSize.y);
                     itemProducerV2.GenerateInAria(pos, size);
                 }
+                return;
             }
         }
     }

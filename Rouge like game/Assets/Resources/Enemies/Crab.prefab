@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1074902583411596315}
   - component: {fileID: 1074902583411596314}
   - component: {fileID: 8747731470068041987}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Crab
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 1074902583931648005}
   - component: {fileID: 1074902583931648011}
   - component: {fileID: 1074902583931648010}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

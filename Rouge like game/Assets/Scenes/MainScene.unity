@@ -1316,18 +1316,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 799768720}
-        m_TargetAssemblyTypeName: UIdeathScreen, Assembly-CSharp
-        m_MethodName: Death
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!4 &542725498
 Transform:
   m_ObjectHideFlags: 0
@@ -1801,7 +1789,6 @@ GameObject:
   - component: {fileID: 799768718}
   - component: {fileID: 799768717}
   - component: {fileID: 799768719}
-  - component: {fileID: 799768720}
   m_Layer: 5
   m_Name: YouDiedScreen
   m_TagString: Untagged
@@ -1888,19 +1875,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &799768720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 799768715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37f7a7d02a5c5394a974922b720e66f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  splashScreenTime: 3
 --- !u!1 &810421073
 GameObject:
   m_ObjectHideFlags: 0
@@ -2817,7 +2791,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1120847958}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 542725497}
+        m_TargetAssemblyTypeName: GameManger, Assembly-CSharp
+        m_MethodName: RestartLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1120847958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6487,9 +6473,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2803398505721129473, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803398505867354519, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2803398505867354520, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803398506331445004, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2803398506331445007, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: far clip plane
@@ -6666,6 +6664,22 @@ PrefabInstance:
     - target: {fileID: 2803398506396595039, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803398506396595039, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803398506851509493, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803398506878227170, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803398507791910530, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}

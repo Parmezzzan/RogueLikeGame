@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5444722163609851177}
   - component: {fileID: 5444722163609851176}
   - component: {fileID: 6250008134914833785}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Octopus
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 5444722164062859575}
   - component: {fileID: 5444722164062859577}
   - component: {fileID: 5444722164062859576}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
