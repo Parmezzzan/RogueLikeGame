@@ -38,11 +38,13 @@ public class EnemiesGeneratorV2 : MonoBehaviour
         foreach (var item in monstersName)
         {
             enemies.Add((GameObject)Resources.Load("Enemies/" + item));
-            print(enemies.ToString());
         }
     }
     private void Generation()
     {
+        if (pointOfSpawn > monstersCount)
+            pointOfSpawn = monstersCount;
+
         int countOnPoint = monstersCount / pointOfSpawn;
 
         for (int k = 0; k < pointOfSpawn; k++)
