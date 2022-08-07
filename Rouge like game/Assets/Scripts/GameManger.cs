@@ -25,6 +25,11 @@ public class GameManger : MonoBehaviour
         SceneManager.LoadScene(scene.name);
         Time.timeScale = 1.0f;
     }
+    public void ToMenu()
+    {
+        SceneManager.LoadScene("Menu");
+        Time.timeScale = 1.0f;
+    }
     private void StopTime()
     {
         Time.timeScale = 0.0f;
