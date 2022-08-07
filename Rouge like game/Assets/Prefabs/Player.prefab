@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2803398505721129475}
   - component: {fileID: 2803398505721129474}
   - component: {fileID: 7801836214549056105}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,8 +37,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.046, y: -0.685}
-  m_SizeDelta: {x: 724.251, y: 141.076}
+  m_AnchoredPosition: {x: -0.009, y: -1.011}
+  m_SizeDelta: {x: 638.925, y: 141.076}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2803398505721129476
 Canvas:
@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 2803398505867354520}
   - component: {fileID: 2803398505867354522}
   - component: {fileID: 2803398505867354521}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,8 @@ GameObject:
   - component: {fileID: 2803398506331445007}
   - component: {fileID: 2803398506331445005}
   - component: {fileID: 2803398506331445006}
-  m_Layer: 0
+  - component: {fileID: 1894030923}
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -254,7 +255,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2803398506331445004}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.58, z: -10}
+  m_LocalPosition: {x: -0.6, y: 0.2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2803398506396595009}
@@ -287,7 +288,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -344,6 +345,40 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &1894030923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2803398506331445004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2803398506396595039
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,7 +396,7 @@ GameObject:
   - component: {fileID: 2803398506396595015}
   - component: {fileID: 2803398506396595016}
   - component: {fileID: 461757802133080644}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -376,7 +411,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2803398506396595039}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6, y: 0.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2803398505721129477}
@@ -425,7 +460,7 @@ SpriteRenderer:
   m_SortingLayerID: -5648797
   m_SortingLayer: 3
   m_SortingOrder: 9
-  m_Sprite: {fileID: 21300000, guid: 0f39a9205e4394ee1b6ba8269428d176, type: 3}
+  m_Sprite: {fileID: -9217055168040156826, guid: 418104116b330f34e9337d5b2e54b8ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -521,9 +556,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Money: 0
   startMoney: 10
-  expiriense: 10
+  expiriense: 0
   maxHealth: 100
   healthBar: {fileID: 2803398506851509495}
+  expSlider: {fileID: 0}
+  expText: {fileID: 0}
+  OnLVLup:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PauseMenuLVLup, Assembly-CSharp
+        m_MethodName: onLVLup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: WaveConfigurator, Assembly-CSharp
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2803398506396595016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,7 +641,7 @@ GameObject:
   - component: {fileID: 2803398506851509494}
   - component: {fileID: 2803398506851509496}
   - component: {fileID: 2803398506851509495}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Health bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -591,7 +667,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 671.653, y: 114.1007}
+  m_SizeDelta: {x: 586.3, y: 104.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2803398506851509496
 MonoBehaviour:
@@ -698,7 +774,7 @@ GameObject:
   - component: {fileID: 2803398506878227171}
   - component: {fileID: 2803398506878227173}
   - component: {fileID: 2803398506878227172}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -771,7 +847,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2803398507791910531}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
