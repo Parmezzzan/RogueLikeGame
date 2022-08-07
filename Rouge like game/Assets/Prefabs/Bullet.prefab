@@ -116,8 +116,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   lifeTime: 2
-  damage: 100
-  impactEffect: {fileID: 8166519431448231566, guid: 20b1ce5fe41a4be438d9a308c672cd52, type: 3}
+  damage: 50
+  impactEffect: {fileID: 100018, guid: a40b64bf23366dc42a892af2c6ff6140, type: 3}
 --- !u!50 &361655090986868808
 Rigidbody2D:
   serializedVersion: 4
