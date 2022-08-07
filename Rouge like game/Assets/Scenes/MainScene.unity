@@ -524,10 +524,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 903839860}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 317430833}
     - target: {fileID: 5444722163609851175, guid: 1ac727ec8e83f2e4b993e876502d76f7, type: 3}
       propertyPath: m_Name
       value: Enemy_octopus
@@ -2053,10 +2049,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 903839860}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 317430833}
     - target: {fileID: 5027927298292681791, guid: 499ea1fbe1ed3b44180a614745cd4422, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3720,10 +3712,6 @@ PrefabInstance:
       propertyPath: autoRepath.visualizeSensitivity
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 317430833}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06bf14df3f52991499330f90333e99da, type: 3}
 --- !u!4 &1371189266 stripped
@@ -5850,10 +5838,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 903839860}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 317430833}
     - target: {fileID: 545270015455217964, guid: c87275eba013f77449a92d2369f8ceb0, type: 3}
       propertyPath: m_Name
       value: Enemy_jumper

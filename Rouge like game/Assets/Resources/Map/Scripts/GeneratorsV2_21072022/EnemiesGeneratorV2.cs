@@ -57,9 +57,6 @@ public class EnemiesGeneratorV2 : MonoBehaviour
             {
                 int j = Random.Range(0, enemies.Count);
                 var obj = Instantiate(enemies[j], new Vector3(X, Y, 0.0f), Quaternion.identity, root);
-                //boolsheat
-                //obj.GetComponent<PathFinderSimple>().SetTarget(targetTransform);
-                //old slow PathFinder
                 obj.GetComponent<Pathfinding.AIDestinationSetter>().target = targetTransform;  //heh kek but it's no error
             }
         }
