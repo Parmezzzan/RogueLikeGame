@@ -3513,7 +3513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   expSoulSphere: {fileID: 290223870701032407, guid: 34ef9369fd198e8419b0a69da728c631, type: 3}
-  health: 100
+  health: 600
   deathEffect: {fileID: 1280141305896002, guid: e473029e4c70ad543a6879b82a732f4f, type: 3}
 --- !u!114 &1134266629
 MonoBehaviour:
