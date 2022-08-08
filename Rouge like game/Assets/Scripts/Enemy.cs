@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         spriteImage = enemy.sprite;
+        //GetComponentInChildren<SpriteRenderer>().sprite = spriteImage;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

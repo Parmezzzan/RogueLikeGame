@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -18,6 +19,8 @@ public class PlayerData : MonoBehaviour
     [SerializeField]
     public HealthBar healthBar;
     [SerializeField]
+    public Pathfinding.AstarData pathFinder;
+    [SerializeField]
     private Slider expSlider;
     [SerializeField]
     private TextMeshProUGUI expText;
@@ -28,8 +31,21 @@ public class PlayerData : MonoBehaviour
     private int currentLevel = 1;
 
 
-
-    // Start is called before the first frame update
+    private void FixedUpdate()
+    {
+        /*
+        // This holds all graph data
+        pathFinder = AstarPath.active.astarData;
+        // This creates a Grid Graph
+        GridGraph gg = pathFinder.AddGraph(typeof(GridGraph)) as GridGraph;
+        // Setup a grid graph with some values
+        gg.center = transform.position;
+        // Updates internal size from the above values
+        gg.UpdateSizeFromWidthDepth();
+        // Scans all graphs, do not call gg.Scan(), that is an internal method
+        AstarPath.active.Scan();
+        */
+    }
     void Start()
     {
         Money = startMoney;
