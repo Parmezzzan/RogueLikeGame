@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using Pathfinding;
 
 public class PlayerData : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class PlayerData : MonoBehaviour
     [SerializeField]
     public HealthBar healthBar;
     [SerializeField]
-    public Pathfinding.AstarData pathFinder;
+    public AstarPath pathFinder;
     [SerializeField]
     private Slider expSlider;
     [SerializeField]
@@ -33,20 +34,33 @@ public class PlayerData : MonoBehaviour
 
     private void FixedUpdate()
     {
+        customiseAStar();
+
+
+    }
+    void customiseAStar()
+    {
+        NavGraph[] graph = pathFinder.graphs;
+        foreach (var item in graph)
+        {
+            item.RelocateNodes(Matrix4x4.TRS(gameObject.transform.position, Quaternion.identity, Vector3.one));
+        }
+
+        pathFinder.Scan();
         /*
-        // This holds all graph data
-        pathFinder = AstarPath.active.astarData;
-        // This creates a Grid Graph
-        GridGraph gg = pathFinder.AddGraph(typeof(GridGraph)) as GridGraph;
-        // Setup a grid graph with some values
-        gg.center = transform.position;
-        // Updates internal size from the above values
-        gg.UpdateSizeFromWidthDepth();
-        // Scans all graphs, do not call gg.Scan(), that is an internal method
-        AstarPath.active.Scan();
+        foreach (IUpdatableGraph graph in graphs)
+        { 
+            graph.width = w;
+
+            graph.depth = d;
+            graph.center = new Vector3(x, y, 0);
+
+            graph.UpdateSizeFromWidthDepth();
+
+        }
         */
     }
-    void Start()
+        void Start()
     {
         Money = startMoney;
         currentHealth = maxHealth;

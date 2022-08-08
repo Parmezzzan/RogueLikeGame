@@ -2209,7 +2209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &840875436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2665,7 +2665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAYIeyqInp/ZgIAACIFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVEtz2jAQ/iuMziVjzCvprQVCeiBhQju5+CKkNdYgSx5J5pEM/70r2caue2L5dr/dbx/yFxHKFsCcNmsj+EZzIN8HxNvk26B1vsCFHrTaiU9oYj4Ed5kPoiHmnTqhER95mtU5OCPYD3WQPjhCsFQi1SZf8QMstHUW4ZRKC+gy2nm2QuhrQC74M3zylCta8dxbn2g9RYMbmgyUA9OGRg9RFM1n08comtachlERSsUkzQvgXn3Li5HW1EAzhCrsrY6a+FJaSmFrYcRdi9D4rsjAgO+cC4p9BjGjhzECGYhD5nzGLvstTS24Wpeh16UwOLAqLfmpqynm1B4rcScqS19oNgmaqpyb/9zDUXCnRucvTdlRaMllgh3f6ZVR6zpT7sLLjvIwojOVR7qX8JGBetVro0vF0elM6amlhXjZ/r13tsiAHVu8ktoDy6Kzq96CfA+30PxlIUW+D+ucVMBO6jDvcAlgcDO/UHC4E1unQNSr+GPhNz10D6p2PAtjHbrqLpWXt9el8aFkFWbmuyndQhsFAa5FF6CodNctpnH9DfZ8nbI9zzP1T6cuXvuaF9GjBLiNj6Kea6vP92XZTJ83YLO30kmhoBXtHa84p4VWqjqw7kwa2q40KWUd2qEU/N/TInE6ZmMep/EkHU33ez6M+ZTO2ZhNZxz29HFGwu0JhX1Sua2E1uPBrak2ucI7a74og7WhRTh2buh5LT5z3RUoVKp3zACotyrFXTkYrILPkq+4wAntwDmhwsLJV0KkZkfgyb1mElpdXZyhSZslIYU4aeeRhCzCNyQhHr4f89bAScDZF2+S3cjtL1BLAwQUAAAICAAAGCHsv+xhMm0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNdRUEovSizIKAaKGII4pZkpIHa0klGacbJxilGakUmaoWlSUoquUYpponmycbKpWUpqUqKFmVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAGCHsqiJ6f2YCAAAiBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAGCHsv+xhMm0AAAB4AAAACQAkAAAAAAAAAAAAAACzAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAGsDAAAAAA==
+    dataString: UEsDBBQAAAgIAAAYIexNzYzmZwIAACEFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMziVjm480vbVASA8kTEgnF1+EtMYaZMkjyQGS4b93JdvYdU8sb/ftvv2Qv4hQtgTmtFkbwTeaA/kxIt4m30ad8wnO9KDVTnxCG/MuuMt9EA0xr9QJjXjsaVYX4IxgP9VB+uAIwUqJTJtixQ+w0NZZhDMqLaDLaOfZCqGvETnjz/jBUy5oJffe+kTrIRpd0WSgHJguNLqLojhK4nkymccNqaXUjEoxSYsSuJffEZMoaotM60CFrTUxU19JSylso4u4Sxn63pU5GPCNc0GxzaAlvpsgkIM45M6n7rNfssyCa1QZelkKg/Oq05Jfuh5iQe2xlvZBZeULzadBU51z8597HAd3ZnTx1JaNQ0MuF+z4Si+MWtcbch9e9pSHAZ2oPNK9hPcc1LNeG10pjk5nKk+tLCTL7u+ts0UO7NjhtdQBWJW9VQ3W43u4hubPCymKfdjmtAZ2Uod5h0MAg5v5jYLDmdgmBaJexR8Lb/TQv6fG8SiMdehqulRe3l5XxoeSVZiZ76ZyC20UBLgRXYKi0l22mMYNNzjw9coOPI/Uv5ymeONrH8SAEuAuPooGrq0+3ZZlc33agM1fKieFgk60dzzjnBZaqfrA+jNpabvKZJT1aIdK8H9PiyTZhE14kiXTLJ7t93yc8Bm9ZxM2m3PY0+9zEm5PKOyTym0ttBkPbk11yRXeWftBGa0NLcOxc0NPa/FZ6L5AoTK9YwZAvdQpbsrBYBV8lnzFBU5oB84JFRZOvlIiNTsCT28109Dq6uwMTbssKSnFh3YeSckifEJS4uHbMW8NfAg4+eJtsiu5/gVQSwMEFAAACAgAABgh7L/sYTJtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tJJRmnGycYpRmpFJmqFpUlKKrlGKaaJ5snGyqVlKalKihZlSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAABgh7E3NjOZnAgAAIQUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAABgh7L/sYTJtAAAAeAAAAAkAJAAAAAAAAAAAAAAAtAIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABsAwAAAAA=
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -3051,7 +3051,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 2.5, y: 0}
   m_SizeDelta: {x: 5, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7853,6 +7853,30 @@ PrefabInstance:
       propertyPath: expSlider
       value: 
       objectReference: {fileID: 1257323053}
+    - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: pathFinder
+      value: 
+      objectReference: {fileID: 933448163}
+    - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: OnLVLup.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: OnLVLup.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1480983394}
+    - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: OnLVLup.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1480983400}
+    - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: OnLVLup.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: OnLVLup.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: onLVLup
+      objectReference: {fileID: 0}
     - target: {fileID: 2803398506396595039, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: m_Name
       value: Player

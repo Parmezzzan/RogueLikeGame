@@ -6,7 +6,7 @@ public class PauseMenuLVLup : MonoBehaviour
 	
     public void onLVLup()
     {
-        Invoke("Pause", 0.8f);
+        Invoke("Pause", 0.5f);
     }
     private void Pause()
     {

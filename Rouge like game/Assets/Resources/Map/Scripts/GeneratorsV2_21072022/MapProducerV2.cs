@@ -41,6 +41,7 @@ public class MapProducerV2 : MonoBehaviour
     public GameObject generateTile(Vector2 pos, Sprite sprite, Vector2 scale)
     {
         var obj = new GameObject();
+        obj.tag = "Map";
         obj.transform.SetParent(objectRoot);
         obj.transform.position = pos;
         obj.transform.localScale = new Vector3() { x = scale.x, y = scale.y, z = 0.0f };
