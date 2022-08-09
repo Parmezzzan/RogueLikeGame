@@ -13,5 +13,5 @@ public class EnemyData : ScriptableObject
     public float repeatDamageTime;
     public float closeDistance;
 
-    public Sprite sprite;
+    public RuntimeAnimatorController anim;
 }

@@ -2,18 +2,15 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField]
     public EnemyData enemy;
-
-    public Sprite spriteImage;
-
     [SerializeField]
     string targetTag = "Player";
 
     private Transform target = null;
-    void Start()
+    private void Start()
     {
-        spriteImage = enemy.sprite;
-        //GetComponentInChildren<SpriteRenderer>().sprite = spriteImage;
+        GetComponentInChildren<Animator>().runtimeAnimatorController = enemy.anim;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

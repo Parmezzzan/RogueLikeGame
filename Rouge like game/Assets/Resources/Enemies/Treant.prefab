@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5027927298292681791}
   - component: {fileID: 5027927298292681784}
   - component: {fileID: 5027927298292681790}
+  - component: {fileID: 5427335826675904055}
   m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
@@ -96,6 +97,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aiPath: {fileID: 5027927298345789753}
+--- !u!95 &5427335826675904055
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5027927298292681785}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5027927298345789754
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +129,6 @@ GameObject:
   - component: {fileID: 5027927298345789752}
   - component: {fileID: 5027927298345789753}
   - component: {fileID: 5027927298345789756}
-  - component: {fileID: 5027927298345789761}
   - component: {fileID: 5027927298345789763}
   - component: {fileID: 5027927298345789760}
   - component: {fileID: 7331971590348947449}
@@ -240,25 +259,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!95 &5027927298345789761
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5027927298345789754}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 96d48f34e1ac06146b5737dce6d0f781, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &5027927298345789763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,7 +287,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 11400000, guid: 9fce6ee49c39ee84489bc3fed6e489d2, type: 2}
-  spriteImage: {fileID: 21300000, guid: 4dbf9e4cb148c4dc991ed1bfc861e5e9, type: 3}
   targetTag: Player
 --- !u!58 &7331971590348947449
 CircleCollider2D:

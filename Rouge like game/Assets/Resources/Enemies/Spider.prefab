@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 545270015002258748}
   - component: {fileID: 545270015002258738}
   - component: {fileID: 545270015002258739}
+  - component: {fileID: 987028521025950122}
   m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
@@ -96,6 +97,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aiPath: {fileID: 545270015455217957}
+--- !u!95 &987028521025950122
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545270015002258749}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &545270015455217964
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +129,6 @@ GameObject:
   - component: {fileID: 545270015455217956}
   - component: {fileID: 545270015455217957}
   - component: {fileID: 545270015455217958}
-  - component: {fileID: 545270015455217959}
   - component: {fileID: 545270015455217954}
   - component: {fileID: 545270015455217955}
   - component: {fileID: 4453797737655899682}
@@ -240,25 +259,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!95 &545270015455217959
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545270015455217964}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 96d48f34e1ac06146b5737dce6d0f781, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &545270015455217954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,7 +287,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 11400000, guid: ee530fc396b0bca498e3bf6f0f90f1fc, type: 2}
-  spriteImage: {fileID: 21300000, guid: 2f933e65ab55a416590f7d39ec8a800d, type: 3}
   targetTag: Player
 --- !u!58 &4453797737655899682
 CircleCollider2D:
