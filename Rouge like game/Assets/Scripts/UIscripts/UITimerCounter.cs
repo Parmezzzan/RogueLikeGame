@@ -15,6 +15,7 @@ public class UITimerCounter : MonoBehaviour
 
     private void Start()
     {
+        UpdateTimerText();
         InvokeRepeating("UpdateTimerText", 1.0f, 1.0f);
     }
     void UpdateTimerText()
