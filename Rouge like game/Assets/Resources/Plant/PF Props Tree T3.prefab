@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2055102311959635375}
   - component: {fileID: 9201753468700945887}
-  m_Layer: 20
+  m_Layer: 6
   m_Name: PF Props Tree T3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
