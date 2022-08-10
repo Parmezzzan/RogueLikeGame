@@ -19,6 +19,11 @@ public class GameManger : MonoBehaviour
         gameOver.Invoke();
         Invoke("StopTime", 2.0f);
     }
+    public void WonGame()
+    {
+        gameEnded = true;
+        Invoke("StopTime", 2.0f);
+    }
     public void RestartLevel()
     {
         var scene = SceneManager.GetActiveScene();
