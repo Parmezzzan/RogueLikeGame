@@ -7680,6 +7680,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1538222874050342968, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: range
+      value: 10.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538222874050342968, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: fireRate
+      value: 5.65
+      objectReference: {fileID: 0}
     - target: {fileID: 2803398505867354520, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
