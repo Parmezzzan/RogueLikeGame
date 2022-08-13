@@ -20,10 +20,9 @@ public class ExplodeBomb : MonoBehaviour
                 item.gameObject.GetComponent<Enemy_HP>().TakeDamage(eachDemage);
         }
     }
-    void OnDrawGizmos()
+    void OnDrawGizmosSelected()
     {
-        var color = Color.cyan;
-        Gizmos.color = new Color(color.r, color.g, color.b, 0.2f);
-        Gizmos.DrawSphere(transform.position, radius);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, 2.0f);
     }
 }

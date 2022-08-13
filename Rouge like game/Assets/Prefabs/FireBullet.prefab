@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 3005589963090848971}
   - component: {fileID: -5306619299452823991}
   - component: {fileID: 361655090986868808}
-  - component: {fileID: -6347569076731844290}
   - component: {fileID: 2936316721345360534}
+  - component: {fileID: -5510247053532116148}
   m_Layer: 11
-  m_Name: PointBullet
+  m_Name: FireBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 10
   m_Sprite: {fileID: 8177471321811730583, guid: 87aaca0a643d54397ba969dab4fc8875, type: 3}
-  m_Color: {r: 1, g: 0.5001359, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.19916248, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -123,23 +123,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &-6347569076731844290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6348529544546483862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9f7ac6000796de4d948861b680067ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeTime: 2
-  speed: 10
-  targetNarrow: {x: 0, y: 0, z: 0}
-  tagEnemy: Enemy
-  damage: 15
 --- !u!96 &2936316721345360534
 TrailRenderer:
   serializedVersion: 2
@@ -211,8 +194,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.42741317, b: 0.019607842, a: 1}
-      key1: {r: 0.6037736, g: 0.30827397, b: 0.2990388, a: 1}
+      key0: {r: 1, g: 0.050631966, b: 0.019607842, a: 1}
+      key1: {r: 0.6226415, g: 0.54639274, b: 0.5433428, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -247,3 +230,19 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &-5510247053532116148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6348529544546483862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6049194f718b4418f8add3b6f3b588, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagEnemy: Enemy
+  damage: 20
+  lifeTime: 5
+  speed: 100

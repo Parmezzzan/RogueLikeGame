@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -24,13 +25,14 @@ public class WorldProvider : MonoBehaviour
     ItemProducerV2 itemProducerV2;
     [SerializeField]
     MapConfiguration mapConfig;
-    
+
 
     private bool scrolEnable = false;
     private Vector2 windowCentralPoint;
     private Vector2 forbiddenZone;
     private Vector2 translation;
     TranslationType transType;
+
     void FixedUpdate()
     {
         if (scrolEnable && IsTargetWayout() != TranslationType.none)
@@ -61,11 +63,12 @@ public class WorldProvider : MonoBehaviour
                             if (transformArray[i].position.x > translation.x)
                                 Destroy(transformArray[i].gameObject);
                     }
-                    var pos = new Vector2(target.transform.position.x - mapConfig.MapUnit_Width/2.0f - windowsSize.x,
-                                        target.transform.position.y + mapConfig.MapUnit_Height/2.0f);
+                    var pos = new Vector2(target.transform.position.x - mapConfig.MapUnit_Width / 2.0f - windowsSize.x,
+                                        target.transform.position.y + mapConfig.MapUnit_Height / 2.0f);
                     var size = new Vector2(windowsSize.x, mapConfig.MapUnit_Height);
                     itemProducerV2.GenerateInAria(pos, size);
                 }
+                UpdatePathFinder();
                 return;
             }
             if (transType == TranslationType.right)
@@ -100,6 +103,7 @@ public class WorldProvider : MonoBehaviour
                     var size = new Vector2(windowsSize.x, mapConfig.MapUnit_Height);
                     itemProducerV2.GenerateInAria(pos, size);
                 }
+                UpdatePathFinder();
                 return;
             }
             if (transType == TranslationType.up)
@@ -134,6 +138,7 @@ public class WorldProvider : MonoBehaviour
                     var size = new Vector2(mapConfig.MapUnit_Width, windowsSize.y);
                     itemProducerV2.GenerateInAria(pos, size);
                 }
+                UpdatePathFinder();
                 return;
             }
             if (transType == TranslationType.down)
@@ -168,11 +173,20 @@ public class WorldProvider : MonoBehaviour
                     var size = new Vector2(mapConfig.MapUnit_Width, windowsSize.y);
                     itemProducerV2.GenerateInAria(pos, size);
                 }
+                UpdatePathFinder();
                 return;
             }
         }
     }
-    public void Run()
+    private void UpdatePathFinder()
+    {
+        var gg = AstarPath.active.astarData.gridGraph;
+        gg.center = target.transform.position;
+        gg.UpdateSizeFromWidthDepth();
+        // Recalculate the graph
+        AstarPath.active.Scan();
+    }
+public void Run()
     {
         windowCentralPoint = mapConfig.CurrentCentralPosition;
         scrolEnable = true;

@@ -29,16 +29,6 @@ public class PointBullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    /*
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag(tagEnemy))
-        {
-            collision.gameObject.GetComponent<Enemy_HP>().TakeDamage(damage);
-            Destroy(gameObject);
-        }
-    }*/
     public void SetTargetPoint(Vector3 newTargetPoin)
     {
         targetNarrow = newTargetPoin;
