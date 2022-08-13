@@ -8329,10 +8329,6 @@ PrefabInstance:
       value: onLVLup
       objectReference: {fileID: 0}
     - target: {fileID: 2803398506396595016, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
-      propertyPath: range
-      value: 9.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 2803398506396595016, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
