@@ -5,9 +5,7 @@ using UnityEngine;
 public class ClowerBoostAtack : MonoBehaviour
 {
     [SerializeField]
-    int attackRateBoost = 20;
-    [SerializeField]
-    float time = 20;
+    PlayerBuff buff;
     [SerializeField]
     float radius = 1.5f;
     [SerializeField]
@@ -19,7 +17,7 @@ public class ClowerBoostAtack : MonoBehaviour
         foreach (var item in colliders)
         {
             if (item.gameObject.CompareTag(targetTag))
-                item.gameObject.GetComponent<SkillsManager>().AttackRate(attackRateBoost, time);
+                item.gameObject.GetComponent<PlayerBuffManager>().AddBuff(buff);
         }
     }
 }

@@ -25,6 +25,10 @@ public class FireBullet : MonoBehaviour
     {
         this.targetAround = targetAround;
     }
+    public void SetDamage(int newGamage)
+    {
+        damage = newGamage;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag(tagEnemy))

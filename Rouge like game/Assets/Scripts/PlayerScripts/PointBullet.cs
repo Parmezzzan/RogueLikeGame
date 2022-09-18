@@ -33,4 +33,8 @@ public class PointBullet : MonoBehaviour
     {
         targetNarrow = newTargetPoin;
     }
+    public void SetDemage(int newDemage)
+    {
+        damage = newDemage;
+    }
 }

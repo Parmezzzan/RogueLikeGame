@@ -18,6 +18,18 @@ public class PlayerData : MonoBehaviour
     [SerializeField]
     public int maxHealth = 100;
     [SerializeField]
+    public float moveSpeed = 5.0f;
+    [SerializeField]
+    public int armor = 1;
+
+    [Space(10)]
+    [SerializeField]
+    public float regenerationCooldownSec = 2.0f;
+    [SerializeField]
+    public int healthRegenerationPower = 2;
+
+    [Space(10)]
+    [SerializeField]
     public HealthBar healthBar;
     [SerializeField]
     private Slider expSlider;
@@ -26,27 +38,44 @@ public class PlayerData : MonoBehaviour
     [SerializeField]
     public UnityEvent OnLVLup;
 
+    [SerializeField]
+    public UnityEvent DataHasUpdated;
+
     public static int currentHealth = 0;
     private int currentLevel = 1;
 
-        void Start()
+    void Start()
     {
         Money = startMoney;
+
         currentHealth = maxHealth;
-        healthBar.SetHealth(maxHealth);
-        expText.text = "Level " + currentLevel; 
+        healthBar.SetHealth(maxHealth * 100 / maxHealth);
+
+        expText.text = "Level " + currentLevel;
+
+        InvokeRepeating("HealthRegeneration", 0.0f, regenerationCooldownSec);
+    }
+    private void HealthRegeneration()
+    {
+        Heal(healthRegenerationPower);
     }
     public void TakeDamage (int damage)
 	{
-        currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
+        damage -= armor;
+        if (damage > 0)
+        {
+            currentHealth -= damage;
+            healthBar.SetHealth(currentHealth * 100 / maxHealth);
+        }
 	}
     public void Heal(int healPower)
     {
         if (healPower > 0)
             currentHealth += healPower;
+        if (currentHealth > maxHealth)
+            currentHealth = maxHealth;
 
-        healthBar.SetHealth(currentHealth);
+        healthBar.SetHealth(currentHealth * 100 / maxHealth);
     }
     public void AddEXP(int exp)
     {

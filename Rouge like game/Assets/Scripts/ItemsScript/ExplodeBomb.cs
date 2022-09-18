@@ -23,6 +23,6 @@ public class ExplodeBomb : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, 2.0f);
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 }

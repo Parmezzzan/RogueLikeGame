@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField]
+    private PlayerData playerData;
+
     public float moveSpeed = 5f; //публичная переменная для задания скорости перса
 
     public Rigidbody2D rb;  //Переменная для привязки физики персонажа
@@ -21,11 +24,12 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
     }
-
+    public void UpdateData()
+    {
+        moveSpeed = playerData.moveSpeed;
+    }
     void FixedUpdate()  //используется для физики, чаще обновляет кадры
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-
-
     }
 }

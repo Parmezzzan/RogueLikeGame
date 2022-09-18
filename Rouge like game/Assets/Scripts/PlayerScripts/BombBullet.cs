@@ -24,6 +24,10 @@ public class BombBullet : MonoBehaviour
         if(Vector3.Distance(transform.position, targetPoint) < ExplodeToPointRange)
             Explode();
     }
+    public void SetDamage(int newDamage)
+    {
+        damage = newDamage;
+    }
     private void Explode()
     {
         var col = Physics2D.OverlapCircleAll(transform.position, explodeRange);

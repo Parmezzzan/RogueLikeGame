@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eachDemage: 100
-  radius: 3.44
+  radius: 2.2
   targetTag: Enemy
 --- !u!58 &2596762606793176257
 CircleCollider2D:

@@ -5,9 +5,7 @@ using UnityEngine;
 public class PlayerPointAttack : MonoBehaviour
 {
     [SerializeField]
-    private float range = 11.0f;
-    [SerializeField]
-    private float fireRate = 4.0f;
+    private WeaponData weaponData;
     [SerializeField]
     private string enemyTag = "Enemy";
     [SerializeField]
@@ -17,11 +15,16 @@ public class PlayerPointAttack : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("Fire", 0.5f, 1.0f/fireRate);
+        InvokeRepeating("Fire", 0.5f, 1.0f/ weaponData.FireRate);
+    }
+    public void UpdateWeaponData()
+    {
+        CancelInvoke();
+        InvokeRepeating("Fire", 0.2f, 1.0f / weaponData.FireRate);
     }
     private void Fire()
     {
-        var colliders = Physics2D.OverlapCircleAll(transform.position, range);
+        var colliders = Physics2D.OverlapCircleAll(transform.position, weaponData.WeaponAria);
         if (colliders.Length > 1)
         {
             Vector3 target = Vector3.zero;
@@ -44,12 +47,13 @@ public class PlayerPointAttack : MonoBehaviour
                 var narrow = Vector3.Normalize(target - transform.position);
                 var bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
                 bullet.SetTargetPoint(narrow);
+                bullet.SetDemage((int)weaponData.Might);
             }
         }
     }
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, range);
+        Gizmos.DrawWireSphere(transform.position, weaponData.WeaponAria);
     }
 }

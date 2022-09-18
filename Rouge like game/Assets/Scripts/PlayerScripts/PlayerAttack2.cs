@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class PlayerAttack2 : MonoBehaviour
 {
+    [SerializeField]
+    private WeaponData weaponData;
+
     public Transform target;
 
-    [Header("Attributes")]
-
-    public float range = 15f;
-    public float fireRate = 1f;      //скорость стрельбы (1 сек)
     private float fireCountdown = 0f;
 
     [Header("Attachements")]
@@ -23,7 +22,10 @@ public class PlayerAttack2 : MonoBehaviour
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f); //вызывает метод сразу после старта и повторяет каждые пол секунды
     }
-
+    public void UpdateWeaponData()
+    {
+        fireCountdown = 0;
+    }
     void UpdateTarget ()
 	{
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
@@ -39,7 +41,7 @@ public class PlayerAttack2 : MonoBehaviour
                 nearestEnemy = enemy;
 			}
 
-            if (nearestEnemy != null && shortestDistance <= range)
+            if (nearestEnemy != null && shortestDistance <= weaponData.WeaponAria)
 			{
                 target = nearestEnemy.transform;
 			} else
@@ -59,7 +61,7 @@ public class PlayerAttack2 : MonoBehaviour
         if (fireCountdown <= 0f)
 		{
             Shoot();
-            fireCountdown = 1f / fireRate;
+            fireCountdown = 1f / weaponData.FireRate;
 		}
 
         fireCountdown -= Time.deltaTime;
@@ -77,6 +79,6 @@ public class PlayerAttack2 : MonoBehaviour
 	void OnDrawGizmosSelected()
 	{
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, range);
+        Gizmos.DrawWireSphere(transform.position, weaponData.WeaponAria);
 	}
 }
