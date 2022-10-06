@@ -7,14 +7,21 @@ public class PlayerPointAttack : MonoBehaviour
     [SerializeField]
     private WeaponData weaponData;
     [SerializeField]
-    private string enemyTag = "Enemy";
-    [SerializeField]
-    private PointBullet bulletPrefab;
+    private GameObject bulletPrefab;
     [SerializeField]
     private Transform firePoint;
+    [SerializeField]
+    private int poolSize = 20;
+    [SerializeField]
+    private Transform poolRoot;
+
+    private string enemyTag = "Enemy";
+    private ObjectPool objectPool;
 
     private void Start()
     {
+        objectPool = new ObjectPool();
+        objectPool.Init(bulletPrefab, poolSize, poolRoot);
         InvokeRepeating("Fire", 0.5f, 1.0f/ weaponData.FireRate);
     }
     public void UpdateWeaponData()
@@ -45,9 +52,12 @@ public class PlayerPointAttack : MonoBehaviour
             if (minDistanse != float.MaxValue)
             {
                 var narrow = Vector3.Normalize(target - transform.position);
-                var bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-                bullet.SetTargetPoint(narrow);
-                bullet.SetDemage((int)weaponData.Might);
+                var bullet = objectPool.GetPoolObjectOrNull();
+                bullet.transform.position = firePoint.position;
+                var pb = bullet.GetComponent<PointBullet>();
+                pb.SetTargetPoint(narrow);
+                pb.SetDemage((int)weaponData.Might);
+                pb.SetLifeTime(3.0f);
             }
         }
     }

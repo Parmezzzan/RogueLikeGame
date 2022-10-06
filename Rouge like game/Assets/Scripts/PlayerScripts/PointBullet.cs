@@ -19,14 +19,14 @@ public class PointBullet : MonoBehaviour
         lifeTime -= Time.deltaTime;
 
         if (lifeTime < 0)
-            Destroy(gameObject);
+            gameObject.SetActive(false);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag(tagEnemy))
         {
             collision.GetComponent<Enemy_HP>().TakeDamage(damage);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
     public void SetTargetPoint(Vector3 newTargetPoin)
@@ -36,5 +36,9 @@ public class PointBullet : MonoBehaviour
     public void SetDemage(int newDemage)
     {
         damage = newDemage;
+    }
+    public void SetLifeTime(float newLifeTime)
+    {
+        lifeTime = newLifeTime;
     }
 }

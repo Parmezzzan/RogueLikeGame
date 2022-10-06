@@ -12,6 +12,10 @@ public class Bullet : MonoBehaviour
 
     public GameObject impactEffect;
 
+    public void UpdateLifeTime(float newLifeTime)
+    {
+        lifeTime = newLifeTime;
+    }
     public void Seek(Transform _target)
     {
         target = _target;
@@ -26,7 +30,7 @@ public class Bullet : MonoBehaviour
     {
         if (target == null)         // ниче не делаем если нет таргета
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
             return;
         }
 
@@ -51,7 +55,7 @@ public class Bullet : MonoBehaviour
 
         Damage(target);
 
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     void Damage (Transform enemy)

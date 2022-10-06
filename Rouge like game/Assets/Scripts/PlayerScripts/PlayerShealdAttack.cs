@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerShealdAttack : MonoBehaviour
@@ -7,18 +5,37 @@ public class PlayerShealdAttack : MonoBehaviour
     [SerializeField]
     private WeaponData weaponData;
     [SerializeField]
-    private FireBullet bulletPrefab;
+    private GameObject bulletPrefab;
+    [SerializeField]
+    private int poolSize = 20;
+    [SerializeField]
+    private Transform poolRoot;
+
+    private ObjectPool objectPool;
 
     private void Start()
     {
+        objectPool = new ObjectPool();
+        objectPool.Init(bulletPrefab, poolSize, poolRoot);
         InvokeRepeating("Fire", 0.5f, 1.0f / weaponData.FireRate);
     }
     private void Fire()
     {
-        var vector = new Vector3(Random.Range(-1.0f , 1.0f), Random.Range(-1.0f, 1.0f), 0.0f) * weaponData.WeaponAria;
-        var bullet = Instantiate(bulletPrefab, transform.position + vector, Quaternion.identity);
-        bullet.SetTargetPoint(transform.position);
-        bullet.SetDamage((int)weaponData.Might);
+        //var bullet = Instantiate(bulletPrefab, transform.position + vector, Quaternion.identity);
+        var bullet = objectPool.GetPoolObjectOrNull();
+        if (bullet != null)
+        {
+            var vector = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), 0.0f) * weaponData.WeaponAria;
+            bullet.transform.position = transform.position + vector;
+            var fb = bullet.GetComponent<FireBullet>();
+            fb.SetTargetPoint(transform.position);  //it's transform at move around for
+            fb.SetDamage((int)weaponData.Might);
+            fb.SetLifeTime(4.0f);
+        }
+        else
+        {
+            throw new System.Exception("NULL get from pool");
+        }
     }
     public void UpdateWeaponData()
     {

@@ -7,14 +7,21 @@ public class PlayerBombAttack : MonoBehaviour
     [SerializeField]
     private WeaponData weaponData;
     [SerializeField]
-    private string enemyTag = "Enemy";
-    [SerializeField]
-    private BombBullet bulletPrefab;
+    private GameObject bulletPrefab;
     [SerializeField]
     private Transform instancePoint;
+    [SerializeField]
+    private int poolSize = 20;
+    [SerializeField]
+    private Transform poolRoot;
+
+    private string enemyTag = "Enemy";
+    private ObjectPool objectPool;
 
     private void Start()
     {
+        objectPool = new ObjectPool();
+        objectPool.Init(bulletPrefab, poolSize, poolRoot);
         InvokeRepeating("Fire", 0.5f, 1.0f / weaponData.FireRate);
     }
     public void UpdateWeaponData()
@@ -31,9 +38,11 @@ public class PlayerBombAttack : MonoBehaviour
             {
                 if (item.CompareTag(enemyTag))
                 {
-                    var bullet = Instantiate(bulletPrefab, instancePoint.position, Quaternion.identity);
-                    bullet.SetTargetPoint(item.transform.position);
-                    bullet.SetDamage((int)weaponData.Might);
+                    var bullet = objectPool.GetPoolObjectOrNull();
+                    bullet.transform.position = instancePoint.position;
+                    var bb = bullet.GetComponent<BombBullet>();
+                    bb.SetTargetPoint(item.transform.position);
+                    bb.SetDamage((int)weaponData.Might);
                     return;
                 }
             }

@@ -6,25 +6,30 @@ public class PlayerAttack2 : MonoBehaviour
 {
     [SerializeField]
     private WeaponData weaponData;
-
-    public Transform target;
-
-    private float fireCountdown = 0f;
-
-    [Header("Attachements")]
-    public string enemyTag = "Enemy";
-
-    public GameObject bulletPrefab;
+    [SerializeField]
+    private Transform poolRoot;
+    [SerializeField]
+    private GameObject bulletPrefab;
+    [SerializeField]
+    private int poolSize = 20;
+    [SerializeField]
     public Transform firePont;
+
+    private Transform target;
+    private ObjectPool bulletPool;
+    private string enemyTag = "Enemy";
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("UpdateTarget", 0f, 0.5f); //вызывает метод сразу после старта и повторяет каждые пол секунды
+        bulletPool = new ObjectPool();
+        bulletPool.Init(bulletPrefab, poolSize, poolRoot);
+        InvokeRepeating("UpdateTarget", 0f, 1f / weaponData.FireRate); //вызывает метод сразу после старта и повторяет каждые пол секунды
     }
     public void UpdateWeaponData()
     {
-        fireCountdown = 0;
+        CancelInvoke();
+        InvokeRepeating("UpdateTarget", 0f, 1f / weaponData.FireRate);
     }
     void UpdateTarget ()
 	{
@@ -42,38 +47,23 @@ public class PlayerAttack2 : MonoBehaviour
 			}
 
             if (nearestEnemy != null && shortestDistance <= weaponData.WeaponAria)
-			{
                 target = nearestEnemy.transform;
-			} else
-			{
+            else
                 target = null;
-			}
-
-        }            
-	}
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (target == null)   //если таргета нет то ничего не делает
-            return;
-
-        if (fireCountdown <= 0f)
-		{
-            Shoot();
-            fireCountdown = 1f / weaponData.FireRate;
-		}
-
-        fireCountdown -= Time.deltaTime;
+        } 
+        if(target != null)
+            Shoot(target);
     }
-
-    void Shoot ()
+    void Shoot (Transform target)
 	{
-        GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePont.position, Quaternion.identity);
-        Bullet bullet = bulletGO.GetComponent<Bullet>();
-
-        if (bullet != null)
-		bullet.Seek(target);
+        var bulletGO = bulletPool.GetPoolObjectOrNull();
+        if (bulletGO != null)
+        {
+            bulletGO.transform.position = firePont.position;
+            var bullet = bulletGO.GetComponent<Bullet>();
+            bullet.Seek(target);
+            bullet.UpdateLifeTime(3.0f);
+        }
 	}
 
 	void OnDrawGizmosSelected()

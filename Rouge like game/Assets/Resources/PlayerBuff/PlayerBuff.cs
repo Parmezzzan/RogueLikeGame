@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Buff", menuName = "Buffs/PlayerBuff", order = 1)]
+[CreateAssetMenu(fileName = "Buff", menuName = "Buffs/PlayerBuff", order = 10)]
 public class PlayerBuff : ScriptableObject
 {
     public enum PlayerBuffType

@@ -47,6 +47,10 @@ public class PlayerBuffManager : MonoBehaviour
                 weaponData.WeaponAria += increaseValue ? buff.AddedValue : -buff.AddedValue;
                 weaponData.DataHasUpdated?.Invoke();
                 return;
+            case PlayerBuff.PlayerBuffType.MoveSpeed:
+                playerData.moveSpeed += increaseValue ? buff.AddedValue : -buff.AddedValue;
+                playerData.DataHasUpdated?.Invoke();
+                return;
             default:
                 throw new System.Exception("No there Buff type in game!");
                 return;

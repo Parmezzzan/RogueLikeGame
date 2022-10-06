@@ -36,7 +36,7 @@ public class BombBullet : MonoBehaviour
             if (item.CompareTag(tagEnemy))
                 item.GetComponent<Enemy_HP>().TakeDamage(damage);
 
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
     private void OnDrawGizmosSelected()
     {

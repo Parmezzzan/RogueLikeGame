@@ -19,7 +19,7 @@ public class FireBullet : MonoBehaviour
         transform.RotateAround(targetAround, Vector3.forward, Time.deltaTime * speed);
         lifeTime -= Time.deltaTime;
         if (lifeTime < 0.0f)
-            Destroy(gameObject);
+            gameObject.SetActive(false);
     }
     public void SetTargetPoint(Vector3 targetAround)
     {
@@ -29,12 +29,16 @@ public class FireBullet : MonoBehaviour
     {
         damage = newGamage;
     }
+    public void SetLifeTime(float updLifeTime)
+    {
+        lifeTime = updLifeTime;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag(tagEnemy))
         {
             collision.GetComponent<Enemy_HP>().TakeDamage(damage);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
