@@ -7,7 +7,6 @@ using UnityEngine;
 public class LevelUpdateBranch : ScriptableObject
 {
     public string Name = "Default branch";
-    public int currentLevel = 0;
     public List<CardLevel> cardsLevel;
     private int maxLevel { get { return cardsLevel.Count; } }
 }

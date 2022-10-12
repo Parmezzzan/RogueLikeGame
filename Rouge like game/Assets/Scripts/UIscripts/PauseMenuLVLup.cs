@@ -1,12 +1,20 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PauseMenuLVLup : MonoBehaviour
 {
+    [SerializeField]
+    private PlayerLvLUpdater updater;
+
+    [SerializeField]
+    private List<CardLevel> cardList;
+
     int? skill = null;
-	
+
     public void onLVLup()
     {
         Invoke("Pause", 0.5f);
+        cardList = updater.GetLevelUpCards();
     }
     private void Pause()
     {
