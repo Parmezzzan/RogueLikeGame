@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,10 +11,10 @@ public class PlayerLvLUpdater : MonoBehaviour
     private List<int> currentLevels;
     private void Start()
     {
-        currentLevels = new List<int>(playerLvLbranches.Count);
-        for (int i = 0; i < currentLevels.Count; i++)
+        currentLevels = new List<int>();
+        for (int i = 0; i < playerLvLbranches.Count; i++)
         {
-            currentLevels[i] = 0;
+            currentLevels.Add(0);
         } 
     }
     public List<CardLevel> GetLevelUpCards()

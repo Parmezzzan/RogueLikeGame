@@ -14,7 +14,9 @@ public class PauseMenuLVLup : MonoBehaviour
     public void onLVLup()
     {
         Invoke("Pause", 0.5f);
+        print("before getting card");
         cardList = updater.GetLevelUpCards();
+        print("after getting card");
     }
     private void Pause()
     {
