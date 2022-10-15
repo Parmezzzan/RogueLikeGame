@@ -81,7 +81,7 @@ SpriteRenderer:
   m_Size: {x: 1.9375, y: 2.1875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &545270015002258739
@@ -272,6 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   expSoulSphere: {fileID: 290223870701032407, guid: 34ef9369fd198e8419b0a69da728c631, type: 3}
+  damageIcon: {fileID: 4371136644036310886, guid: 0a19ac0d5a8edbf4e9595ed1474b807e, type: 3}
   health: 100
   deathEffect: {fileID: 1280141305896002, guid: e473029e4c70ad543a6879b82a732f4f, type: 3}
 --- !u!114 &545270015455217955

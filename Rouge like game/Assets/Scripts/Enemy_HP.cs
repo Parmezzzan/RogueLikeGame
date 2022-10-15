@@ -4,11 +4,17 @@ public class Enemy_HP : MonoBehaviour
 {
     [SerializeField]
     private GameObject expSoulSphere;
+    [SerializeField]
+    private PoolManager poolManager;
 
     public int health = 100;
 
     public GameObject deathEffect;
 
+    private void Start()
+    {
+        poolManager = GameObject.FindGameObjectWithTag("DamagePoolManager").GetComponent<PoolManager>();
+    }
     public void TakeDamage (int damage)
 	{
         health -= damage;
@@ -17,6 +23,9 @@ public class Enemy_HP : MonoBehaviour
 		{
             Die();
 		}
+        var icon = poolManager.GetObjectFromPool();
+        icon.GetComponent<damageIcon>().setText(damage.ToString());
+        icon.gameObject.transform.position = transform.position;
 	}
 
     void Die ()
