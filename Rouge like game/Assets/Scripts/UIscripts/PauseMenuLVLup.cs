@@ -4,19 +4,30 @@ using UnityEngine;
 public class PauseMenuLVLup : MonoBehaviour
 {
     [SerializeField]
-    private PlayerLvLUpdater updater;
-
+    PlayerLvLUpdater updater;
     [SerializeField]
-    private List<CardLevel> cardList;
+    GameObject UICardPrefab;
+    [SerializeField]
+    List<CardLevel> cardList;
 
     int? skill = null;
-
+    List<GameObject> cardDeck;
+    private void Start()
+    {
+        cardDeck = new List<GameObject>();
+    }
     public void onLVLup()
     {
         Invoke("Pause", 0.5f);
-        print("before getting card");
         cardList = updater.GetLevelUpCards();
-        print("after getting card");
+
+        cardDeck.Clear();
+        foreach (var card in cardList)
+        {
+            var newUicard = Instantiate(UICardPrefab, Vector3.zero , Quaternion.identity, transform);
+            newUicard.GetComponent<CardLoaderManager>().LoadInfo(gameObject ,card);
+            cardDeck.Add(newUicard);
+        }
     }
     private void Pause()
     {
@@ -34,5 +45,14 @@ public class PauseMenuLVLup : MonoBehaviour
             skill = null;
             gameObject.SetActive(false);
         }
+    }
+    public void ChoiceCard(CardLevel chosenCard)
+    {
+        updater.ChosenCard(chosenCard);
+        foreach (var card  in cardDeck)
+        {
+            Destroy(card);
+        }
+        Time.timeScale = 1.0f;
     }
 }

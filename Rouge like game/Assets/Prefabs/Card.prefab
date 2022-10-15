@@ -120,7 +120,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8481891172407668356}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5115800947929551559}
+        m_TargetAssemblyTypeName: CardLoaderManager, Assembly-CSharp
+        m_MethodName: OnChoise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8481891172655640647
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,6 +355,7 @@ GameObject:
   - component: {fileID: 8481891172867859643}
   - component: {fileID: 8481891172867859637}
   - component: {fileID: 8481891172867859636}
+  - component: {fileID: 5115800947929551559}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -411,6 +424,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5115800947929551559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8481891172867859642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa73ca7b537bf34ba279e56ed3ff75d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logoImage: {fileID: 8481891172858666573}
+  title: {fileID: 8481891172655640641}
+  info: {fileID: 8481891173558601363}
 --- !u!1 &8481891173558601361
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,9 +641,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Choose
-
-'
+  m_text: Upgrade
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e54e7a73646276c4cae9c2f9c1e75dd2, type: 2}
   m_sharedMaterial: {fileID: 1793155650470504578, guid: e54e7a73646276c4cae9c2f9c1e75dd2, type: 2}

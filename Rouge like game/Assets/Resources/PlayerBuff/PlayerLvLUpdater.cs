@@ -7,6 +7,8 @@ public class PlayerLvLUpdater : MonoBehaviour
     private int maxCardOnUI = 4;
     [SerializeField]
     private List<LevelUpdateBranch> playerLvLbranches = new List<LevelUpdateBranch>();
+    [SerializeField]
+    private PlayerBuffManager playerBuffManager;
 
     private List<int> currentLevels;
     private void Start()
@@ -58,5 +60,24 @@ public class PlayerLvLUpdater : MonoBehaviour
         }
 
         return cardList;
+    }
+    public void ChosenCard(CardLevel chosenCard)
+    {
+        for (int i = 0; i < playerLvLbranches.Count; i++)
+        {
+            if (playerLvLbranches[i].cardsLevel.Contains(chosenCard)) 
+            { 
+                currentLevels[i]++;
+                RealiseCard(chosenCard);
+                break;
+            } 
+        }
+    }
+    private void RealiseCard(CardLevel cardForRealise)
+    {
+        foreach (var buff in cardForRealise.CardBuffs)
+        {
+            playerBuffManager.AddBuff(buff);
+        }
     }
 }

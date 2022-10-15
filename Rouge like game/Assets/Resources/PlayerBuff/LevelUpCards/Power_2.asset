@@ -16,7 +16,7 @@ MonoBehaviour:
   Info: mmm!!
   Text: WoW!!
   Backgroung: {fileID: 0}
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: bb34a19a135b2e847a027c7e12398b41, type: 3}
   StarsNum: 2
   CardBuffs:
   - {fileID: 11400000, guid: e7b49a16f2396004fa19fb25f847cfa0, type: 2}
