@@ -51,6 +51,10 @@ public class PlayerBuffManager : MonoBehaviour
                 playerData.moveSpeed += increaseValue ? buff.AddedValue : -buff.AddedValue;
                 playerData.DataHasUpdated?.Invoke();
                 return;
+            case PlayerBuff.PlayerBuffType.MagnetPower:
+                playerData.magnetRadius += increaseValue ? buff.AddedValue : -buff.AddedValue;
+                playerData.DataHasUpdated?.Invoke();
+                return;
             default:
                 throw new System.Exception("No there Buff type in game!");
                 return;

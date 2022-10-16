@@ -21,6 +21,8 @@ public class PlayerData : MonoBehaviour
     public float moveSpeed = 5.0f;
     [SerializeField]
     public int armor = 1;
+    [SerializeField]
+    public float magnetRadius = 2.0f;
 
     [Space(10)]
     [SerializeField]

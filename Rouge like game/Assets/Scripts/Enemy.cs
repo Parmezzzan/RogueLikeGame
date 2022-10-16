@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     string targetTag = "Player";
 
     private Transform target = null;
+    private PlayerData playerData;
     private void Start()
     {
         GetComponentInChildren<Animator>().runtimeAnimatorController = enemy.anim;
@@ -17,7 +18,8 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag(targetTag))
         {
             target = collision.transform;
-            collision.gameObject.GetComponent<PlayerData>().TakeDamage(enemy.attack);
+            playerData = collision.gameObject.GetComponent<PlayerData>();
+            playerData.TakeDamage(enemy.attack);
             InvokeRepeating("TakeDamage", enemy.repeatDamageTime, enemy.repeatDamageTime);
         }
     }
@@ -25,12 +27,12 @@ public class Enemy : MonoBehaviour
     {
         if(Vector3.Distance(transform.position, target.position) < enemy.closeDistance)
         {
-            target.gameObject.GetComponent<PlayerData>().TakeDamage(enemy.attack);
+            playerData.TakeDamage(enemy.attack);
         }
         else
         {
             target = null;
-            StopAllCoroutines();
+            CancelInvoke();
         }
     }
 }

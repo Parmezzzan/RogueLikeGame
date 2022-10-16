@@ -17,5 +17,5 @@ MonoBehaviour:
   attack: 5
   health: 100
   repeatDamageTime: 1
-  closeDistance: 3
+  closeDistance: 0.5
   anim: {fileID: 9100000, guid: 42f1fcdbdc4003f4d802e6f980d72bf1, type: 2}

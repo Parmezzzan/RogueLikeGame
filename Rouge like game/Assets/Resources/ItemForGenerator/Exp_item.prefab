@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 399600517}
   - component: {fileID: 399600518}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,10 +83,9 @@ GameObject:
   - component: {fileID: 115303509387921097}
   - component: {fileID: 115303509387921098}
   - component: {fileID: 115303509387921096}
-  - component: {fileID: 9114200700886351957}
   - component: {fileID: 3731745665521658059}
   - component: {fileID: 225763231163873430}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Exp_item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,36 +177,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &9114200700886351957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 115303509387921099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41759adc2c95ed247bb25d167ed23713, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickupTag: Player
-  destroyAfterPickUping: 1
-  pickupBuff: {fileID: 0}
-  OnPickUp:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3731745665521658059}
-        m_TargetAssemblyTypeName: ExprienseGem, Assembly-CSharp
-        m_MethodName: GetEXP
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &3731745665521658059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,8 +190,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EXPboost: 20
-  radius: 1.5
-  targetTag: Player
+  upMoveDistanseKoifitient: 0.2
+  movingSpeed: 10
+  destroyDistanse: 0.3
 --- !u!58 &225763231163873430
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -233,7 +203,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

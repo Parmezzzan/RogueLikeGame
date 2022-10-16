@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class ExprienseGem : MonoBehaviour
@@ -5,17 +6,34 @@ public class ExprienseGem : MonoBehaviour
     [SerializeField]
     int EXPboost = 20;
     [SerializeField]
-    float radius = 1.5f;
+    float upMoveDistanseKoifitient = 0.2f;
     [SerializeField]
-    string targetTag = "Player";
-    public void GetEXP()
+    float movingSpeed = 10.0f;
+    [SerializeField]
+    float destroyDistanse = 0.3f;
+
+    private Transform target;
+    private PlayerData playerData;
+
+    public void GetEXP(PlayerData playerDataObj)
     {
-        var pos = transform.position;
-        var colliders = Physics2D.OverlapCircleAll(pos, radius);
-        foreach (var item in colliders)
-        {
-            if (item.gameObject.CompareTag(targetTag))
-                item.gameObject.GetComponent<PlayerData>().AddEXP(EXPboost);
+        gameObject.GetComponent<CircleCollider2D>().enabled = false;
+        target = playerDataObj.gameObject.transform;
+        playerData = playerDataObj;
+        StartCoroutine("GetGem");
+    }
+    private IEnumerator GetGem()
+    {
+        while (upMoveDistanseKoifitient > 0) {
+            upMoveDistanseKoifitient -= Time.deltaTime;
+            transform.position += Vector3.up * Time.deltaTime * movingSpeed;
+            yield return null;
         }
+        while (Vector3.Distance(transform.position, target.position) > destroyDistanse){
+            transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * movingSpeed);
+            yield return null;
+        }
+        playerData.AddEXP(EXPboost);
+        Destroy(gameObject);
     }
 }
