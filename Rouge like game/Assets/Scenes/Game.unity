@@ -3623,9 +3623,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BindingMode: 1
   m_FollowOffset: {x: 0, y: 0, z: -10}
-  m_XDamping: 0.4
-  m_YDamping: 0.4
-  m_ZDamping: 0
+  m_XDamping: 0.35
+  m_YDamping: 0.35
+  m_ZDamping: 1
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -3739,7 +3739,7 @@ MonoBehaviour:
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
   m_Priority: 10
-  m_StandbyUpdate: 2
+  m_StandbyUpdate: 0
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 317430833}
   m_Lens:
@@ -7808,6 +7808,10 @@ PrefabInstance:
       propertyPath: m_Antialiasing
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2803398506331445006, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: m_AllowXRRendering
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2803398506331445007, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: far clip plane
       value: 1000
@@ -7827,6 +7831,10 @@ PrefabInstance:
     - target: {fileID: 2803398506331445232, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803398506331445232, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 2803398506331445232, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: m_LocalRotation.w
