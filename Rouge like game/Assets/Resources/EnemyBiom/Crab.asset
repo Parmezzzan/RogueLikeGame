@@ -18,4 +18,6 @@ MonoBehaviour:
   health: 100
   repeatDamageTime: 1
   closeDistance: 0.5
+  maxMoneyFarm: 20
+  moneyChance: 90
   anim: {fileID: 9100000, guid: a2d1a0a24c25bac478e5f06124b31a8d, type: 2}

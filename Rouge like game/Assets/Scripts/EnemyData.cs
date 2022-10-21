@@ -12,6 +12,8 @@ public class EnemyData : ScriptableObject
     public int health;
     public float repeatDamageTime;
     public float closeDistance;
+    public int maxMoneyFarm;
+    public int moneyChance;
 
     public RuntimeAnimatorController anim;
 }

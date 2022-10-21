@@ -6,6 +6,10 @@ public class Enemy_HP : MonoBehaviour
     private GameObject expSoulSphere;
     [SerializeField]
     private PoolManager poolManager;
+    [SerializeField]
+    private EnemyData enemyData;
+    [SerializeField]
+    private GameObject moneyFarmObject;
 
     public int health = 100;
 
@@ -28,11 +32,19 @@ public class Enemy_HP : MonoBehaviour
         icon.gameObject.transform.position = transform.position;
 	}
 
-    void Die ()
-	{
+    void Die()
+    {
         Destroy(gameObject);
         GameObject deathEffectIns = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
         Instantiate(expSoulSphere, transform.position, Quaternion.identity);
+
+        if(Random.Range(0,100) < enemyData.moneyChance)
+        { 
+            var moneyObj = Instantiate(moneyFarmObject,
+                transform.position + new Vector3(Random.Range(0, 1.0f),
+                Random.Range(0, 1.0f), 0.0f), Quaternion.identity);
+            moneyObj.GetComponent<MoneyFarmController>().SetAmount(Random.Range(1, enemyData.maxMoneyFarm));
+        }
         Destroy(deathEffectIns, 2f);
     }
 }

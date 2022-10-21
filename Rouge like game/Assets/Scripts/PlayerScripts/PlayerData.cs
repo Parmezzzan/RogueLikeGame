@@ -10,7 +10,7 @@ using Pathfinding;
 public class PlayerData : MonoBehaviour
 {
     [SerializeField]
-    private int Money;
+    private int Money = 0;
     [SerializeField]
     private int startMoney = 10;
     [SerializeField]
@@ -35,6 +35,8 @@ public class PlayerData : MonoBehaviour
     public HealthBar healthBar;
     [SerializeField]
     private Slider expSlider;
+    [SerializeField]
+    private UICoinCounter CoinCounter;
     [SerializeField]
     private TextMeshProUGUI expText;
     [SerializeField]
@@ -88,6 +90,11 @@ public class PlayerData : MonoBehaviour
             LevelUP();
         }
         expSlider.value = expiriense / 100.0f;
+    }
+    public void AddMoney(int addtionMoney)
+    {
+        Money += addtionMoney;
+        CoinCounter.UpdateCounter(Money);
     }
     private void LevelUP()
     {
