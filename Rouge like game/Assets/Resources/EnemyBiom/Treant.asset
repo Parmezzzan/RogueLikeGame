@@ -16,6 +16,8 @@ MonoBehaviour:
   speed: 7
   attack: 5
   health: 100
-  repeatDamageTime: 1
+  repeatDamageTime: 0.2
   closeDistance: 0.5
+  maxMoneyFarm: 0
+  moneyChance: 0
   anim: {fileID: 9100000, guid: c9fe00e6c319ca64ba2848ca687becd7, type: 2}
