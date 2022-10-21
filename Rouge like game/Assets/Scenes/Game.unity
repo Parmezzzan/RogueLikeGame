@@ -7909,6 +7909,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: healthRegenerationPower
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: OnLVLup.m_PersistentCalls.m_Calls.Array.size
       value: 3
       objectReference: {fileID: 0}
