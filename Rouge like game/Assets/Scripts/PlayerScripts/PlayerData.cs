@@ -102,4 +102,5 @@ public class PlayerData : MonoBehaviour
         currentLevel++;
         expText.text = "Level " + currentLevel;
     }
+    public int GetAccMonney() { return Money; }
 }

@@ -8,7 +8,8 @@ public class GameManger : MonoBehaviour
     UnityEvent gameOver;
 
     private bool gameEnded = false;
-    void Update()
+
+    void FixedUpdate()
     {
         if (PlayerData.currentHealth <= 0 && !gameEnded)
             EndGame();
@@ -16,7 +17,7 @@ public class GameManger : MonoBehaviour
     private void EndGame()
 	{
         gameEnded = true;
-        gameOver.Invoke();
+        gameOver?.Invoke();
         Invoke("StopTime", 2.0f);
     }
     public void WonGame()
