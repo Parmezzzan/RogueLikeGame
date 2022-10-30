@@ -9,11 +9,13 @@ public class SaveManager : MonoBehaviour
     [SerializeField]
     private PlayerData playerData;
     [SerializeField]
-    public string path = "Assets/Resources/SaveGame/Save1.txt";
+    public string currentSaveName = "Save1.txt";
+
+    private const string saveFolderPath = "Assets/Resources/SaveGame/";
     public void SaveGameSession()
     {
         string jsonLoad = null;
-        using (StreamReader sr = new StreamReader(path))
+        using (StreamReader sr = new StreamReader(saveFolderPath + currentSaveName))
         {
             jsonLoad = sr.ReadToEnd();
             print(jsonLoad);
@@ -21,9 +23,7 @@ public class SaveManager : MonoBehaviour
 
         SaveFile loadFileJson = null;
         if (jsonLoad != null)
-        {
             loadFileJson = JsonUtility.FromJson<SaveFile>(jsonLoad);
-        }
 
         if (loadFileJson != null)
         {
@@ -36,7 +36,7 @@ public class SaveManager : MonoBehaviour
         }
 
         var stringSave = JsonUtility.ToJson(loadFileJson);
-        using (StreamWriter sw = new StreamWriter(path))
+        using (StreamWriter sw = new StreamWriter(saveFolderPath + currentSaveName))
         {
             print(stringSave);
             sw.Write(stringSave);
@@ -49,4 +49,8 @@ public class SaveManager : MonoBehaviour
 public class SaveFile
 {
     public int money;
+    //kittenUpgrade
+    public int KittenHomeLevel;
+    public int KittenCupLevel;
+    public int KittenRugLevel;
 }

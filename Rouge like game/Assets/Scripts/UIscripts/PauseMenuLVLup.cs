@@ -6,9 +6,14 @@ public class PauseMenuLVLup : MonoBehaviour
     [SerializeField]
     PlayerLvLUpdater updater;
     [SerializeField]
+    float timeBeforePause = 0.4f;
+    [SerializeField]
     GameObject UICardPrefab;
     [SerializeField]
     List<CardLevel> cardList;
+
+    private int lvlsUpCounter = 0;
+    private bool inProcess = false;
 
     int? skill = null;
     List<GameObject> cardDeck;
@@ -18,33 +23,30 @@ public class PauseMenuLVLup : MonoBehaviour
     }
     public void onLVLup()
     {
-        Invoke("Pause", 0.5f);
-        cardList = updater.GetLevelUpCards();
+        lvlsUpCounter++;
 
-        cardDeck.Clear();
-        foreach (var card in cardList)
+        if(!inProcess)
+            LvLUP();
+    }
+    private void LvLUP()
+    {
+        inProcess = true;
+        cardList = updater.GetLevelUpCards();
+        if (cardList.Count != 0)
         {
-            var newUicard = Instantiate(UICardPrefab, Vector3.zero , Quaternion.identity, transform);
-            newUicard.GetComponent<CardLoaderManager>().LoadInfo(gameObject ,card);
-            cardDeck.Add(newUicard);
+            Invoke("Pause", timeBeforePause);
+            cardDeck.Clear();
+            foreach (var card in cardList)
+            {
+                var newUicard = Instantiate(UICardPrefab, Vector3.zero, Quaternion.identity, transform);
+                newUicard.GetComponent<CardLoaderManager>().LoadInfo(gameObject, card);
+                cardDeck.Add(newUicard);
+            }
         }
     }
     private void Pause()
     {
         Time.timeScale = 0.0f;
-    }
-    public void SkkillChoise(int N)
-    {
-        skill = N;
-    }
-    public void ExitMenu()
-    {
-        if(skill != null)
-        {
-            Time.timeScale = 1.0f;
-            skill = null;
-            gameObject.SetActive(false);
-        }
     }
     public void ChoiceCard(CardLevel chosenCard)
     {
@@ -54,5 +56,14 @@ public class PauseMenuLVLup : MonoBehaviour
             Destroy(card);
         }
         Time.timeScale = 1.0f;
+
+        inProcess = false;
+        lvlsUpCounter--;
+
+        if (lvlsUpCounter > 0 && !inProcess)
+        {
+            LvLUP();
+            lvlsUpCounter--;
+        }
     }
 }
