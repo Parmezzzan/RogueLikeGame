@@ -39,11 +39,14 @@ public class Enemy_HP : MonoBehaviour
         Instantiate(expSoulSphere, transform.position, Quaternion.identity);
 
         if(Random.Range(0,100) < enemyData.moneyChance)
-        { 
-            var moneyObj = Instantiate(moneyFarmObject,
-                transform.position + new Vector3(Random.Range(0, 1.0f),
-                Random.Range(0, 1.0f), 0.0f), Quaternion.identity);
-            moneyObj.GetComponent<MoneyFarmController>().SetAmount(Random.Range(1, enemyData.maxMoneyFarm));
+        {
+            var pl = GameObject.FindGameObjectWithTag("Player");
+            pl.GetComponent<PlayerData>().AddMoney(Random.Range(1, enemyData.maxMoneyFarm));
+
+            //var moneyObj = Instantiate(moneyFarmObject,
+            //    transform.position + new Vector3(Random.Range(0, 1.0f),
+            //    Random.Range(0, 1.0f), 0.0f), Quaternion.identity);
+            //moneyObj.GetComponent<MoneyFarmController>().SetAmount(Random.Range(1, enemyData.maxMoneyFarm));
         }
         Destroy(deathEffectIns, 2f);
     }

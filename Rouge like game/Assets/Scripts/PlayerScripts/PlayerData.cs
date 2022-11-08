@@ -51,6 +51,7 @@ public class PlayerData : MonoBehaviour
     void Start()
     {
         Money = startMoney;
+        CoinCounter.UpdateCounter(Money);
 
         currentHealth = maxHealth;
         healthBar.SetHealth(maxHealth * 100 / maxHealth);
