@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da3f61fb2d3b76418e002484afe0570, type: 3}
+  m_Name: ArmorBranch
+  m_EditorClassIdentifier: 
+  Name: MightBranch
+  cardsLevel:
+  - {fileID: 11400000, guid: 5219b9875d1a0be4e866b90be94a234d, type: 2}
+  - {fileID: 11400000, guid: 95c18ee8c0def674cbb067a7ae1aad52, type: 2}
+  - {fileID: 11400000, guid: 0c0414cd7f1446c4790fea2a0ee67612, type: 2}
+  - {fileID: 11400000, guid: 2cc2fa161ead3d94fa56f9f3f2423e99, type: 2}
+  - {fileID: 11400000, guid: 68ca0582e4581584b8e5b8de8de771da, type: 2}

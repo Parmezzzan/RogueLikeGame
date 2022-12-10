@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MightBuff
   m_EditorClassIdentifier: 
   BuffType: 5
-  isConstantBuff: 0
+  isConstantBuff: 1
   DurationSec: 15
-  AddedValue: 7
+  AddedValue: 5
