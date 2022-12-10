@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ArmorBuff
   m_EditorClassIdentifier: 
   BuffType: 2
-  isConstantBuff: 0
+  isConstantBuff: 1
   DurationSec: 10
-  AddedValue: 10
+  AddedValue: 3

@@ -3565,8 +3565,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxCardOnUI: 4
   playerLvLbranches:
-  - {fileID: 11400000, guid: 1f54608392d017a4d9e8931842b495f2, type: 2}
-  - {fileID: 11400000, guid: 1f54608392d017a4d9e8931842b495f2, type: 2}
+  - {fileID: 11400000, guid: 11ea69e6d00f9b045b4d939a56c0e84e, type: 2}
+  - {fileID: 11400000, guid: 413284553ed23b1488128f716c041cee, type: 2}
   playerBuffManager: {fileID: 317430839}
 --- !u!4 &1110151176
 Transform:

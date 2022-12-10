@@ -1,1 +1,1 @@
-{"money":212,"KittenHomeLevel":0,"KittenCupLevel":0,"KittenRugLevel":0}
+{"money":238,"KittenHomeLevel":0,"KittenCupLevel":0,"KittenRugLevel":0}
