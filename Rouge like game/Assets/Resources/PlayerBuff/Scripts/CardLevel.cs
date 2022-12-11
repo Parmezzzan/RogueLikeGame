@@ -6,7 +6,6 @@ public class CardLevel : ScriptableObject
 {
     public string Name;
     public string Info;
-    public string Text;
     public Sprite Backgroung;
     public Sprite Icon;
     public int StarsNum;
