@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9222ed84c37df0a4ea35a602757d7ef7, type: 3}
   m_Name: Might_1
   m_EditorClassIdentifier: 
-  Name: Might
+  Name: Might 1
   Info: Upgrade your might
   Text: This card will upgrade your might. Your weapon will be dealing more damage
     to the enemies

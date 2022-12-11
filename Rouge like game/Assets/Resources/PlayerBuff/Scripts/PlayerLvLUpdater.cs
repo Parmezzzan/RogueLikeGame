@@ -34,7 +34,7 @@ public class PlayerLvLUpdater : MonoBehaviour
                 {
                     cardList.Add(playerLvLbranches[i].cardsLevel[currentLevels[i]]);
                     print("add a card");
-                    currentLevels[i]++;
+                    //currentLevels[i]++;
                 }
                 else
                 {
@@ -54,7 +54,7 @@ public class PlayerLvLUpdater : MonoBehaviour
                 if (currentLevels[i] != playerLvLbranches[indexz].cardsLevel.Count)
                 {
                     cardList.Add(playerLvLbranches[indexz].cardsLevel[currentLevels[i]]);
-                    currentLevels[i]++;
+                    //currentLevels[i]++;
                 }
             }
         }
