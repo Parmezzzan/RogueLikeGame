@@ -5,13 +5,13 @@ using UnityEngine;
 public class MapConfiguration : MonoBehaviour
 {
     [SerializeField]
-    public float MapUnit_Width;
+    public int MapUnit_Width;
     [SerializeField]
-    public float MapUnit_Height;
+    public int MapUnit_Height;
     [SerializeField]
-    public float TileSize;
+    public int TileSize;
     [SerializeField]
-    public Vector2 CenterStartPosition;
+    public Vector2Int CenterStartPosition;
     [Space(10)]
     [SerializeField]
     public bool isChankGeneration = false;
@@ -24,9 +24,9 @@ public class MapConfiguration : MonoBehaviour
     {
         CurrentCentralPosition = CenterStartPosition;
     }
-    public Vector2 LeftTopPosition()
+    public Vector2Int LeftTopPosition()
     {
-        return new Vector2()
+        return new Vector2Int()
         {
             x = CenterStartPosition.x - MapUnit_Width / 2,
             y = CenterStartPosition.y + MapUnit_Height / 2

@@ -17,19 +17,19 @@ public class MapProducerV2 : MonoBehaviour
 
     public void GenerateMap(MapConfiguration config)
     {
-        float posX = config.LeftTopPosition().x;
-        float posY = config.LeftTopPosition().y;
+        int posX = config.LeftTopPosition().x;
+        int posY = config.LeftTopPosition().y;
 
-        int tileNumX = (int)(config.MapUnit_Width / config.TileSize);
-        int tileNumy = (int)(config.MapUnit_Height / config.TileSize);
+        int tileNumX = config.MapUnit_Width / config.TileSize;
+        int tileNumy = config.MapUnit_Height / config.TileSize;
 
         for (int j = 0; j < tileNumy; j++)
         {
             for (int i = 0; i < tileNumX; i++)
             {
-                var obj = generateTile(new Vector2() { x = posX, y = posY },
+                var obj = generateTile(new Vector2Int() { x = posX, y = posY },
                             sprites[Random.Range(0, sprites.Length)],
-                            new Vector2(config.TileSize, config.TileSize));
+                            new Vector2Int(config.TileSize, config.TileSize));
 
                 obj.name = i.ToString() + j.ToString();
                 posX += config.TileSize;
@@ -38,12 +38,12 @@ public class MapProducerV2 : MonoBehaviour
             posY -= config.TileSize;
         }
     }
-    public GameObject generateTile(Vector2 pos, Sprite sprite, Vector2 scale)
+    public GameObject generateTile(Vector2Int pos, Sprite sprite, Vector2Int scale)
     {
         var obj = new GameObject();
         obj.tag = "Map";
         obj.transform.SetParent(objectRoot);
-        obj.transform.position = pos;
+        obj.transform.position = new Vector3(pos.x, pos.y, 0.0f);
         obj.transform.localScale = new Vector3() { x = scale.x, y = scale.y, z = 0.0f };
 
         var spriteComponent = obj.AddComponent(typeof(SpriteRenderer)) as SpriteRenderer;
@@ -66,11 +66,11 @@ public class MapProducerV2 : MonoBehaviour
             throw new System.Exception();
 
         Vector2Int tilePerChank = new Vector2Int(config.chankSize, config.chankSize);
-        Vector2 tileSize = new Vector2(config.TileSize, config.TileSize);
-        Vector2Int chankAmount = new Vector2Int((int)(config.MapUnit_Width / config.chankSize),
-                                               (int)(config.MapUnit_Height / config.chankSize));
+        Vector2Int tileSize = new Vector2Int(config.TileSize, config.TileSize);
+        Vector2Int chankAmount = new Vector2Int(config.MapUnit_Width / config.chankSize,
+                                               config.MapUnit_Height / config.chankSize);
 
-        var chankCorner = ProducePositions(config.LeftTopPosition(), chankAmount, new Vector2(config.chankSize, config.chankSize));
+        var chankCorner = ProducePositions(config.LeftTopPosition(), chankAmount, new Vector2Int(config.chankSize, config.chankSize));
 
         foreach (var corner in chankCorner)
         {
@@ -86,17 +86,17 @@ public class MapProducerV2 : MonoBehaviour
         }
         
     }
-    private List<Vector2> ProducePositions(Vector2 topLeftCorner, Vector2Int tileAmount, Vector2 tileSize)
+    private List<Vector2Int> ProducePositions(Vector2Int topLeftCorner, Vector2Int tileAmount, Vector2Int tileSize)
     {
-        List<Vector2> posList = new List<Vector2>();
-        float posX = topLeftCorner.x;
-        float posY = topLeftCorner.y;
+        List<Vector2Int> posList = new List<Vector2Int>();
+        int posX = topLeftCorner.x;
+        int posY = topLeftCorner.y;
 
         for (int j = 0; j < tileAmount.y; j++)
         {
             for (int i = 0; i < tileAmount.x; i++)
             {
-                posList.Add(new Vector2(posX, posY));
+                posList.Add(new Vector2Int(posX, posY));
                 posX += tileSize.x;
             }
             posX = (int)topLeftCorner.x;
