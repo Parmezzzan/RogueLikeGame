@@ -10,15 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9222ed84c37df0a4ea35a602757d7ef7, type: 3}
-  m_Name: testCard
+  m_Name: MaxHealth_2
   m_EditorClassIdentifier: 
-  Name: 
-  Info: 
-  Text: 
-  Backgroung: {fileID: 0}
-  Icon: {fileID: 0}
-  StarsNum: 0
+  Name: MaxHealth 2
+  Info: Upgrade your MaxHealth
+  Backgroung: {fileID: 21300000, guid: 43a7d98bd4222b64e933596512dc09ad, type: 3}
+  Icon: {fileID: 21300000, guid: d0b55daf4cdb8d94fa27bf014e3709d4, type: 3}
+  StarsNum: 2
   CardBuffs:
-  - {fileID: 11400000, guid: 3d59ce0b92f17df4f8d50cb2ccf595b9, type: 2}
-  - {fileID: 11400000, guid: 3d59ce0b92f17df4f8d50cb2ccf595b9, type: 2}
-  - {fileID: 11400000, guid: 3d59ce0b92f17df4f8d50cb2ccf595b9, type: 2}
+  - {fileID: 11400000, guid: 0754ba009afe38a458912fc807d0900c, type: 2}
+  - {fileID: 11400000, guid: 0754ba009afe38a458912fc807d0900c, type: 2}

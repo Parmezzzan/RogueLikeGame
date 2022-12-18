@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7da3f61fb2d3b76418e002484afe0570, type: 3}
   m_Name: ArmorBranch
   m_EditorClassIdentifier: 
-  Name: MightBranch
+  Name: ArmorBranch
   cardsLevel:
   - {fileID: 11400000, guid: 5219b9875d1a0be4e866b90be94a234d, type: 2}
   - {fileID: 11400000, guid: 95c18ee8c0def674cbb067a7ae1aad52, type: 2}

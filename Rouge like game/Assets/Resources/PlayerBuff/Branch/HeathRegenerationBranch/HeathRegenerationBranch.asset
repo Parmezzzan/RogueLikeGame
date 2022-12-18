@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da3f61fb2d3b76418e002484afe0570, type: 3}
+  m_Name: HeathRegenerationBranch
+  m_EditorClassIdentifier: 
+  Name: HeathRegenerationBranch
+  cardsLevel:
+  - {fileID: 11400000, guid: 503fceca883b44b438864c279d3074c0, type: 2}
+  - {fileID: 11400000, guid: 655d62e3f31a7054b8b4a60bf3d45367, type: 2}
+  - {fileID: 11400000, guid: e71af840cf3918d45bcb70eeb5233d62, type: 2}
+  - {fileID: 11400000, guid: 0c2b388f94a2af94f91b4b7d3649e21e, type: 2}
+  - {fileID: 11400000, guid: 55606a11016005f4685288ea8a150718, type: 2}

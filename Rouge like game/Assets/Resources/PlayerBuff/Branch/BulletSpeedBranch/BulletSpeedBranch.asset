@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da3f61fb2d3b76418e002484afe0570, type: 3}
+  m_Name: BulletSpeedBranch
+  m_EditorClassIdentifier: 
+  Name: BulletSpeedBranch
+  cardsLevel:
+  - {fileID: 11400000, guid: 97d605e3cef53594db2c50d872d68f58, type: 2}
+  - {fileID: 11400000, guid: cb3f06c8eb1b8244289a10d77edeb535, type: 2}
+  - {fileID: 11400000, guid: 089edb79dfae9194f997834275beb13b, type: 2}
+  - {fileID: 11400000, guid: ec46d1f88f558254fbd7057c1115f064, type: 2}
+  - {fileID: 11400000, guid: 062aee1e5befaa54a98e4a15731161d1, type: 2}

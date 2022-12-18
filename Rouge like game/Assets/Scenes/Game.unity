@@ -5242,6 +5242,12 @@ MonoBehaviour:
   playerLvLbranches:
   - {fileID: 11400000, guid: 11ea69e6d00f9b045b4d939a56c0e84e, type: 2}
   - {fileID: 11400000, guid: 413284553ed23b1488128f716c041cee, type: 2}
+  - {fileID: 11400000, guid: beed4ab939364bd4d905c0d1fa855132, type: 2}
+  - {fileID: 11400000, guid: 9ef118ff27a9ecb41977ea42bc20b7d6, type: 2}
+  - {fileID: 11400000, guid: 55cca79755638de4598cfd098cd9d149, type: 2}
+  - {fileID: 11400000, guid: 1721d0e59a4fb474aa06f0975c09a2c8, type: 2}
+  - {fileID: 11400000, guid: d39fc6447f7ee1942be8023b76123b76, type: 2}
+  - {fileID: 11400000, guid: b59c7ac0f7b342648950bf79ebde8610, type: 2}
   playerBuffManager: {fileID: 317430839}
 --- !u!4 &1110151176
 Transform:
@@ -6189,7 +6195,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -361, y: 457.55}
+  m_AnchoredPosition: {x: -360.99997, y: 457.55}
   m_SizeDelta: {x: -1682.62, y: -915.09}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1232719822
