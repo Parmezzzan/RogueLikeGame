@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: MightBranch
   cardsLevel:
-  - {fileID: 11400000, guid: 303a1a75ae8715e4892ecaf5f8cfc1b7, type: 2}
-  - {fileID: 11400000, guid: 655d62e3f31a7054b8b4a60bf3d45367, type: 2}
-  - {fileID: 11400000, guid: e71af840cf3918d45bcb70eeb5233d62, type: 2}
-  - {fileID: 11400000, guid: 0c2b388f94a2af94f91b4b7d3649e21e, type: 2}
-  - {fileID: 11400000, guid: 55606a11016005f4685288ea8a150718, type: 2}
+  - {fileID: 11400000, guid: 0592c10c33070a3438fea768c6f34da1, type: 2}
+  - {fileID: 11400000, guid: 9a0208298a74e3e43824e5dcfe4050b6, type: 2}
+  - {fileID: 11400000, guid: 1f28187c73d022f45b7b4b9e0c2cf552, type: 2}
+  - {fileID: 11400000, guid: cd2875f487cf60c4fa2e6728200a8231, type: 2}
+  - {fileID: 11400000, guid: 4dd32de0c32cf874292f4d7343cfa7e6, type: 2}

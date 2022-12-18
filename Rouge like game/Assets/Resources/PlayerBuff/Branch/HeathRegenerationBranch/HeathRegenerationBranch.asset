@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: HeathRegenerationBranch
   cardsLevel:
   - {fileID: 11400000, guid: 503fceca883b44b438864c279d3074c0, type: 2}
-  - {fileID: 11400000, guid: 655d62e3f31a7054b8b4a60bf3d45367, type: 2}
-  - {fileID: 11400000, guid: e71af840cf3918d45bcb70eeb5233d62, type: 2}
-  - {fileID: 11400000, guid: 0c2b388f94a2af94f91b4b7d3649e21e, type: 2}
-  - {fileID: 11400000, guid: 55606a11016005f4685288ea8a150718, type: 2}
+  - {fileID: 11400000, guid: e43c0c2bf3cd32a4a822ff4200d5ba41, type: 2}
+  - {fileID: 11400000, guid: 9407c43a7ef3d1b439c8a85d5609c155, type: 2}
+  - {fileID: 11400000, guid: d690a1922d42dd941bbba0f9f8973b24, type: 2}
+  - {fileID: 11400000, guid: 090377a50b7c2cd46bfef1316ee0790a, type: 2}
