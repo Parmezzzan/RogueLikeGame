@@ -43,6 +43,7 @@ public class PlayerBombAttack : MonoBehaviour
                     var bb = bullet.GetComponent<BombBullet>();
                     bb.SetTargetPoint(item.transform.position);
                     bb.SetDamage((int)weaponData.Might);
+                    bb.SetSpeed(weaponData.BulletSpeed);
                     return;
                 }
             }

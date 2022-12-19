@@ -31,6 +31,7 @@ public class PlayerShealdAttack : MonoBehaviour
             fb.SetTargetPoint(transform.position);  //it's transform at move around for
             fb.SetDamage((int)weaponData.Might);
             fb.SetLifeTime(4.0f);
+            fb.SetSpeed(weaponData.BulletSpeed);
         }
         else
         {

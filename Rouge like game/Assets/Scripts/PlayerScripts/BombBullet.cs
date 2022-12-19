@@ -28,6 +28,10 @@ public class BombBullet : MonoBehaviour
     {
         damage = newDamage;
     }
+    public void SetSpeed (float newSpeed)
+    {
+        speed = newSpeed;
+    }
     private void Explode()
     {
         var col = Physics2D.OverlapCircleAll(transform.position, explodeRange);

@@ -37,6 +37,10 @@ public class PointBullet : MonoBehaviour
     {
         damage = newDemage;
     }
+    public void SetSpeed(float newSpeed)
+    {
+        speed = newSpeed;
+    }
     public void SetLifeTime(float newLifeTime)
     {
         lifeTime = newLifeTime;

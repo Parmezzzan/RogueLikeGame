@@ -63,6 +63,7 @@ public class PlayerAttack2 : MonoBehaviour
             var bullet = bulletGO.GetComponent<Bullet>();
             bullet.Seek(target);
             bullet.UpdateLifeTime(3.0f);
+            bullet.speed = weaponData.BulletSpeed;
         }
 	}
 

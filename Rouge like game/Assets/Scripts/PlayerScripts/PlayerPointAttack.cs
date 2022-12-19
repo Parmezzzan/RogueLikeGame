@@ -58,6 +58,7 @@ public class PlayerPointAttack : MonoBehaviour
                 pb.SetTargetPoint(narrow);
                 pb.SetDemage((int)weaponData.Might);
                 pb.SetLifeTime(3.0f);
+                pb.SetSpeed(weaponData.BulletSpeed);
             }
         }
     }

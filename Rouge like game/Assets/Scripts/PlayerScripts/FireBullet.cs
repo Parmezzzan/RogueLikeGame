@@ -33,6 +33,10 @@ public class FireBullet : MonoBehaviour
     {
         lifeTime = updLifeTime;
     }
+    public void SetSpeed(float newSpeed)
+    {
+        speed = newSpeed;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag(tagEnemy))

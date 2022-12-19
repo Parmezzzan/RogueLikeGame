@@ -25,36 +25,33 @@ public class PlayerLvLUpdater : MonoBehaviour
 
         if (playerLvLbranches.Count <= maxCardOnUI)
         {
-            print("chosen cards..");
             print(playerLvLbranches.Count);
             for (int i = 0; i < playerLvLbranches.Count; i++)
             {
-                print("branch!");
                 if (currentLevels[i] < playerLvLbranches[i].cardsLevel.Count)
                 {
                     cardList.Add(playerLvLbranches[i].cardsLevel[currentLevels[i]]);
-                    print("add a card");
-                    //currentLevels[i]++;
-                }
-                else
-                {
-                    print("dont add card");
                 }
             }
         }
         else
         {
-            var chosenBranches = new List<int>();
-            for (int i = 0; i < maxCardOnUI; i++)
-            {
-                int indexz = Random.Range(0, 4);
-                while(chosenBranches.Contains(indexz))    indexz = Random.Range(0, 4);
-                chosenBranches.Add(indexz);
+            List<int> branchNoMax = new List<int>();
+            for (int j = 0; j < playerLvLbranches.Count; j++)
+                if (currentLevels[j] < playerLvLbranches[j].cardsLevel.Count)
+                    branchNoMax.Add(j);
 
-                if (currentLevels[i] != playerLvLbranches[indexz].cardsLevel.Count)
+            int maxCard = branchNoMax.Count >= maxCardOnUI ? maxCardOnUI : branchNoMax.Count;
+
+            int chosenCardNum = 0;
+            while(chosenCardNum < maxCard)
+            {
+                int index = Random.Range(0, playerLvLbranches.Count);
+                if (branchNoMax.Contains(index))
                 {
-                    cardList.Add(playerLvLbranches[indexz].cardsLevel[currentLevels[i]]);
-                    //currentLevels[i]++;
+                    cardList.Add(playerLvLbranches[index].cardsLevel[currentLevels[index]]);
+                    chosenCardNum++;
+                    branchNoMax.Remove(index);
                 }
             }
         }
