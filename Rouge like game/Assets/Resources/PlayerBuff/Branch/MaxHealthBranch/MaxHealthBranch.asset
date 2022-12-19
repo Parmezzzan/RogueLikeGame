@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da3f61fb2d3b76418e002484afe0570, type: 3}
+  m_Name: MaxHealthBranch
+  m_EditorClassIdentifier: 
+  Name: MaxHealthBranch
+  cardsLevel:
+  - {fileID: 11400000, guid: bec8ca2f246056c47be22b7562a6320c, type: 2}
+  - {fileID: 11400000, guid: 5648048372ea4594fad0b4d06afd89fc, type: 2}
+  - {fileID: 11400000, guid: 876a1c9386084d046a6316f91170aabd, type: 2}
+  - {fileID: 11400000, guid: 8589ce8ed64d64043a83b6a880ddc945, type: 2}
+  - {fileID: 11400000, guid: bc367615b69e2a64986ba8329eef7f57, type: 2}

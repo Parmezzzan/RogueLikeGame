@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da3f61fb2d3b76418e002484afe0570, type: 3}
+  m_Name: MoveSpeedBranch
+  m_EditorClassIdentifier: 
+  Name: MoveSpeedBranch
+  cardsLevel:
+  - {fileID: 11400000, guid: cb7f2964e00b29246b02b348f3028f7e, type: 2}
+  - {fileID: 11400000, guid: 0063313963fa69b479f3892c1e905494, type: 2}
+  - {fileID: 11400000, guid: b253165b2a3f8e84aa5aa45234b9f5c3, type: 2}
+  - {fileID: 11400000, guid: 6eeb2c385cf95bb41ab469c11348afd0, type: 2}
+  - {fileID: 11400000, guid: 23d815f27cb00bb45ae1719930c33362, type: 2}
