@@ -31,7 +31,7 @@ public class PlayerBuffManager : MonoBehaviour
                 playerData.maxHealth += increaseValue ? (int)buff.AddedValue : (int)-buff.AddedValue;
                 playerData.DataHasUpdated?.Invoke();
                 return;
-            case PlayerBuff.PlayerBuffType.HealtRegeneration:
+            case PlayerBuff.PlayerBuffType.HealtRegen:
                 playerData.healthRegenerationPower += increaseValue ? (int)buff.AddedValue : (int)-buff.AddedValue;
                 playerData.DataHasUpdated?.Invoke();
                 return;
@@ -39,11 +39,11 @@ public class PlayerBuffManager : MonoBehaviour
                 playerData.armor += increaseValue ? (int)buff.AddedValue : (int)-buff.AddedValue;
                 playerData.DataHasUpdated?.Invoke();
                 return;
-            case PlayerBuff.PlayerBuffType.Migth:
+            case PlayerBuff.PlayerBuffType.Straight:
                 weaponData.Might += increaseValue ? buff.AddedValue : -buff.AddedValue;
                 weaponData.DataHasUpdated?.Invoke();
                 return;
-            case PlayerBuff.PlayerBuffType.WeaponArea:
+            case PlayerBuff.PlayerBuffType.WeaponRange:
                 weaponData.WeaponAria += increaseValue ? buff.AddedValue : -buff.AddedValue;
                 weaponData.DataHasUpdated?.Invoke();
                 return;
@@ -51,7 +51,7 @@ public class PlayerBuffManager : MonoBehaviour
                 playerData.moveSpeed += increaseValue ? buff.AddedValue : -buff.AddedValue;
                 playerData.DataHasUpdated?.Invoke();
                 return;
-            case PlayerBuff.PlayerBuffType.MagnetPower:
+            case PlayerBuff.PlayerBuffType.MagnetRange:
                 playerData.magnetRadius += increaseValue ? buff.AddedValue : -buff.AddedValue;
                 playerData.DataHasUpdated?.Invoke();
                 return;

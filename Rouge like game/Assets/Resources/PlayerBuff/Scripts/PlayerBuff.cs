@@ -5,17 +5,14 @@ public class PlayerBuff : ScriptableObject
 {
     public enum PlayerBuffType
     {
-        //character
         MaxHealth,
-        HealtRegeneration,
+        HealtRegen,
         Armor,
         MoveSpeed,
-        MagnetPower, //aria of character puckup's power
-                     //weapon
-        Migth, //power of ALL weapon
-        WeaponArea,
-        FireRate, //speed of weapon
-                  //bullet
+        MagnetRange,
+        Straight, 
+        WeaponRange,
+        FireRate,
         BulletSpeed
     }
     public PlayerBuffType BuffType;
