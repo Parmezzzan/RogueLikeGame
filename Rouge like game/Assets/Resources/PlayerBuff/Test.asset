@@ -16,3 +16,5 @@ MonoBehaviour:
   isConstantBuff: 0
   DurationSec: 10
   AddedValue: 10
+  WeaponBuff: 2
+  weaponNum: 1

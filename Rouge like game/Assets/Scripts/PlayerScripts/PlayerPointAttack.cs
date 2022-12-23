@@ -22,16 +22,16 @@ public class PlayerPointAttack : MonoBehaviour
     {
         objectPool = new ObjectPool();
         objectPool.Init(bulletPrefab, poolSize, poolRoot);
-        InvokeRepeating("Fire", 0.5f, 1.0f/ weaponData.FireRate);
+        InvokeRepeating("Fire", 0.5f, 1.0f/ weaponData.commonStats.FireRate);
     }
     public void UpdateWeaponData()
     {
         CancelInvoke();
-        InvokeRepeating("Fire", 0.2f, 1.0f / weaponData.FireRate);
+        InvokeRepeating("Fire", 0.2f, 1.0f / weaponData.commonStats.FireRate);
     }
     private void Fire()
     {
-        var colliders = Physics2D.OverlapCircleAll(transform.position, weaponData.WeaponAria);
+        var colliders = Physics2D.OverlapCircleAll(transform.position, weaponData.commonStats.WeaponRange);
         if (colliders.Length > 1)
         {
             Vector3 target = Vector3.zero;
@@ -56,15 +56,15 @@ public class PlayerPointAttack : MonoBehaviour
                 bullet.transform.position = firePoint.position;
                 var pb = bullet.GetComponent<PointBullet>();
                 pb.SetTargetPoint(narrow);
-                pb.SetDemage((int)weaponData.Might);
+                pb.SetDemage((int)weaponData.commonStats.Stright);
                 pb.SetLifeTime(3.0f);
-                pb.SetSpeed(weaponData.BulletSpeed);
+                pb.SetSpeed(weaponData.commonStats.BulletSpeed);
             }
         }
     }
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, weaponData.WeaponAria);
+        Gizmos.DrawWireSphere(transform.position, weaponData.commonStats.WeaponRange);
     }
 }

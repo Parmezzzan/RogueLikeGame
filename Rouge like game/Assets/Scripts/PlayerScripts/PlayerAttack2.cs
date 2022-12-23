@@ -24,12 +24,12 @@ public class PlayerAttack2 : MonoBehaviour
     {
         bulletPool = new ObjectPool();
         bulletPool.Init(bulletPrefab, poolSize, poolRoot);
-        InvokeRepeating("UpdateTarget", 0f, 1f / weaponData.FireRate); //вызывает метод сразу после старта и повторяет каждые пол секунды
+        InvokeRepeating("UpdateTarget", 0f, 1f / weaponData.commonStats.FireRate); //вызывает метод сразу после старта и повторяет каждые пол секунды
     }
     public void UpdateWeaponData()
     {
         CancelInvoke();
-        InvokeRepeating("UpdateTarget", 0f, 1f / weaponData.FireRate);
+        InvokeRepeating("UpdateTarget", 0f, 1f / weaponData.commonStats.FireRate);
     }
     void UpdateTarget ()
 	{
@@ -46,7 +46,7 @@ public class PlayerAttack2 : MonoBehaviour
                 nearestEnemy = enemy;
 			}
 
-            if (nearestEnemy != null && shortestDistance <= weaponData.WeaponAria)
+            if (nearestEnemy != null && shortestDistance <= weaponData.commonStats.WeaponRange)
                 target = nearestEnemy.transform;
             else
                 target = null;
@@ -63,13 +63,13 @@ public class PlayerAttack2 : MonoBehaviour
             var bullet = bulletGO.GetComponent<Bullet>();
             bullet.Seek(target);
             bullet.UpdateLifeTime(3.0f);
-            bullet.speed = weaponData.BulletSpeed;
+            bullet.speed = weaponData.commonStats.BulletSpeed;
         }
 	}
 
 	void OnDrawGizmosSelected()
 	{
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, weaponData.WeaponAria);
+        Gizmos.DrawWireSphere(transform.position, weaponData.commonStats.WeaponRange);
 	}
 }

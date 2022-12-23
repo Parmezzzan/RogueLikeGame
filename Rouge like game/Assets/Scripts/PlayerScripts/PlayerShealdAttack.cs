@@ -17,7 +17,7 @@ public class PlayerShealdAttack : MonoBehaviour
     {
         objectPool = new ObjectPool();
         objectPool.Init(bulletPrefab, poolSize, poolRoot);
-        InvokeRepeating("Fire", 0.5f, 1.0f / weaponData.FireRate);
+        InvokeRepeating("Fire", 0.5f, 1.0f / weaponData.commonStats.FireRate);
     }
     private void Fire()
     {
@@ -25,13 +25,13 @@ public class PlayerShealdAttack : MonoBehaviour
         var bullet = objectPool.GetPoolObjectOrNull();
         if (bullet != null)
         {
-            var vector = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), 0.0f) * weaponData.WeaponAria;
+            var vector = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), 0.0f) * weaponData.commonStats.WeaponRange;
             bullet.transform.position = transform.position + vector;
             var fb = bullet.GetComponent<FireBullet>();
             fb.SetTargetPoint(transform.position);  //it's transform at move around for
-            fb.SetDamage((int)weaponData.Might);
+            fb.SetDamage((int)weaponData.commonStats.Stright);
             fb.SetLifeTime(4.0f);
-            fb.SetSpeed(weaponData.BulletSpeed);
+            fb.SetSpeed(weaponData.commonStats.BulletSpeed);
         }
         else
         {
@@ -41,12 +41,12 @@ public class PlayerShealdAttack : MonoBehaviour
     public void UpdateWeaponData()
     {
         CancelInvoke();
-        InvokeRepeating("Fire", 0.2f, 1.0f / weaponData.FireRate);
+        InvokeRepeating("Fire", 0.2f, 1.0f / weaponData.commonStats.FireRate);
     }
 
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, weaponData.WeaponAria);
+        Gizmos.DrawWireSphere(transform.position, weaponData.commonStats.WeaponRange);
     }
 }

@@ -15,8 +15,18 @@ public class PlayerBuff : ScriptableObject
         FireRate,
         BulletSpeed
     }
+    public enum WeaponBuffType
+    {
+        None,
+        Straight,
+        WeaponRange,
+        FireRate,
+        BulletSpeed
+    }
     public PlayerBuffType BuffType;
     public bool isConstantBuff;
     public float DurationSec;
     public float AddedValue;
+    public WeaponBuffType WeaponBuff = WeaponBuffType.None;
+    public int weaponNum = 1;
 }
