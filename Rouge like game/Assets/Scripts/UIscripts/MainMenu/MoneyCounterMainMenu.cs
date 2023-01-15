@@ -8,23 +8,26 @@ public class MoneyCounterMainMenu : MonoBehaviour
 {
     [SerializeField]
     private Text textCounter;
-    [SerializeField]
-    private string path = "Assets/Resources/SaveGame/Save1.txt";
+
+    public int money;
+
     private void Start()
     {
-        string jsonLoad = null;
-        using (StreamReader sr = new StreamReader(path))
-        {
-            jsonLoad = sr.ReadToEnd();
-            print(jsonLoad);
-        }
+        SetMoney(SaveManager.LoadSavefile().money);
+    }
 
-        SaveFile loadFileJson = null;
-        if (jsonLoad != null)
+    public void SetMoney(int newMoney)
+    {
+        if(newMoney >= 0)
         {
-            loadFileJson = JsonUtility.FromJson<SaveFile>(jsonLoad);
+            money = newMoney;
+            textCounter.text = money.ToString();
         }
-
-        textCounter.text = loadFileJson.money.ToString();
+    }
+    public void increaseMoney(int m)
+    {
+        if (money >= m)
+            money -= m;
+        SetMoney(money);
     }
 }
