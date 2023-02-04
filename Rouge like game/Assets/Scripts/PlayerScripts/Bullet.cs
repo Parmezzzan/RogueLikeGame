@@ -54,7 +54,6 @@ public class Bullet : MonoBehaviour
         Destroy(effectIns, 2f);
 
         Damage(target);
-
         gameObject.SetActive(false);
     }
 

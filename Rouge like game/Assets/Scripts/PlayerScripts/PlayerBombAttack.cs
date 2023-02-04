@@ -41,6 +41,7 @@ public class PlayerBombAttack : MonoBehaviour
                     var bullet = objectPool.GetPoolObjectOrNull();
                     bullet.transform.position = instancePoint.position;
                     var bb = bullet.GetComponent<BombBullet>();
+                    bb.GetComponent<TrailRenderer>().Clear();
                     bb.SetTargetPoint(item.transform.position);
                     bb.SetDamage((int)weaponData.commonStats.Stright);
                     bb.SetSpeed(weaponData.commonStats.BulletSpeed);

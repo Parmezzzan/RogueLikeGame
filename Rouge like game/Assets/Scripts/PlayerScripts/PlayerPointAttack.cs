@@ -55,6 +55,7 @@ public class PlayerPointAttack : MonoBehaviour
                 var bullet = objectPool.GetPoolObjectOrNull();
                 bullet.transform.position = firePoint.position;
                 var pb = bullet.GetComponent<PointBullet>();
+                pb.GetComponent<TrailRenderer>().Clear();
                 pb.SetTargetPoint(narrow);
                 pb.SetDemage((int)weaponData.commonStats.Stright);
                 pb.SetLifeTime(3.0f);

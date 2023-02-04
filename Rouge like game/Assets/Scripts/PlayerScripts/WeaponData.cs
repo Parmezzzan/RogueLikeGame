@@ -12,17 +12,18 @@ public class WeaponData : MonoBehaviour
     public List<CommonWeaponData> weaponStats = new List<CommonWeaponData>();
     [SerializeField]
     public UnityEvent DataHasUpdated;
-    private void Start()
+    
+    private void Awake()
     {
         commonStats.CommonInit();
+
         weaponStats = new List<CommonWeaponData>(weaponAmount);
         foreach (var item in weaponStats)
             item.Init();
     }
     public struct CommonWeaponData
     {
-        public float WeaponRange
-            ;
+        public float WeaponRange;            
         public float Stright;
         public float FireRate;
         public float BulletSpeed;

@@ -61,6 +61,7 @@ public class PlayerAttack2 : MonoBehaviour
         {
             bulletGO.transform.position = firePont.position;
             var bullet = bulletGO.GetComponent<Bullet>();
+            bullet.GetComponent<TrailRenderer>().Clear();
             bullet.Seek(target);
             bullet.UpdateLifeTime(3.0f);
             bullet.speed = weaponData.commonStats.BulletSpeed;

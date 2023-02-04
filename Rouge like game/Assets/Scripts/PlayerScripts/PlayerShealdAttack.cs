@@ -28,6 +28,7 @@ public class PlayerShealdAttack : MonoBehaviour
             var vector = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), 0.0f) * weaponData.commonStats.WeaponRange;
             bullet.transform.position = transform.position + vector;
             var fb = bullet.GetComponent<FireBullet>();
+            fb.GetComponent<TrailRenderer>().Clear();
             fb.SetTargetPoint(transform.position);  //it's transform at move around for
             fb.SetDamage((int)weaponData.commonStats.Stright);
             fb.SetLifeTime(4.0f);
