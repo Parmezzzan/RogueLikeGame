@@ -14,7 +14,10 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        moveSpeed = playerData.moveSpeed;
+    }
     void Update()
     {
        movement.x = Input.GetAxisRaw("Horizontal");
