@@ -19,4 +19,3 @@ MonoBehaviour:
   StarsNum: 2
   CardBuffs:
   - {fileID: 11400000, guid: 88a0f4493a01faf4c8142270ca4db449, type: 2}
-  - {fileID: 11400000, guid: 88a0f4493a01faf4c8142270ca4db449, type: 2}

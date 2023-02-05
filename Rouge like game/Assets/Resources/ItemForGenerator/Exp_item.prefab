@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 626432cf5eaa27a4f8def5f73be1b925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EXPboost: 20
+  EXPboost: 100
   upMoveDistanseKoifitient: 0.2
   movingSpeed: 10
   destroyDistanse: 0.3
