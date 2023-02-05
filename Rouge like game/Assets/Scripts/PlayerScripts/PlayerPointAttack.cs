@@ -22,16 +22,22 @@ public class PlayerPointAttack : MonoBehaviour
     {
         objectPool = new ObjectPool();
         objectPool.Init(bulletPrefab, poolSize, poolRoot);
-        InvokeRepeating("Fire", 0.5f, 1.0f/ weaponData.commonStats.FireRate);
+
+        if (weaponData.weaponStats[2].level > 0)
+            InvokeRepeating("Fire", 0.5f, 1.0f/ (weaponData.commonStats.FireRate + weaponData.weaponStats[2].FireRate));
     }
     public void UpdateWeaponData()
     {
-        CancelInvoke();
-        InvokeRepeating("Fire", 0.2f, 1.0f / weaponData.commonStats.FireRate);
+
+        if (weaponData.weaponStats[2].level > 0)
+        {
+            CancelInvoke();
+            InvokeRepeating("Fire", 0.2f, 1.0f / (weaponData.commonStats.FireRate + weaponData.weaponStats[2].FireRate));
+        }
     }
     private void Fire()
     {
-        var colliders = Physics2D.OverlapCircleAll(transform.position, weaponData.commonStats.WeaponRange);
+        var colliders = Physics2D.OverlapCircleAll(transform.position, weaponData.commonStats.WeaponRange + weaponData.weaponStats[2].WeaponRange);
         if (colliders.Length > 1)
         {
             Vector3 target = Vector3.zero;
@@ -57,15 +63,15 @@ public class PlayerPointAttack : MonoBehaviour
                 var pb = bullet.GetComponent<PointBullet>();
                 pb.GetComponent<TrailRenderer>().Clear();
                 pb.SetTargetPoint(narrow);
-                pb.SetDemage((int)weaponData.commonStats.Stright);
+                pb.SetDemage((int)weaponData.commonStats.Stright + (int)weaponData.weaponStats[2].Stright);
                 pb.SetLifeTime(3.0f);
-                pb.SetSpeed(weaponData.commonStats.BulletSpeed);
+                pb.SetSpeed(weaponData.commonStats.BulletSpeed + weaponData.weaponStats[2].BulletSpeed);
             }
         }
     }
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, weaponData.commonStats.WeaponRange);
+        Gizmos.DrawWireSphere(transform.position, weaponData.commonStats.WeaponRange + weaponData.weaponStats[2].WeaponRange);
     }
 }

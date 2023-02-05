@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da3f61fb2d3b76418e002484afe0570, type: 3}
+  m_Name: Weapon2_branch
+  m_EditorClassIdentifier: 
+  Name: Default branch
+  cardsLevel:
+  - {fileID: 11400000, guid: 49fb9c1c508431745b86d407a47d40ab, type: 2}
+  - {fileID: 11400000, guid: 49fb9c1c508431745b86d407a47d40ab, type: 2}

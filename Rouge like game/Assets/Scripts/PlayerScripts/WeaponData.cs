@@ -9,7 +9,8 @@ public class WeaponData : MonoBehaviour
     [SerializeField]
     int weaponAmount = 4;
 
-    public List<CommonWeaponData> weaponStats = new List<CommonWeaponData>();
+    [SerializeField]
+    public CommonWeaponData[] weaponStats;
     [SerializeField]
     public UnityEvent DataHasUpdated;
     
@@ -17,9 +18,15 @@ public class WeaponData : MonoBehaviour
     {
         commonStats.CommonInit();
 
-        weaponStats = new List<CommonWeaponData>(weaponAmount);
-        foreach (var item in weaponStats)
-            item.Init();
+        weaponStats = new CommonWeaponData[weaponAmount];
+        for (int i = 0; i < weaponAmount; i++)
+            weaponStats[i] = new CommonWeaponData();
+
+        print($"has {weaponAmount} col");
+        print($"has {weaponStats.Length} stats");
+
+        for (int i = 0; i < weaponStats.Length; i++)
+            weaponStats[i].Init();
     }
     public struct CommonWeaponData
     {
@@ -27,9 +34,11 @@ public class WeaponData : MonoBehaviour
         public float Stright;
         public float FireRate;
         public float BulletSpeed;
+        public int level;
 
         public void CommonInit()
         {
+            level = 0;
             WeaponRange = 10.0f;
             Stright = 5.0f;
             FireRate = 1.0f;
@@ -37,10 +46,19 @@ public class WeaponData : MonoBehaviour
         }
         public void Init()
         {
+            level = 0;
             WeaponRange = 0.0f;
             Stright = 0.0f;
             FireRate = 0.0f;
             BulletSpeed = 0.0f;
+        }
+        public void Print()
+        {
+            print(level);
+            print(WeaponRange);
+            print(Stright);
+            print(FireRate);
+            print(BulletSpeed);
         }
     }
 }

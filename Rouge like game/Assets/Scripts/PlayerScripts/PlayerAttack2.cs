@@ -24,12 +24,12 @@ public class PlayerAttack2 : MonoBehaviour
     {
         bulletPool = new ObjectPool();
         bulletPool.Init(bulletPrefab, poolSize, poolRoot);
-        InvokeRepeating("UpdateTarget", 0f, 1f / weaponData.commonStats.FireRate); //вызывает метод сразу после старта и повторяет каждые пол секунды
+        InvokeRepeating("UpdateTarget", 0f, 1f / (weaponData.commonStats.FireRate + weaponData.weaponStats[0].FireRate)); //вызывает метод сразу после старта и повторяет каждые пол секунды
     }
     public void UpdateWeaponData()
     {
         CancelInvoke();
-        InvokeRepeating("UpdateTarget", 0f, 1f / weaponData.commonStats.FireRate);
+        InvokeRepeating("UpdateTarget", 0f, 1f / (weaponData.commonStats.FireRate + weaponData.weaponStats[0].FireRate));
     }
     void UpdateTarget ()
 	{
@@ -46,7 +46,7 @@ public class PlayerAttack2 : MonoBehaviour
                 nearestEnemy = enemy;
 			}
 
-            if (nearestEnemy != null && shortestDistance <= weaponData.commonStats.WeaponRange)
+            if (nearestEnemy != null && shortestDistance <= weaponData.commonStats.WeaponRange + weaponData.weaponStats[0].WeaponRange)
                 target = nearestEnemy.transform;
             else
                 target = null;
@@ -64,13 +64,14 @@ public class PlayerAttack2 : MonoBehaviour
             bullet.GetComponent<TrailRenderer>().Clear();
             bullet.Seek(target);
             bullet.UpdateLifeTime(3.0f);
-            bullet.speed = weaponData.commonStats.BulletSpeed;
+            bullet.damage = (int)(weaponData.weaponStats[0].Stright + weaponData.commonStats.Stright);
+            bullet.speed = weaponData.commonStats.BulletSpeed +  weaponData.weaponStats[0].BulletSpeed;
         }
 	}
 
 	void OnDrawGizmosSelected()
 	{
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, weaponData.commonStats.WeaponRange);
+        Gizmos.DrawWireSphere(transform.position, weaponData.commonStats.WeaponRange + weaponData.weaponStats[0].BulletSpeed);
 	}
 }

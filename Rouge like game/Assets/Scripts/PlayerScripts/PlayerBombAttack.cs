@@ -22,16 +22,20 @@ public class PlayerBombAttack : MonoBehaviour
     {
         objectPool = new ObjectPool();
         objectPool.Init(bulletPrefab, poolSize, poolRoot);
-        InvokeRepeating("Fire", 0.5f, 1.0f / weaponData.commonStats.FireRate);
+        if(weaponData.weaponStats[3].level > 0)
+            InvokeRepeating("Fire", 0.5f, 1.0f / (weaponData.commonStats.FireRate + weaponData.weaponStats[3].FireRate));
     }
     public void UpdateWeaponData()
     {
-        CancelInvoke();
-        InvokeRepeating("Fire", 0.2f, 1.0f / weaponData.commonStats.FireRate);
+        if (weaponData.weaponStats[3].level > 0)
+        {
+            CancelInvoke();
+            InvokeRepeating("Fire", 0.2f, 1.0f / (weaponData.commonStats.FireRate + weaponData.weaponStats[3].FireRate));
+        }
     }
     private void Fire()
     {
-        var colliders = Physics2D.OverlapCircleAll(transform.position, weaponData.commonStats.WeaponRange);
+        var colliders = Physics2D.OverlapCircleAll(transform.position, weaponData.commonStats.WeaponRange + weaponData.weaponStats[3].WeaponRange);
         if (colliders.Length > 1)
         {
             foreach (var item in colliders)
@@ -43,8 +47,8 @@ public class PlayerBombAttack : MonoBehaviour
                     var bb = bullet.GetComponent<BombBullet>();
                     bb.GetComponent<TrailRenderer>().Clear();
                     bb.SetTargetPoint(item.transform.position);
-                    bb.SetDamage((int)weaponData.commonStats.Stright);
-                    bb.SetSpeed(weaponData.commonStats.BulletSpeed);
+                    bb.SetDamage((int)weaponData.commonStats.Stright + (int)weaponData.weaponStats[3].Stright);
+                    bb.SetSpeed(weaponData.commonStats.BulletSpeed + weaponData.weaponStats[3].BulletSpeed);
                     return;
                 }
             }
@@ -53,7 +57,6 @@ public class PlayerBombAttack : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, weaponData.commonStats.WeaponRange);
+        Gizmos.DrawWireSphere(transform.position, weaponData.commonStats.WeaponRange + weaponData.weaponStats[3].WeaponRange);
     }
-
 }

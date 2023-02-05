@@ -71,24 +71,26 @@ public class PlayerBuffManager : MonoBehaviour
             switch (buff.WeaponBuff)
             {
                 case PlayerBuff.WeaponBuffType.FireRate:
-                    var wd = weaponData.weaponStats[buff.weaponNum];
-                    wd.FireRate += increaseValue ? buff.AddedValue : -buff.AddedValue;
+                    weaponData.weaponStats[buff.weaponNum].FireRate += increaseValue ? buff.AddedValue : -buff.AddedValue;
+                    weaponData.weaponStats[buff.weaponNum].level += increaseValue ? 1 : -1;
                     weaponData.DataHasUpdated?.Invoke();
                     return;
                 case PlayerBuff.WeaponBuffType.Straight:
                     var wd2 = weaponData.weaponStats[buff.weaponNum];
-                    wd2.Stright += increaseValue ? buff.AddedValue : -buff.AddedValue;
-                    playerData.DataHasUpdated?.Invoke();
+                    weaponData.weaponStats[buff.weaponNum].Stright += increaseValue ? buff.AddedValue : -buff.AddedValue;
+                    weaponData.weaponStats[buff.weaponNum].level += increaseValue ? 1 : -1;
+                    weaponData.weaponStats[buff.weaponNum].Print();
+                    weaponData.DataHasUpdated?.Invoke();
                     return;
                 case PlayerBuff.WeaponBuffType.BulletSpeed:
-                    var wd3 = weaponData.weaponStats[buff.weaponNum];
-                    wd3.BulletSpeed += increaseValue ? buff.AddedValue : -buff.AddedValue;
-                    playerData.DataHasUpdated?.Invoke();
+                    weaponData.weaponStats[buff.weaponNum].BulletSpeed += increaseValue ? buff.AddedValue : -buff.AddedValue;
+                    weaponData.weaponStats[buff.weaponNum].level += increaseValue ? 1 : -1;
+                    weaponData.DataHasUpdated?.Invoke();
                     return;
                 case PlayerBuff.WeaponBuffType.WeaponRange:
-                    var wd4 = weaponData.weaponStats[buff.weaponNum];
-                    wd4.WeaponRange += increaseValue ? buff.AddedValue : -buff.AddedValue;
-                    playerData.DataHasUpdated?.Invoke();
+                    weaponData.weaponStats[buff.weaponNum].WeaponRange += increaseValue ? buff.AddedValue : -buff.AddedValue;
+                    weaponData.weaponStats[buff.weaponNum].level += increaseValue ? 1 : -1;
+                    weaponData.DataHasUpdated?.Invoke();
                     return;
                 default:
                     throw new System.Exception("No there Buff type in game!");
