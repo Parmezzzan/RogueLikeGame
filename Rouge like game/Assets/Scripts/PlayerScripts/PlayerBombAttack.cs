@@ -57,6 +57,6 @@ public class PlayerBombAttack : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, weaponData.commonStats.WeaponRange + weaponData.weaponStats[3].WeaponRange);
+        Gizmos.DrawWireSphere(transform.position, weaponData.commonStats.WeaponRange);
     }
 }

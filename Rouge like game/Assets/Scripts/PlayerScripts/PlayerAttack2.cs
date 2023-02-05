@@ -72,6 +72,6 @@ public class PlayerAttack2 : MonoBehaviour
 	void OnDrawGizmosSelected()
 	{
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, weaponData.commonStats.WeaponRange + weaponData.weaponStats[0].BulletSpeed);
+        Gizmos.DrawWireSphere(transform.position, weaponData.commonStats.WeaponRange);
 	}
 }

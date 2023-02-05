@@ -9,19 +9,22 @@ public class FireBullet : MonoBehaviour
     [SerializeField]
     private int damage = 20;
     [SerializeField]
-    private float lifeTime = 4.0f;
+    private float lifeTime = 10f;
     [SerializeField]
-    private float speed = 2.0f;
+    private float speed = 2f;
 
-    private Vector3 targetAround;
+    private float angle = 0f;
+    private GameObject targetAround;
     void Update()
     {
-        transform.RotateAround(targetAround, Vector3.forward, Time.deltaTime * speed);
         lifeTime -= Time.deltaTime;
         if (lifeTime < 0.0f)
             gameObject.SetActive(false);
+        angle += Time.deltaTime * speed * 15; 
+        transform.position = targetAround.transform.position + Vector3.up * 1.2f;
+        transform.RotateAround(targetAround.transform.position, Vector3.forward, angle);
     }
-    public void SetTargetPoint(Vector3 targetAround)
+    public void SetTargetPoint(GameObject targetAround)
     {
         this.targetAround = targetAround;
     }

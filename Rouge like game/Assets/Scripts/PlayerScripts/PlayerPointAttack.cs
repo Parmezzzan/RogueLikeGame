@@ -72,6 +72,6 @@ public class PlayerPointAttack : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, weaponData.commonStats.WeaponRange + weaponData.weaponStats[2].WeaponRange);
+        Gizmos.DrawWireSphere(transform.position, weaponData.commonStats.WeaponRange);
     }
 }

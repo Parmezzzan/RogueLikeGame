@@ -26,13 +26,13 @@ public class PlayerShealdAttack : MonoBehaviour
         var bullet = objectPool.GetPoolObjectOrNull();
         if (bullet != null)
         {
-            var vector = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), 0.0f) * (weaponData.commonStats.WeaponRange + weaponData.weaponStats[1].WeaponRange);
+            var vector = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), 0.0f) * 1.2f;//(weaponData.commonStats.WeaponRange + weaponData.weaponStats[1].WeaponRange);
             bullet.transform.position = transform.position + vector;
             var fb = bullet.GetComponent<FireBullet>();
             fb.GetComponent<TrailRenderer>().Clear();
-            fb.SetTargetPoint(transform.position);  //it's transform at move around for
+            fb.SetTargetPoint(gameObject);  //it's transform at move around for
             fb.SetDamage((int)weaponData.commonStats.Stright + (int)weaponData.weaponStats[1].Stright);
-            fb.SetLifeTime(4.0f);
+            fb.SetLifeTime(10.0f);
             fb.SetSpeed(weaponData.commonStats.BulletSpeed + weaponData.weaponStats[1].BulletSpeed);
         }
         else
@@ -52,6 +52,6 @@ public class PlayerShealdAttack : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, weaponData.commonStats.WeaponRange + weaponData.weaponStats[1].WeaponRange);
+        Gizmos.DrawWireSphere(transform.position, weaponData.commonStats.WeaponRange);
     }
 }
