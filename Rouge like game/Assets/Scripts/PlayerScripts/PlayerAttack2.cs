@@ -64,7 +64,7 @@ public class PlayerAttack2 : MonoBehaviour
             bullet.GetComponent<TrailRenderer>().Clear();
             bullet.Seek(target);
             bullet.UpdateLifeTime(3.0f);
-            bullet.damage = (int)(weaponData.weaponStats[0].Stright + weaponData.commonStats.Stright);
+            bullet.damage = (int)(weaponData.weaponStats[0].Might + weaponData.commonStats.Might);
             bullet.speed = weaponData.commonStats.BulletSpeed +  weaponData.weaponStats[0].BulletSpeed;
         }
 	}

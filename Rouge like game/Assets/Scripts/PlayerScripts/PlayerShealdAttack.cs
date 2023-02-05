@@ -31,7 +31,7 @@ public class PlayerShealdAttack : MonoBehaviour
             var fb = bullet.GetComponent<FireBullet>();
             fb.GetComponent<TrailRenderer>().Clear();
             fb.SetTargetPoint(gameObject);  //it's transform at move around for
-            fb.SetDamage((int)weaponData.commonStats.Stright + (int)weaponData.weaponStats[1].Stright);
+            fb.SetDamage((int)weaponData.commonStats.Might + (int)weaponData.weaponStats[1].Might);
             fb.SetLifeTime(10.0f);
             fb.SetSpeed(weaponData.commonStats.BulletSpeed + weaponData.weaponStats[1].BulletSpeed);
         }

@@ -10,7 +10,7 @@ public class PlayerBuff : ScriptableObject
         Armor,
         MoveSpeed,
         MagnetRange,
-        Straight, 
+        Might, 
         WeaponRange,
         FireRate,
         BulletSpeed
@@ -18,7 +18,7 @@ public class PlayerBuff : ScriptableObject
     public enum WeaponBuffType
     {
         None,
-        Straight,
+        Might,
         WeaponRange,
         FireRate,
         BulletSpeed

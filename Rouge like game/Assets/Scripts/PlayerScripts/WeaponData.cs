@@ -31,7 +31,7 @@ public class WeaponData : MonoBehaviour
     public struct CommonWeaponData
     {
         public float WeaponRange;            
-        public float Stright;
+        public float Might;
         public float FireRate;
         public float BulletSpeed;
         public int level;
@@ -40,7 +40,7 @@ public class WeaponData : MonoBehaviour
         {
             level = 0;
             WeaponRange = 10.0f;
-            Stright = 5.0f;
+            Might = 5.0f;
             FireRate = 1.0f;
             BulletSpeed = 2.0f;
         }
@@ -48,7 +48,7 @@ public class WeaponData : MonoBehaviour
         {
             level = 0;
             WeaponRange = 0.0f;
-            Stright = 0.0f;
+            Might = 0.0f;
             FireRate = 0.0f;
             BulletSpeed = 0.0f;
         }
@@ -56,7 +56,7 @@ public class WeaponData : MonoBehaviour
         {
             print(level);
             print(WeaponRange);
-            print(Stright);
+            print(Might);
             print(FireRate);
             print(BulletSpeed);
         }

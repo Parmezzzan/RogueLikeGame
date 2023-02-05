@@ -47,7 +47,7 @@ public class PlayerBombAttack : MonoBehaviour
                     var bb = bullet.GetComponent<BombBullet>();
                     bb.GetComponent<TrailRenderer>().Clear();
                     bb.SetTargetPoint(item.transform.position);
-                    bb.SetDamage((int)weaponData.commonStats.Stright + (int)weaponData.weaponStats[3].Stright);
+                    bb.SetDamage((int)weaponData.commonStats.Might + (int)weaponData.weaponStats[3].Might);
                     bb.SetSpeed(weaponData.commonStats.BulletSpeed + weaponData.weaponStats[3].BulletSpeed);
                     return;
                 }

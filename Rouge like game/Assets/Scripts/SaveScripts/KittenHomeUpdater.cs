@@ -38,7 +38,7 @@ public class KittenHomeUpdater : MonoBehaviour
             case PlayerBuff.PlayerBuffType.MoveSpeed:
                 text.text = file.MoveSpeed.ToString();
                 break;
-            case PlayerBuff.PlayerBuffType.Straight:
+            case PlayerBuff.PlayerBuffType.Might:
                 text.text = file.Straight.ToString();
                 break;
             case PlayerBuff.PlayerBuffType.WeaponRange:
@@ -85,7 +85,7 @@ public class KittenHomeUpdater : MonoBehaviour
                     file.MoveSpeed++;
                     text.text = file.MoveSpeed.ToString();
                     break;
-                case PlayerBuff.PlayerBuffType.Straight:
+                case PlayerBuff.PlayerBuffType.Might:
                     file.Straight++;
                     text.text = file.Straight.ToString();
                     break;

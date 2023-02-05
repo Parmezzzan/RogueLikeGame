@@ -41,8 +41,8 @@ public class PlayerBuffManager : MonoBehaviour
                     playerData.armor += increaseValue ? (int)buff.AddedValue : (int)-buff.AddedValue;
                     playerData.DataHasUpdated?.Invoke();
                     return;
-                case PlayerBuff.PlayerBuffType.Straight:
-                    weaponData.commonStats.Stright += increaseValue ? buff.AddedValue : -buff.AddedValue;
+                case PlayerBuff.PlayerBuffType.Might:
+                    weaponData.commonStats.Might += increaseValue ? buff.AddedValue : -buff.AddedValue;
                     weaponData.DataHasUpdated?.Invoke();
                     return;
                 case PlayerBuff.PlayerBuffType.WeaponRange:
@@ -75,9 +75,9 @@ public class PlayerBuffManager : MonoBehaviour
                     weaponData.weaponStats[buff.weaponNum].level += increaseValue ? 1 : -1;
                     weaponData.DataHasUpdated?.Invoke();
                     return;
-                case PlayerBuff.WeaponBuffType.Straight:
+                case PlayerBuff.WeaponBuffType.Might:
                     var wd2 = weaponData.weaponStats[buff.weaponNum];
-                    weaponData.weaponStats[buff.weaponNum].Stright += increaseValue ? buff.AddedValue : -buff.AddedValue;
+                    weaponData.weaponStats[buff.weaponNum].Might += increaseValue ? buff.AddedValue : -buff.AddedValue;
                     weaponData.weaponStats[buff.weaponNum].level += increaseValue ? 1 : -1;
                     weaponData.weaponStats[buff.weaponNum].Print();
                     weaponData.DataHasUpdated?.Invoke();

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53d966d96ead58f49b8d9ce5e832f88b, type: 3}
-  m_Name: Weapon2_buff_straight
+  m_Name: Weapon2_buff_might
   m_EditorClassIdentifier: 
   BuffType: 0
   isConstantBuff: 1

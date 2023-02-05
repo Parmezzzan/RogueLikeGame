@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9222ed84c37df0a4ea35a602757d7ef7, type: 3}
-  m_Name: W2_straight
+  m_Name: W2_might
   m_EditorClassIdentifier: 
   Name: Sheald Buff
   Info: Protect yourself!
