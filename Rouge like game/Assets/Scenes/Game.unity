@@ -2135,7 +2135,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.9281482}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0.00012207, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &427915076
@@ -10595,7 +10595,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 192.27612, y: -51.157166}
+  m_AnchoredPosition: {x: 192.27612, y: -51.157227}
   m_SizeDelta: {x: 362.1221, y: 102.3145}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2038581223
@@ -11447,7 +11447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2803398506396595010, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: moveSpeed
-      value: 3.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2803398506396595011, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: m_Interpolate
@@ -11461,6 +11461,10 @@ PrefabInstance:
       propertyPath: expSlider
       value: 
       objectReference: {fileID: 1257323053}
+    - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: moveSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2803398506396595015, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: CoinCounter
       value: 
