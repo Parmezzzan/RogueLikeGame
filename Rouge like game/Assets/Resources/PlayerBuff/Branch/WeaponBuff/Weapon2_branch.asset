@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Default branch
   cardsLevel:
+  - {fileID: 11400000, guid: 8941b77adeb54bc45a3c6a14cffbf410, type: 2}
+  - {fileID: 11400000, guid: 8941b77adeb54bc45a3c6a14cffbf410, type: 2}
   - {fileID: 11400000, guid: 49fb9c1c508431745b86d407a47d40ab, type: 2}
   - {fileID: 11400000, guid: 49fb9c1c508431745b86d407a47d40ab, type: 2}
+  - {fileID: 11400000, guid: 8941b77adeb54bc45a3c6a14cffbf410, type: 2}
+  - {fileID: 11400000, guid: 8941b77adeb54bc45a3c6a14cffbf410, type: 2}

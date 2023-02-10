@@ -24,6 +24,11 @@ public class ObjectPool : MonoBehaviour
             poolObjects[i].SetActive(false);
         }
     }
+    public void Clear ()
+    {
+        for (int i = 0; i < poolSize; i++)
+            poolObjects[i].SetActive(false);
+    }
     public GameObject GetPoolObjectOrNull()
     {
         for (int i = 0; i < poolSize; i++)
