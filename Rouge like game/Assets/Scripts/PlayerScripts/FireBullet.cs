@@ -18,6 +18,7 @@ public class FireBullet : MonoBehaviour
         angle += Time.deltaTime * speed * 15; 
         transform.position = targetAround.transform.position + Vector3.up * 1.2f;
         transform.RotateAround(targetAround.transform.position, Vector3.forward, angle);
+        transform.rotation = Quaternion.identity;
     }
     public void SetTargetPoint(GameObject targetAround)
     {

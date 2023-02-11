@@ -6,6 +6,8 @@ public class GameManger : MonoBehaviour
 {
     [SerializeField]
     UnityEvent gameOver;
+    [SerializeField]
+    GameObject pauseMenu;
 
     private bool gameEnded = false;
 
@@ -13,6 +15,11 @@ public class GameManger : MonoBehaviour
     {
         if (PlayerData.currentHealth <= 0 && !gameEnded)
             EndGame();
+        if (Input.GetKeyDown(KeyCode.Escape) && !pauseMenu.active)
+        {
+            PauseTime();
+            pauseMenu.SetActive(true);
+        }
     }
     private void EndGame()
 	{
@@ -30,6 +37,14 @@ public class GameManger : MonoBehaviour
         var scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
         Time.timeScale = 1.0f;
+    }
+    public void ResumeTime()
+    {
+        Time.timeScale = 1.0f;
+    }
+    public void PauseTime()
+    {
+        Time.timeScale = 0.0f;
     }
     public void ToMenu()
     {
