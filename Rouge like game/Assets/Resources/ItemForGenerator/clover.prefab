@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7294878928616424287}
   - component: {fileID: 7294878928616424285}
   - component: {fileID: 1174839534299444803}
-  - component: {fileID: 5728659453945529760}
   - component: {fileID: 1531401654745103342}
   m_Layer: 0
   m_Name: clover
@@ -121,24 +120,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.58
---- !u!114 &5728659453945529760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7294878928616424256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41759adc2c95ed247bb25d167ed23713, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickupTag: Player
-  destroyAfterPickUping: 1
-  pickupBuff: {fileID: 1531401654745103342}
-  OnPickUp:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1531401654745103342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,3 +133,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff: {fileID: 11400000, guid: 0754ba009afe38a458912fc807d0900c, type: 2}
+  upMoveDistanseKoifitient: 0.2
+  movingSpeed: 10
+  destroyDistanse: 0.3

@@ -83,7 +83,6 @@ GameObject:
   - component: {fileID: 2234651043012772976}
   - component: {fileID: 2234651043012772977}
   - component: {fileID: 2234651043012772982}
-  - component: {fileID: 8133361920736520850}
   - component: {fileID: 6546182625054297011}
   - component: {fileID: 5448356321548747087}
   m_Layer: 0
@@ -178,36 +177,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8133361920736520850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2234651043012772983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41759adc2c95ed247bb25d167ed23713, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickupTag: Player
-  destroyAfterPickUping: 1
-  pickupBuff: {fileID: 0}
-  OnPickUp:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6546182625054297011}
-        m_TargetAssemblyTypeName: PoisonHP, Assembly-CSharp
-        m_MethodName: Heal
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &6546182625054297011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,8 +190,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healPower: 20
-  radius: 1
-  targetTag: Player
+  upMoveDistanseKoifitient: 0.2
+  movingSpeed: 10
+  destroyDistanse: 0.3
 --- !u!58 &5448356321548747087
 CircleCollider2D:
   m_ObjectHideFlags: 0

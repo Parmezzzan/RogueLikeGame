@@ -9,20 +9,16 @@ public class PickUp : MonoBehaviour
     string pickupTag = "Player";
     [SerializeField]
     bool destroyAfterPickUping = true;
-    [SerializeField]
-    PickupBuff pickupBuff;
-    [Space(15)]
-    [SerializeField]
+
+    [Space(15)]    [SerializeField]
     UnityEvent OnPickUp;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag(pickupTag))
         {
             OnPickUp?.Invoke();
-            pickupBuff?.AddBuff(collision.transform);
 
-            if(destroyAfterPickUping)
-                Destroy(gameObject);
+            if(destroyAfterPickUping) Destroy(gameObject);
         }
     }
 }

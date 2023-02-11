@@ -20,7 +20,7 @@ public class ExprienseGem : MonoBehaviour, IFarm
         gameObject.GetComponent<CircleCollider2D>().enabled = false;
         target = playerDataObj.gameObject.transform;
         playerData = playerDataObj;
-        StartCoroutine("GetGem");
+        StartCoroutine(GetGem());
     }
     private IEnumerator GetGem()
     {
