@@ -39,10 +39,10 @@ public class KittenHomeUpdater : MonoBehaviour
                 text.text = file.MoveSpeed.ToString();
                 break;
             case PlayerBuff.PlayerBuffType.Might:
-                text.text = file.Straight.ToString();
+                text.text = file.Might.ToString();
                 break;
             case PlayerBuff.PlayerBuffType.WeaponRange:
-                text.text = file.WeaponRange.ToString();
+                text.text = file.WeaponArea.ToString();
                 break;
             default:
                 return;
@@ -86,12 +86,12 @@ public class KittenHomeUpdater : MonoBehaviour
                     text.text = file.MoveSpeed.ToString();
                     break;
                 case PlayerBuff.PlayerBuffType.Might:
-                    file.Straight++;
-                    text.text = file.Straight.ToString();
+                    file.Might++;
+                    text.text = file.Might.ToString();
                     break;
                 case PlayerBuff.PlayerBuffType.WeaponRange:
-                    file.WeaponRange++;
-                    text.text = file.WeaponRange.ToString();
+                    file.WeaponArea++;
+                    text.text = file.WeaponArea.ToString();
                     break;
                 default:
                     return;

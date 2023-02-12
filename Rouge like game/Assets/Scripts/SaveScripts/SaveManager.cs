@@ -56,8 +56,8 @@ public class SaveFile
     public int Armor;
     public int MoveSpeed;
     public int MagnetRange;
-    public int Straight;
-    public int WeaponRange;
+    public int Might;
+    public int WeaponArea;
     public int FireRate;
     public int BulletSpeed;
 
