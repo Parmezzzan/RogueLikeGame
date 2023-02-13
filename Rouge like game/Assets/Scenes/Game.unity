@@ -1657,6 +1657,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dfc20ce524baa44c8eed7f4aa4614fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &317430841 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2803398506396595012, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+  m_PrefabInstance: {fileID: 2803398506692915056}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &327655443 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 115303509387921097, guid: f4bcfbb4c675fd14f9077996b3c897cf, type: 3}
@@ -2936,6 +2941,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 317430841}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Cat_death
           m_BoolArgument: 1
         m_CallState: 2
   pauseMenu: {fileID: 1995842406}

@@ -25,12 +25,12 @@ public class GameManger : MonoBehaviour
 	{
         gameEnded = true;
         gameOver?.Invoke();
-        Invoke("StopTime", 2.0f);
+        Invoke("StopTime", 3.5f);
     }
     public void WonGame()
     {
         gameEnded = true;
-        Invoke("StopTime", 2.0f);
+        Invoke("StopTime", 3.5f);
     }
     public void RestartLevel()
     {
