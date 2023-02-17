@@ -10,7 +10,12 @@ public class ExplodeBomb : MonoBehaviour
     float radius = 10.0f;
     [SerializeField]
     string targetTag = "Enemy";
-    public void Explode()
+
+    private void Start()
+    {
+        gameObject.GetComponent<Pickup>().OnPickUP += explode;
+    }
+    public void explode (Transform t)
     {
         var pos = transform.position;
         var colliders = Physics2D.OverlapCircleAll(pos, radius);
@@ -19,6 +24,7 @@ public class ExplodeBomb : MonoBehaviour
             if (item.gameObject.CompareTag(targetTag))
                 item.gameObject.GetComponent<Enemy_HP>().TakeDamage(eachDemage);
         }
+        gameObject.GetComponent<Pickup>().OnPickUP -= explode;
     }
     void OnDrawGizmosSelected()
     {

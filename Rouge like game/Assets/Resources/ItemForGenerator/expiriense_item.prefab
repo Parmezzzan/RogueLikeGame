@@ -83,10 +83,11 @@ GameObject:
   - component: {fileID: 115303509387921097}
   - component: {fileID: 115303509387921098}
   - component: {fileID: 115303509387921096}
+  - component: {fileID: 3640043435846232760}
   - component: {fileID: 3731745665521658059}
   - component: {fileID: 225763231163873430}
   m_Layer: 13
-  m_Name: Exp_item
+  m_Name: expiriense_item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,6 +178,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3640043435846232760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115303509387921099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57870d0e44f51ff41b11aa078373b3f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upMoveDistanseKoifitient: 0.2
+  movingSpeed: 10
+  destroyDistanse: 0.3
 --- !u!114 &3731745665521658059
 MonoBehaviour:
   m_ObjectHideFlags: 0
