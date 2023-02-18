@@ -40,7 +40,7 @@ public class WeaponData : MonoBehaviour
         {
             level = 0;
             WeaponRange = 10.0f;
-            Might = 5.0f;
+            Might = 500.0f;
             FireRate = 1.0f;
             BulletSpeed = 2.0f;
         }

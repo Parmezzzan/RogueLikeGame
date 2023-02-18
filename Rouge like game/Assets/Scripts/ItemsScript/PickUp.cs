@@ -13,6 +13,8 @@ public class Pickup : MonoBehaviour, IFarm
     [SerializeField]
     float destroyDistanse = 0.3f;
 
+    [SerializeField] bool isPooled = false;
+
     private Transform target;
 
     public void GetFarm(PlayerData playerDataObj)
@@ -36,6 +38,9 @@ public class Pickup : MonoBehaviour, IFarm
             yield return null;
         }
         OnPickUP?.Invoke(target);
-        Destroy(gameObject);
+
+        gameObject.GetComponent<CircleCollider2D>().enabled = true;
+        if (isPooled) gameObject.SetActive(false);
+        else Destroy(gameObject);
     }
 }

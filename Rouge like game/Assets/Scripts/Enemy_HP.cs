@@ -3,16 +3,13 @@ using UnityEngine;
 public class Enemy_HP : MonoBehaviour
 {
     [SerializeField]
-    private GameObject expSoulSphere;
-    [SerializeField]
     private PoolManager poolManager;
     [SerializeField]
     private EnemyData enemyData;
-    [SerializeField]
-    private GameObject moneyFarmObject;
 
     public int health = 100;
 
+    private ObjectPool expPool;
     public GameObject deathEffect;
 
     private void Start()
@@ -36,18 +33,18 @@ public class Enemy_HP : MonoBehaviour
     {
         Destroy(gameObject);
         GameObject deathEffectIns = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Instantiate(expSoulSphere, transform.position, Quaternion.identity);
+
+        expPool.GetPoolObjectOrNull().transform.position = transform.position;
 
         if(Random.Range(0,100) < enemyData.moneyChance)
         {
             var pl = GameObject.FindGameObjectWithTag("Player");
             pl.GetComponent<PlayerData>().AddMoney(Random.Range(1, enemyData.maxMoneyFarm));
-
-            //var moneyObj = Instantiate(moneyFarmObject,
-            //    transform.position + new Vector3(Random.Range(0, 1.0f),
-            //    Random.Range(0, 1.0f), 0.0f), Quaternion.identity);
-            //moneyObj.GetComponent<MoneyFarmController>().SetAmount(Random.Range(1, enemyData.maxMoneyFarm));
         }
         Destroy(deathEffectIns, 2f);
+    }
+    public void SetExpPool(ObjectPool t)
+    {
+        expPool = t;
     }
 }

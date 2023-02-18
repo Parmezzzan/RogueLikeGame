@@ -8,6 +8,12 @@ public class EnemiesGeneratorV2 : MonoBehaviour
     Transform root;
     [SerializeField]
     Transform targetTransform;
+    [SerializeField] Transform expirienseRoot;
+
+    [SerializeField] int expPoolSize = 200;
+    [SerializeField] bool IsPoolCycled = true;
+    [SerializeField] GameObject expItem;
+    ObjectPool expPool;
 
     private float durationTime = 5.0f;
     private int pointOfSpawn = 1;
@@ -17,6 +23,11 @@ public class EnemiesGeneratorV2 : MonoBehaviour
 
     private bool generationOn = false;
 
+    private void Awake()
+    {
+        expPool = new ObjectPool();
+        expPool.Init(expItem, expPoolSize, expirienseRoot, IsPoolCycled);
+    }
     public void Run()
     {
         generationOn = true;
@@ -57,6 +68,7 @@ public class EnemiesGeneratorV2 : MonoBehaviour
             {
                 int j = Random.Range(0, enemies.Count);
                 var obj = Instantiate(enemies[j], new Vector3(X, Y, 0.0f), Quaternion.identity, root);
+                obj.GetComponent<Enemy_HP>().SetExpPool(expPool);
                 obj.GetComponent<Pathfinding.AIDestinationSetter>().target = targetTransform;  //heh kek but it's no error
             }
         }

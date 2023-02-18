@@ -3,15 +3,19 @@ using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
-    private int poolSize;
-    private GameObject poolObject;
-    private GameObject[] poolObjects;
-    private Transform root;
-    public void Init(GameObject gameObject, int size, Transform newRoot)
+    int poolSize;
+    GameObject poolObject;
+    GameObject[] poolObjects;
+    Transform root;
+    
+    bool cycledPool;
+    int currentindex;
+    public void Init(GameObject gameObject, int size, Transform newRoot, bool isCycled = false)
     {
         root = newRoot;
         poolSize = size;
         poolObject = gameObject;
+        cycledPool = isCycled;
         Init();
     }
     private void Init()
@@ -23,6 +27,7 @@ public class ObjectPool : MonoBehaviour
             poolObjects[i].transform.parent = root;
             poolObjects[i].SetActive(false);
         }
+        currentindex = 0;
     }
     public void Clear ()
     {
@@ -31,15 +36,25 @@ public class ObjectPool : MonoBehaviour
     }
     public GameObject GetPoolObjectOrNull()
     {
-        for (int i = 0; i < poolSize; i++)
+        if (!cycledPool)
         {
-            if (poolObjects[i].gameObject.active == false)
+            for (int i = 0; i < poolSize; i++)
             {
-                poolObjects[i].SetActive(true);
-                return poolObjects[i];
+                if (poolObjects[i].gameObject.active == false)
+                {
+                    poolObjects[i].SetActive(true);
+                    return poolObjects[i];
+                }
             }
-        }
 
-        return null;
+            return null;
+        }
+        else
+        {
+            currentindex++;
+            if (currentindex >= poolSize) currentindex = 0; 
+            poolObjects[currentindex].SetActive(true);
+            return poolObjects[currentindex];
+        }
     }
 }

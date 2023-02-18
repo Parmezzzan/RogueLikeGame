@@ -10342,6 +10342,7 @@ Transform:
   - {fileID: 12046524}
   - {fileID: 1560861778}
   - {fileID: 1492627234}
+  - {fileID: 2011168290}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10508,6 +10509,10 @@ MonoBehaviour:
   distanse: 12
   root: {fileID: 1560861778}
   targetTransform: {fileID: 317430833}
+  expirienseRoot: {fileID: 2011168290}
+  expPoolSize: 5
+  IsPoolCycled: 1
+  expItem: {fileID: 290223870701032407, guid: 34ef9369fd198e8419b0a69da728c631, type: 3}
 --- !u!114 &1915491059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11008,6 +11013,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1995842406}
   m_CullTransparentMesh: 1
+--- !u!1 &2011168289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2011168290}
+  m_Layer: 0
+  m_Name: ExpirienceRoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2011168290
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011168289}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1915491051}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2011581397 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 115303509387921097, guid: f4bcfbb4c675fd14f9077996b3c897cf, type: 3}
