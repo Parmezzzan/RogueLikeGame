@@ -22,6 +22,8 @@ public class WorldProvider : MonoBehaviour
     [SerializeField]
     Transform[] scrolRootsWitsDeleting;
     [SerializeField]
+    Transform[] scrolRootsWitsPolling;
+    [SerializeField]
     ItemProducerV2 itemProducerV2;
     [SerializeField]
     MapConfiguration mapConfig;
@@ -63,6 +65,19 @@ public class WorldProvider : MonoBehaviour
                             if (transformArray[i].position.x > translation.x)
                                 Destroy(transformArray[i].gameObject);
                     }
+                }
+                if (scrolRootsWitsPolling.Length > 0)
+                {
+                    for (int m = 0; m < scrolRootsWitsPolling.Length; m++)
+                    {
+                        var transformArray = new List<Transform>();
+                        for (int k = 0; k < scrolRootsWitsPolling[m].childCount; k++)
+                            transformArray.Add(scrolRootsWitsPolling[m].GetChild(k));
+
+                        for (int i = 0; i < transformArray.Count; i++)
+                            if (transformArray[i].position.x > translation.x)
+                                transformArray[i].gameObject.SetActive(false);
+                    }
                     var pos = new Vector2(target.transform.position.x - mapConfig.MapUnit_Width / 2.0f - windowsSize.x,
                                         target.transform.position.y + mapConfig.MapUnit_Height / 2.0f);
                     var size = new Vector2(windowsSize.x, mapConfig.MapUnit_Height);
@@ -97,6 +112,19 @@ public class WorldProvider : MonoBehaviour
                         for (int i = 0; i < transformArray.Count; i++)
                             if (transformArray[i].position.x < translation.x)
                                 Destroy(transformArray[i].gameObject);
+                    }
+                }
+                if (scrolRootsWitsPolling.Length > 0)
+                {
+                    for (int m = 0; m < scrolRootsWitsPolling.Length; m++)
+                    {
+                        var transformArray = new List<Transform>();
+                        for (int k = 0; k < scrolRootsWitsPolling[m].childCount; k++)
+                            transformArray.Add(scrolRootsWitsPolling[m].GetChild(k));
+
+                        for (int i = 0; i < transformArray.Count; i++)
+                            if (transformArray[i].position.x < translation.x)
+                                transformArray[i].gameObject.SetActive(false);
                     }
                     var pos = new Vector2(target.transform.position.x + mapConfig.MapUnit_Width / 2.0f - windowsSize.x,
                                         target.transform.position.y + mapConfig.MapUnit_Height / 2.0f);
@@ -133,8 +161,21 @@ public class WorldProvider : MonoBehaviour
                             if (transformArray[i].position.y < translation.y)
                                 Destroy(transformArray[i].gameObject);
                     }
+                }
+                if (scrolRootsWitsPolling.Length > 0)
+                {
+                    for (int m = 0; m < scrolRootsWitsPolling.Length; m++)
+                    {
+                        var transformArray = new List<Transform>();
+                        for (int k = 0; k < scrolRootsWitsPolling[m].childCount; k++)
+                            transformArray.Add(scrolRootsWitsPolling[m].GetChild(k));
+
+                        for (int i = 0; i < transformArray.Count; i++)
+                            if (transformArray[i].position.y < translation.y)
+                                transformArray[i].gameObject.SetActive(false);
+                    }
                     var pos = new Vector2(target.transform.position.x - mapConfig.MapUnit_Width / 2.0f,
-                                        target.transform.position.y + mapConfig.MapUnit_Height - windowsSize.y);
+                                       target.transform.position.y + mapConfig.MapUnit_Height - windowsSize.y);
                     var size = new Vector2(mapConfig.MapUnit_Width, windowsSize.y);
                     itemProducerV2.GenerateInAria(pos, size);
                 }
@@ -173,6 +214,23 @@ public class WorldProvider : MonoBehaviour
                     var size = new Vector2(mapConfig.MapUnit_Width, windowsSize.y);
                     itemProducerV2.GenerateInAria(pos, size);
                 }
+                if (scrolRootsWitsPolling.Length > 0)
+                {
+                    for (int m = 0; m < scrolRootsWitsPolling.Length; m++)
+                    {
+                        var transformArray = new List<Transform>();
+                        for (int k = 0; k < scrolRootsWitsPolling[m].childCount; k++)
+                            transformArray.Add(scrolRootsWitsPolling[m].GetChild(k));
+
+                        for (int i = 0; i < transformArray.Count; i++)
+                            if (transformArray[i].position.y > translation.y)
+                                transformArray[i].gameObject.SetActive(false);
+                    }
+                    var pos = new Vector2(target.transform.position.x - mapConfig.MapUnit_Width / 2.0f,
+                                        target.transform.position.y - mapConfig.MapUnit_Height / 2.0f + windowsSize.y);
+                    var size = new Vector2(mapConfig.MapUnit_Width, windowsSize.y);
+                    itemProducerV2.GenerateInAria(pos, size);
+                }
                 UpdatePathFinder();
                 return;
             }
@@ -182,7 +240,8 @@ public class WorldProvider : MonoBehaviour
     {
         var gg = AstarPath.active.astarData.gridGraph;
         gg.center = target.transform.position;
-        gg.UpdateSizeFromWidthDepth();
+        //gg.UpdateSizeFromWidthDepth();
+        //gg.UpdateTransform();
         // Recalculate the graph
         AstarPath.active.Scan();
     }

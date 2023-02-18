@@ -6,6 +6,8 @@ public class ItemProducerV2 : MonoBehaviour
 {
     [SerializeField]
     GameObject[] items;
+    ObjectPool[] itemsPools;
+    [SerializeField] int poolsSize = 30;
     [SerializeField]
     Transform root;
     [Space(20)]
@@ -20,6 +22,15 @@ public class ItemProducerV2 : MonoBehaviour
     [SerializeField]
     ObstacleProducerV2 obstacleGen;
 
+    private void Awake()
+    {
+        itemsPools = new ObjectPool[items.Length];
+        for (int i = 0; i < items.Length; i++)
+        {
+            itemsPools[i] = new ObjectPool();
+            itemsPools[i].Init(items[i], poolsSize, root, true);
+        }
+    }
     private List<GameObject> pull = new List<GameObject>();
     public void GenerateItems(MapConfiguration mapConfig)
     {
@@ -59,10 +70,10 @@ public class ItemProducerV2 : MonoBehaviour
             if (valid)
             {
                 succes++;
-                pull.Add(
-                    Instantiate(items[Random.Range(0, items.Length)],
-                    pos, Quaternion.identity, root)
-                    );
+                int num = Random.Range(0, items.Length);
+                var obj = itemsPools[num].GetPoolObjectOrNull();
+                obj.transform.position = pos;
+                pull.Add(obj); //need to compare the next position of items
             }
         }
     }
@@ -83,8 +94,10 @@ public class ItemProducerV2 : MonoBehaviour
             var posY = Random.Range(pos.y - size.y, pos.y);
             var position = new Vector3(posX, posY);
 
-            Instantiate(items[Random.Range(0, items.Length)],
-                    position, Quaternion.identity, root);
+            int num = Random.Range(0, items.Length);
+            var obj = itemsPools[num].GetPoolObjectOrNull();
+            obj.transform.position = position;
+            //Instantiate(items[num], position, Quaternion.identity, root);
         }
     }
 }

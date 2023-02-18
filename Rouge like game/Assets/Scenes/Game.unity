@@ -10440,6 +10440,7 @@ MonoBehaviour:
   - {fileID: 2234651043012772983, guid: 37f943baf4a609b4885a34d8c51e4d4f, type: 3}
   - {fileID: 290223870701032407, guid: 5cbe2060eef455146bc4e72557f88425, type: 3}
   - {fileID: 7294878928616424256, guid: c8e13ede05704e040af3c2862916cd6c, type: 3}
+  poolsSize: 10
   root: {fileID: 12046524}
   distance: 3
   tryingNum: 1000
@@ -10490,7 +10491,8 @@ MonoBehaviour:
   scrollRoots:
   - {fileID: 724419090}
   - {fileID: 1492627234}
-  scrolRootsWitsDeleting:
+  scrolRootsWitsDeleting: []
+  scrolRootsWitsPolling:
   - {fileID: 12046524}
   itemProducerV2: {fileID: 1915491055}
   mapConfig: {fileID: 1915491054}
@@ -10511,7 +10513,7 @@ MonoBehaviour:
   targetTransform: {fileID: 317430833}
   expirienseRoot: {fileID: 2011168290}
   expPoolSize: 5
-  IsPoolCycled: 1
+  IsExpPoolCycled: 1
   expItem: {fileID: 290223870701032407, guid: 34ef9369fd198e8419b0a69da728c631, type: 3}
 --- !u!114 &1915491059
 MonoBehaviour:

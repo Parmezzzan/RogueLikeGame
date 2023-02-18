@@ -11,7 +11,7 @@ public class EnemiesGeneratorV2 : MonoBehaviour
     [SerializeField] Transform expirienseRoot;
 
     [SerializeField] int expPoolSize = 200;
-    [SerializeField] bool IsPoolCycled = true;
+    [SerializeField] bool IsExpPoolCycled = true;
     [SerializeField] GameObject expItem;
     ObjectPool expPool;
 
@@ -26,7 +26,7 @@ public class EnemiesGeneratorV2 : MonoBehaviour
     private void Awake()
     {
         expPool = new ObjectPool();
-        expPool.Init(expItem, expPoolSize, expirienseRoot, IsPoolCycled);
+        expPool.Init(expItem, expPoolSize, expirienseRoot, IsExpPoolCycled);
     }
     public void Run()
     {
