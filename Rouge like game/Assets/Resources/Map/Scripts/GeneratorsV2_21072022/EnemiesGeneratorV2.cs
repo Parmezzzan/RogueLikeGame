@@ -5,11 +5,16 @@ public class EnemiesGeneratorV2 : MonoBehaviour
     [SerializeField]
     float distanse = 15.0f;
     [SerializeField]
-    Transform root;
+    Transform monstersRoot;
     [SerializeField]
     Transform targetTransform;
-    [SerializeField] Transform expirienseRoot;
 
+    [SerializeField] int MonsterPoolSize = 300;
+    [SerializeField] GameObject monsterPrefab;
+    ObjectPool monstersPool;
+    [SerializeField] bool IsMonstersPoolCycled = true;
+
+    [SerializeField] Transform expirienseRoot;
     [SerializeField] int expPoolSize = 200;
     [SerializeField] bool IsExpPoolCycled = true;
     [SerializeField] GameObject expItem;
@@ -19,12 +24,21 @@ public class EnemiesGeneratorV2 : MonoBehaviour
     private int pointOfSpawn = 1;
     int monstersCount = 0;
     private string[] monstersName;
-    private List<GameObject> enemies;
+    private List<EnemyData> enemiesScriptableData;
 
     private bool generationOn = false;
 
     private void Awake()
     {
+        monstersPool = new ObjectPool();
+        monstersPool.Init(monsterPrefab, MonsterPoolSize, monstersRoot, IsMonstersPoolCycled);
+        for (int i = 0; i < MonsterPoolSize; i++)
+        {
+            var obj = monstersPool.GetPoolObjectOrNull();
+            obj.GetComponent<Enemy_HP>().SetExpPool(expPool);
+            obj.SetActive(false);
+        }
+
         expPool = new ObjectPool();
         expPool.Init(expItem, expPoolSize, expirienseRoot, IsExpPoolCycled);
     }
@@ -45,10 +59,10 @@ public class EnemiesGeneratorV2 : MonoBehaviour
         monstersCount = wd.monstersAmount;
 
         monstersName = wd.monstersName;
-        enemies = new List<GameObject>();
+        enemiesScriptableData = new List<EnemyData>();
         foreach (var item in monstersName)
         {
-            enemies.Add((GameObject)Resources.Load("Enemies/" + item));
+            enemiesScriptableData.Add(Resources.Load<EnemyData>("EnemyBiom/" + item));
         }
     }
     private void Generation()
@@ -66,10 +80,11 @@ public class EnemiesGeneratorV2 : MonoBehaviour
 
             for (int i = 0; i < countOnPoint; i++)
             {
-                int j = Random.Range(0, enemies.Count);
-                var obj = Instantiate(enemies[j], new Vector3(X, Y, 0.0f), Quaternion.identity, root);
-                obj.GetComponent<Enemy_HP>().SetExpPool(expPool);
+                int j = Random.Range(0, enemiesScriptableData.Count);
+                var obj = monstersPool.GetPoolObjectOrNull();
+                obj.GetComponent<Enemy>().SetData(enemiesScriptableData[j]);
                 obj.GetComponent<Pathfinding.AIDestinationSetter>().target = targetTransform;  //heh kek but it's no error
+                obj.transform.position = new Vector3(X, Y, 0.0f);
             }
         }
     }

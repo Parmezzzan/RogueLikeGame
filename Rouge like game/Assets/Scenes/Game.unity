@@ -716,6 +716,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 008a233f53af8fa418c5ecef99987304, type: 2}
     - target: {fileID: 1074902583411596315, guid: 06bf14df3f52991499330f90333e99da, type: 3}
+      propertyPath: isPolledMonster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074902583411596315, guid: 06bf14df3f52991499330f90333e99da, type: 3}
       propertyPath: moneyFarmObject
       value: 
       objectReference: {fileID: 290223870701032407, guid: 5cbe2060eef455146bc4e72557f88425, type: 3}
@@ -837,6 +841,10 @@ PrefabInstance:
       propertyPath: enemyData
       value: 
       objectReference: {fileID: 11400000, guid: 008a233f53af8fa418c5ecef99987304, type: 2}
+    - target: {fileID: 1074902583411596315, guid: 06bf14df3f52991499330f90333e99da, type: 3}
+      propertyPath: isPolledMonster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1074902583411596315, guid: 06bf14df3f52991499330f90333e99da, type: 3}
       propertyPath: moneyFarmObject
       value: 
@@ -4750,7 +4758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAYIeyzw6L4XgIAABUFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMziVjmwBJb60TSA8kTGgnF1+EtcYaZMmjjwDJ8N+7km3s0smJ5e3b3bcf8ifh0tSQW6WXmrOVYkC+j4i3ybdR73yCI90pueEf0HHeOLOlJ9HAeaWWK8RjH2ZUBVbz/IfcCU+OEHSSF0pXj2wHqTLWIFxQYQBdWlkfLRH6HJEj/ozvfcgJrWTurQ+07qPRGc0cpAXdUztiR2tYTuaCVjUwL7knT5OWPU0CTWIzLSO+mfjsSghuWi3EnurQa0pr47ATJDBOsbcgILqZIVAC35XWKx2GvxSFAdvK0vT0wDUOqclLfqpmchU1+0bbOxXOV5rdBllNztV/7nEc3IVW1VNXNo58CVvyfP9KTzk1djDZIfzQK4/DhA5U7OlWwFsJ8lkttXKSodNq50OdgeSh/3vpLC0h3/d4I/UKdPXX+/E9nEPzx1TwahsGedsAG6HCwMP2QeNyfqHgcBumTYGoV/HHwG+6Gx5R61hwbSy62i6ll7dVTnsqWaDhB587myotQQ8T1CCpsKc1prHXG7zyfR21oP65tMVbX/cKrkIC3POj6Mq1VofLskypDisw5YuzgkvoJ+0dzzinVEnZHNiwpS5s43RB80HYznH272mR+YxFcUKnCZvPokkyGc9ZcjedbKMkjovZXRSRcHtcYp9UrBuh7Xhwa7JPLvHOuq/IaKlpHY6daXpY8o9KmZ7JZaE2uQaQL02Gi3DQWAQfJntkHAe0AWu5DPsmnxkRKt8Dyy6JstDp49FqmvVZMlLzd2U9kpE0fDYy4uHLLa81vHM4+OJdsjM5/wVQSwMEFAAACAgAABgh7BFVC71tAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tJK5WYqBoVGiqVGKuZmBsZGxrnmKkYWpcZKBkaFhmpmFgYFSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAABgh7LPDovheAgAAFQUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAABgh7BFVC71tAAAAeAAAAAkAJAAAAAAAAAAAAAAAqwIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABjAwAAAAA=
+    dataString: UEsDBBQAAAgIAAAYIezlA1nUXgIAABcFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VEtz2jAQ/iuMzk3GNgkkvbUOkB5ImNBOLr4Ia401yJJHDx7J8N+7km3s0smJ5dtvd799yJ+ES1NDbpVeaM6WigH5PiLeJt9GvfMZjnSr5Jp/QMd558yWnkQD541arhCPfZhRFVjN8x9yKzw5QtBJXihdzdgWUmWsQbigwgC6tLI+WiL0OSJH/Ll59CEntJKptz7QeoxGZzRzkBZ0T+2IHa1hOZkLWtXAvOSeHEd3LR2tQJTYTsuJb8c+vxKCm1YNsac6dJvS2jjsBQmMU+wuSIhuJwiUwLel9VqH4a9FYcC2wjQ9PXGNY2rykp+qmV1Fza5Rt6fC+UqTRlaTc/mf+yYO7kKr6rkrG0e+hC15vnujp5waO5jtEH7qlcdhRgcqdnQj4L0E+aIWWjnJ0Gm186HOQPLU/710lpaQ73q8kXoFuvrrDfkezqH5Yyp4tQmDvGuAtVBh4GH/oHE5v1BwuA7TpkDUq/hj4DfdDs+odcy5NhZdbZfSy9sopz2VzNHwg8+dTZWWoIcJapBU2NMK09jrDV75vo6aU/9g2uKtr3sHVyEB7vlRdOVaqcNlWaZUhyWY8tVZwSX0k/aOF5xTqqRsDmzYUhe2drqg+SBs6zj797TIdMKiOKH3CZtOonEyvpmy5OF+vImSOC4mD1FEwu1xiX1SsWqEtuPBrck+ucQ7674jo4WmdTh2pulhwT8qZXoml4Va5xpAvjYZLsJBYxF8mGzGOA5oDdZyGfZNPjMiVL4Dll0SZaHT2dFqmvVZMlLzvbIeyUgaPhwZ8fDlllca9hwOvniX7EzOfwFQSwMEFAAACAgAABgh7BFVC71tAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tJK5WYqBoVGiqVGKuZmBsZGxrnmKkYWpcZKBkaFhmpmFgYFSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAABgh7OUDWdReAgAAFwUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAABgh7BFVC71tAAAAeAAAAAkAJAAAAAAAAAAAAAAAqwIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABjAwAAAAA=
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -4764,7 +4772,7 @@ MonoBehaviour:
   showSearchTree: 0
   unwalkableNodeDebugSize: 0.3
   logPathResults: 1
-  maxNearestNodeDistance: 100
+  maxNearestNodeDistance: 2000
   scanOnStartup: 1
   fullGetNearestSearch: 0
   prioritizeGraphs: 0
@@ -4815,7 +4823,7 @@ MonoBehaviour:
   heuristicScale: 1
   threadCount: 8
   maxFrameTime: 10
-  batchGraphUpdates: 0
+  batchGraphUpdates: 1
   graphUpdateBatchingInterval: 0.2
   euclideanEmbedding:
     mode: 0
@@ -7511,6 +7519,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 008a233f53af8fa418c5ecef99987304, type: 2}
     - target: {fileID: 1074902583411596315, guid: 06bf14df3f52991499330f90333e99da, type: 3}
+      propertyPath: isPolledMonster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074902583411596315, guid: 06bf14df3f52991499330f90333e99da, type: 3}
       propertyPath: moneyFarmObject
       value: 
       objectReference: {fileID: 290223870701032407, guid: 5cbe2060eef455146bc4e72557f88425, type: 3}
@@ -8489,6 +8501,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 008a233f53af8fa418c5ecef99987304, type: 2}
     - target: {fileID: 1074902583411596315, guid: 06bf14df3f52991499330f90333e99da, type: 3}
+      propertyPath: isPolledMonster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074902583411596315, guid: 06bf14df3f52991499330f90333e99da, type: 3}
       propertyPath: moneyFarmObject
       value: 
       objectReference: {fileID: 290223870701032407, guid: 5cbe2060eef455146bc4e72557f88425, type: 3}
@@ -8798,6 +8814,10 @@ PrefabInstance:
       propertyPath: enemyData
       value: 
       objectReference: {fileID: 11400000, guid: 008a233f53af8fa418c5ecef99987304, type: 2}
+    - target: {fileID: 1074902583411596315, guid: 06bf14df3f52991499330f90333e99da, type: 3}
+      propertyPath: isPolledMonster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1074902583411596315, guid: 06bf14df3f52991499330f90333e99da, type: 3}
       propertyPath: moneyFarmObject
       value: 
@@ -9391,6 +9411,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4bcfbb4c675fd14f9077996b3c897cf, type: 3}
+--- !u!1 &1697877771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1697877772}
+  m_Layer: 0
+  m_Name: MonstersRoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1697877772
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697877771}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1915491051}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1702116684
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10343,6 +10393,7 @@ Transform:
   - {fileID: 1560861778}
   - {fileID: 1492627234}
   - {fileID: 2011168290}
+  - {fileID: 1697877772}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10509,10 +10560,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanse: 12
-  root: {fileID: 1560861778}
+  monstersRoot: {fileID: 1697877772}
   targetTransform: {fileID: 317430833}
+  MonsterPoolSize: 300
+  monsterPrefab: {fileID: 1074902583411596309, guid: 06bf14df3f52991499330f90333e99da, type: 3}
+  IsMonstersPoolCycled: 1
   expirienseRoot: {fileID: 2011168290}
-  expPoolSize: 5
+  expPoolSize: 3
   IsExpPoolCycled: 1
   expItem: {fileID: 290223870701032407, guid: 34ef9369fd198e8419b0a69da728c631, type: 3}
 --- !u!114 &1915491059
@@ -11633,6 +11687,10 @@ PrefabInstance:
       propertyPath: enemyData
       value: 
       objectReference: {fileID: 11400000, guid: 008a233f53af8fa418c5ecef99987304, type: 2}
+    - target: {fileID: 1074902583411596315, guid: 06bf14df3f52991499330f90333e99da, type: 3}
+      propertyPath: isPolledMonster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1074902583411596315, guid: 06bf14df3f52991499330f90333e99da, type: 3}
       propertyPath: moneyFarmObject
       value: 

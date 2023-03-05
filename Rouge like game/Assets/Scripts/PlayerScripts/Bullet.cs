@@ -51,7 +51,7 @@ public class Bullet : MonoBehaviour
 	void HitTarget()
     {
         GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, Quaternion.identity);
-        Destroy(effectIns, 2f);
+        Destroy(effectIns, 1.5f);
 
         Damage(target);
         gameObject.SetActive(false);
@@ -60,12 +60,6 @@ public class Bullet : MonoBehaviour
     void Damage (Transform enemy)
 	{
         Enemy_HP e = enemy.GetComponent<Enemy_HP>();
-        if (e != null)
-		{
-           e.TakeDamage(damage);
-        }
-        
+        e?.TakeDamage(damage);
     }
-
-   
 }

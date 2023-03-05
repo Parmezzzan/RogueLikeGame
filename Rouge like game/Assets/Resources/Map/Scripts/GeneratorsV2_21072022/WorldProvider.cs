@@ -240,8 +240,9 @@ public class WorldProvider : MonoBehaviour
     {
         var gg = AstarPath.active.astarData.gridGraph;
         gg.center = target.transform.position;
+        //gg.RelocateNodes(target.transform.position, Quaternion.Euler(90, 0, 0), 1.35f);
         //gg.UpdateSizeFromWidthDepth();
-        //gg.UpdateTransform();
+        gg.UpdateTransform();
         // Recalculate the graph
         AstarPath.active.Scan();
     }

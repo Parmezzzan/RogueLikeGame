@@ -66,6 +66,7 @@ public class SaveFile
     public int KittenCupLevel;
     public int KittenRugLevel;
 
+    public string chosenKitten;
     //kitten persons upgrade
     public bool mageIsAvailable;
     public bool archerIsAvailable;

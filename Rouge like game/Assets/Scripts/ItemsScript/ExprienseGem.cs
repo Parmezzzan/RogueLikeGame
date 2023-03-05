@@ -13,6 +13,5 @@ public class ExprienseGem : MonoBehaviour
     public void getExp(Transform t)
     {
         t.gameObject.GetComponent<PlayerData>().AddEXP(EXPboost);
-        gameObject.GetComponent<Pickup>().OnPickUP -= getExp;
     }
 }

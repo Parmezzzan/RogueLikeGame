@@ -35,4 +35,9 @@ public class Enemy : MonoBehaviour
             CancelInvoke();
         }
     }
+    public void SetData(EnemyData d)
+    {
+        enemy = d;
+        GetComponentInChildren<Animator>().runtimeAnimatorController = enemy.anim;
+    }
 }

@@ -39,8 +39,8 @@ public class Pickup : MonoBehaviour, IFarm
         }
         OnPickUP?.Invoke(target);
 
-        gameObject.GetComponent<CircleCollider2D>().enabled = true;
         if (isPooled) gameObject.SetActive(false);
         else Destroy(gameObject);
+        gameObject.GetComponent<CircleCollider2D>().enabled = true;
     }
 }

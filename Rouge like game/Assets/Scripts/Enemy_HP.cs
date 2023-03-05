@@ -3,9 +3,11 @@ using UnityEngine;
 public class Enemy_HP : MonoBehaviour
 {
     [SerializeField]
-    private PoolManager poolManager;
+    private PoolManager poolDamageText;
     [SerializeField]
     private EnemyData enemyData;
+
+    [SerializeField] bool isPolledMonster = false;
 
     public int health = 100;
 
@@ -14,25 +16,30 @@ public class Enemy_HP : MonoBehaviour
 
     private void Start()
     {
-        poolManager = GameObject.FindGameObjectWithTag("DamagePoolManager").GetComponent<PoolManager>();
+        poolDamageText = GameObject.FindGameObjectWithTag("DamagePoolManager").GetComponent<PoolManager>();
     }
     public void TakeDamage (int damage)
 	{
         health -= damage;
         
-        if (health <= 0)
-		{
-            Die();
-		}
-        var icon = poolManager.GetObjectFromPool();
+        var icon = poolDamageText.GetObjectFromPool();
         icon.GetComponent<damageIcon>().setText(damage.ToString());
         icon.gameObject.transform.position = transform.position;
-	}
 
-    void Die()
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
     {
-        Destroy(gameObject);
-        GameObject deathEffectIns = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
+        if (!isPolledMonster)
+            Destroy(gameObject);
+        else
+            gameObject.SetActive(false);
+
+        var deathEffectIns = Instantiate(deathEffect, transform.position, Quaternion.identity);
 
         expPool.GetPoolObjectOrNull().transform.position = transform.position;
 
@@ -41,8 +48,9 @@ public class Enemy_HP : MonoBehaviour
             var pl = GameObject.FindGameObjectWithTag("Player");
             pl.GetComponent<PlayerData>().AddMoney(Random.Range(1, enemyData.maxMoneyFarm));
         }
-        Destroy(deathEffectIns, 2f);
+        Destroy(deathEffectIns);
     }
+
     public void SetExpPool(ObjectPool t)
     {
         expPool = t;

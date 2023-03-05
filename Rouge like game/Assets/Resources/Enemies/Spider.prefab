@@ -271,10 +271,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2e6b4bd8edf4b4890f2e325be6f287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  expSoulSphere: {fileID: 290223870701032407, guid: 34ef9369fd198e8419b0a69da728c631, type: 3}
   poolManager: {fileID: 0}
   enemyData: {fileID: 11400000, guid: ee530fc396b0bca498e3bf6f0f90f1fc, type: 2}
-  moneyFarmObject: {fileID: 290223870701032407, guid: 5cbe2060eef455146bc4e72557f88425, type: 3}
+  isPolledMonster: 1
   health: 100
   deathEffect: {fileID: 1280141305896002, guid: e473029e4c70ad543a6879b82a732f4f, type: 3}
 --- !u!114 &545270015455217955
