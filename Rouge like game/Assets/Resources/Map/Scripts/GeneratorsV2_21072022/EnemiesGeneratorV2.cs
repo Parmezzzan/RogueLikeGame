@@ -32,15 +32,16 @@ public class EnemiesGeneratorV2 : MonoBehaviour
     {
         monstersPool = new ObjectPool();
         monstersPool.Init(monsterPrefab, MonsterPoolSize, monstersRoot, IsMonstersPoolCycled);
+
+        expPool = new ObjectPool();
+        expPool.Init(expItem, expPoolSize, expirienseRoot, IsExpPoolCycled);
+
         for (int i = 0; i < MonsterPoolSize; i++)
         {
             var obj = monstersPool.GetPoolObjectOrNull();
             obj.GetComponent<Enemy_HP>().SetExpPool(expPool);
             obj.SetActive(false);
         }
-
-        expPool = new ObjectPool();
-        expPool.Init(expItem, expPoolSize, expirienseRoot, IsExpPoolCycled);
     }
     public void Run()
     {

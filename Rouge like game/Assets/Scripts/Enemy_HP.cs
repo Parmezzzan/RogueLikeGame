@@ -26,10 +26,7 @@ public class Enemy_HP : MonoBehaviour
         icon.GetComponent<damageIcon>().setText(damage.ToString());
         icon.gameObject.transform.position = transform.position;
 
-        if (health <= 0)
-        {
-            Die();
-        }
+        if (health <= 0)    Die();
     }
 
     public void Die()
@@ -48,7 +45,7 @@ public class Enemy_HP : MonoBehaviour
             var pl = GameObject.FindGameObjectWithTag("Player");
             pl.GetComponent<PlayerData>().AddMoney(Random.Range(1, enemyData.maxMoneyFarm));
         }
-        Destroy(deathEffectIns);
+        Destroy(deathEffectIns, 1f);
     }
 
     public void SetExpPool(ObjectPool t)

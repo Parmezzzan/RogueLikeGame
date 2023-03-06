@@ -4500,7 +4500,7 @@ RectTransform:
   - {fileID: 427915075}
   - {fileID: 1995842407}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5011,7 +5011,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &964937070
 MonoBehaviour:
@@ -5891,7 +5891,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8103653942780622458, guid: d11c98b3d09442345b51ce7f459d41b3, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8103653942780622458, guid: d11c98b3d09442345b51ce7f459d41b3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10353,6 +10353,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4bcfbb4c675fd14f9077996b3c897cf, type: 3}
+--- !u!1 &1906895637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1906895639}
+  - component: {fileID: 1906895638}
+  m_Layer: 0
+  m_Name: poolDemageFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1906895638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906895637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4189128d361d6cc41af5dc2a88145cfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolSize: 50
+  poolObj: {fileID: 100018, guid: a40b64bf23366dc42a892af2c6ff6140, type: 3}
+--- !u!4 &1906895639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906895637}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.017730037, y: 4.32863, z: -0.45408136}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1915491050
 GameObject:
   m_ObjectHideFlags: 0
@@ -10566,7 +10611,7 @@ MonoBehaviour:
   monsterPrefab: {fileID: 1074902583411596309, guid: 06bf14df3f52991499330f90333e99da, type: 3}
   IsMonstersPoolCycled: 1
   expirienseRoot: {fileID: 2011168290}
-  expPoolSize: 3
+  expPoolSize: 40
   IsExpPoolCycled: 1
   expItem: {fileID: 290223870701032407, guid: 34ef9369fd198e8419b0a69da728c631, type: 3}
 --- !u!114 &1915491059
@@ -10664,7 +10709,7 @@ GameObject:
   - component: {fileID: 1941540160}
   - component: {fileID: 1941540159}
   m_Layer: 0
-  m_Name: pools
+  m_Name: poolsDamageText
   m_TagString: DamagePoolManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12183,7 +12228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2803398506396595009, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2803398506396595009, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: m_LocalScale.x
@@ -12261,6 +12306,10 @@ PrefabInstance:
       propertyPath: OnLVLup.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1103049027}
+    - target: {fileID: 2803398506396595016, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: fxPool
+      value: 
+      objectReference: {fileID: 1906895638}
     - target: {fileID: 2803398506396595016, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: poolRoot
       value: 

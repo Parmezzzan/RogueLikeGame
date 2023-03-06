@@ -14,6 +14,8 @@ public class PlayerAttack2 : MonoBehaviour
     private int poolSize = 20;
     [SerializeField]
     public Transform firePont;
+    [SerializeField]
+    private PoolManager fxPool;
 
     private Transform target;
     private ObjectPool bulletPool;
@@ -64,6 +66,7 @@ public class PlayerAttack2 : MonoBehaviour
             bullet.GetComponent<TrailRenderer>().Clear();
             bullet.Seek(target);
             bullet.UpdateLifeTime(3.0f);
+            bullet.PoolFX(fxPool);
             bullet.damage = (int)(weaponData.weaponStats[0].Might + weaponData.commonStats.Might);
             bullet.speed = weaponData.commonStats.BulletSpeed +  weaponData.weaponStats[0].BulletSpeed;
         }

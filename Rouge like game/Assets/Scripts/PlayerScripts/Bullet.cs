@@ -10,16 +10,23 @@ public class Bullet : MonoBehaviour
     public float lifeTime = 2f;
     public int damage = 30;
 
-    public GameObject impactEffect;
+    PoolManager poolHitFX;
 
     public void UpdateLifeTime(float newLifeTime)
     {
         lifeTime = newLifeTime;
     }
+
     public void Seek(Transform _target)
     {
         target = _target;
     }
+
+    public void PoolFX(PoolManager newPoolFx)
+    {
+        poolHitFX = newPoolFx;
+    }
+
 	public void Start()
 	{
         Invoke("HitTarget", lifeTime);
@@ -28,7 +35,7 @@ public class Bullet : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-        if (target == null)         // ниче не делаем если нет таргета
+        if (lifeTime < 0 || target.gameObject.active == false)         // ниче не делаем если нет таргета
         {
             gameObject.SetActive(false);
             return;
@@ -36,8 +43,9 @@ public class Bullet : MonoBehaviour
 
         Vector2 dir = target.position - transform.position;
         float distanceThisFrame = speed * Time.deltaTime;
+        lifeTime -= Time.deltaTime;
 
-        if (dir.magnitude <= distanceThisFrame)
+        if (dir.magnitude <= 0.15f) //distanceThisFrame)
         {
             HitTarget();
             return;
@@ -50,11 +58,15 @@ public class Bullet : MonoBehaviour
 
 	void HitTarget()
     {
-        GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, Quaternion.identity);
-        Destroy(effectIns, 1.5f);
+        if (target.gameObject.active == true)
+        {
+            var o = poolHitFX.GetObjectFromPool();
+            o.transform.position = gameObject.transform.position;
+            o.GetComponent<ParticleSystem>().Emit(100);
 
-        Damage(target);
-        gameObject.SetActive(false);
+            Damage(target);
+            gameObject.SetActive(false);
+        }
     }
 
     void Damage (Transform enemy)
