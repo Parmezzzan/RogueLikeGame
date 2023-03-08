@@ -8,12 +8,14 @@ public class PoolManager : MonoBehaviour
     int poolSize = 50;
     [SerializeField]
     GameObject poolObj;
+    [SerializeField]
+    bool IsCycledBuffer = false;
 
     ObjectPool pool;
     void Start()
     {
         pool = new ObjectPool();
-        pool.Init(poolObj, poolSize, gameObject.transform);
+        pool.Init(poolObj, poolSize, gameObject.transform, IsCycledBuffer);
     }
     public GameObject GetObjectFromPool()
     {

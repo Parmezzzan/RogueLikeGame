@@ -8,6 +8,7 @@ TagManager:
   - FxTemporaire
   - Map
   - DamagePoolManager
+  - DeathPoolManager
   layers:
   - Default
   - TransparentFX

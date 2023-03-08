@@ -12,11 +12,12 @@ public class Enemy_HP : MonoBehaviour
     public int health = 100;
 
     private ObjectPool expPool;
-    public GameObject deathEffect;
+    public PoolManager deathFXpool;
 
     private void Start()
     {
         poolDamageText = GameObject.FindGameObjectWithTag("DamagePoolManager").GetComponent<PoolManager>();
+        deathFXpool = GameObject.FindGameObjectWithTag("DeathPoolManager").GetComponent<PoolManager>();
     }
     public void TakeDamage (int damage)
 	{
@@ -36,7 +37,11 @@ public class Enemy_HP : MonoBehaviour
         else
             gameObject.SetActive(false);
 
-        var deathEffectIns = Instantiate(deathEffect, transform.position, Quaternion.identity);
+        
+        var o = deathFXpool.GetObjectFromPool();
+        o.transform.position = gameObject.transform.position;
+        o.GetComponent<AutoDestroy>().Reload();
+        o.GetComponent<ParticleSystem>().Play();
 
         expPool.GetPoolObjectOrNull().transform.position = transform.position;
 
@@ -45,7 +50,6 @@ public class Enemy_HP : MonoBehaviour
             var pl = GameObject.FindGameObjectWithTag("Player");
             pl.GetComponent<PlayerData>().AddMoney(Random.Range(1, enemyData.maxMoneyFarm));
         }
-        Destroy(deathEffectIns, 1f);
     }
 
     public void SetExpPool(ObjectPool t)

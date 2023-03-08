@@ -4,9 +4,19 @@ public class AutoDestroy : MonoBehaviour
 {
     [SerializeField]
     float lifeTime = 3f;
+
+    float curLifeTime;
+    private void Awake()
+    {
+        curLifeTime = lifeTime;
+    }
     void Update()
     {
-        lifeTime -= Time.deltaTime;
-        if (lifeTime < 0) gameObject.SetActive(false);
+        curLifeTime -= Time.deltaTime;
+        if (curLifeTime < 0) gameObject.SetActive(false);
+    }
+    public void Reload()
+    {
+        curLifeTime = lifeTime;
     }
 }
