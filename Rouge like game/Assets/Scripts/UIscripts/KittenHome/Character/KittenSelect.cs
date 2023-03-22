@@ -21,7 +21,7 @@ public class KittenSelect : MonoBehaviour
 
     private void Start()
     {
-        nameTarget = SaveManager.LoadSavefile().chosenKitten;
+        KittenChoiseMem.nameKitten = nameTarget = SaveManager.LoadSavefile().chosenKitten;
         var l = FindObjectsOfType<CharacterNum>();
         bool find = false;
         foreach (var item in l)
@@ -35,6 +35,7 @@ public class KittenSelect : MonoBehaviour
         }
         if(!find)
             frame.transform.position = target.transform.position;
+
     }
 
     private IEnumerator MoveFrame()
@@ -47,7 +48,7 @@ public class KittenSelect : MonoBehaviour
         }
         var file = SaveManager.LoadSavefile();
         file.chosenKitten = target.GetComponent<CharacterNum>().name;
-        nameTarget = file.chosenKitten;
+        KittenChoiseMem.nameKitten = nameTarget = file.chosenKitten;
         SaveManager.Save(file);
     }
 }

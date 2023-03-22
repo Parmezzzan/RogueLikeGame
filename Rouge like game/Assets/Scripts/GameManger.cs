@@ -11,6 +11,10 @@ public class GameManger : MonoBehaviour
 
     private bool gameEnded = false;
 
+    private void Start()
+    {
+        print(KittenChoiseMem.nameKitten);
+    }
     void FixedUpdate()
     {
         if (PlayerData.currentHealth <= 0 && !gameEnded)
