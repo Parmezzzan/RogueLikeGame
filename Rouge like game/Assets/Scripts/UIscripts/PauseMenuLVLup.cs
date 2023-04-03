@@ -6,7 +6,7 @@ public class PauseMenuLVLup : MonoBehaviour
     [SerializeField]
     PlayerLvLUpdater updater;
     [SerializeField]
-    float timeBeforePause = 0.4f;
+    float timeBeforePause = 0.02f;
     [SerializeField]
     GameObject UICardPrefab;
     [SerializeField]

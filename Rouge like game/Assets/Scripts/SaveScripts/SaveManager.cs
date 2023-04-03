@@ -61,12 +61,12 @@ public class SaveFile
     public int FireRate;
     public int BulletSpeed;
 
+    public KittenChoiseMem.kittenName chosenKitten = KittenChoiseMem.kittenName.none;
     //kitten house Upgrade
     public int KittenHomeLevel;
     public int KittenCupLevel;
     public int KittenRugLevel;
 
-    public string chosenKitten;
     //kitten persons upgrade
     public bool mageIsAvailable;
     public bool archerIsAvailable;
