@@ -2562,6 +2562,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da843c246dd394647ae5c615d25e7bb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kittenHome: {fileID: 668092607}
+  characters: {fileID: 1389552826}
+  options: {fileID: 1344586282}
 --- !u!1 &597746070
 GameObject:
   m_ObjectHideFlags: 0
@@ -2824,7 +2827,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 680157661}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 592569612}
+        m_TargetAssemblyTypeName: MainMenuUIcontroller, Assembly-CSharp
+        m_MethodName: HideOptions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &680157661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3232,7 +3247,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 769349103}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 592569612}
+        m_TargetAssemblyTypeName: MainMenuUIcontroller, Assembly-CSharp
+        m_MethodName: ShowOptions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &769349103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5082,7 +5109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -213, y: 92}
   m_SizeDelta: {x: 714.6587, y: 653.1927}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1351199877
@@ -5265,6 +5292,7 @@ MonoBehaviour:
   frame: {fileID: 446236809}
   s: 1000
   target: {fileID: 1864897611}
+  nameTarget: 
 --- !u!1 &1411300555
 GameObject:
   m_ObjectHideFlags: 0
