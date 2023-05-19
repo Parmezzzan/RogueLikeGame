@@ -39,10 +39,10 @@ public class WeaponData : MonoBehaviour
         public void CommonInit()
         {
             level = 0;
-            WeaponRange = 10.0f;
-            Might = 500.0f;
-            FireRate = 1.0f;
-            BulletSpeed = 2.0f;
+            WeaponRange = 6.0f;
+            Might = 20.0f;
+            FireRate = 0.8f;
+            BulletSpeed = 1.5f;
         }
         public void Init()
         {

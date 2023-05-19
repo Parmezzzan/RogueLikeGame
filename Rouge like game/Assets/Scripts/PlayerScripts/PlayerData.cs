@@ -12,7 +12,7 @@ public class PlayerData : MonoBehaviour
     [SerializeField]
     private int Money = 0;
     [SerializeField]
-    private int startMoney = 10;
+    private int startMoney = 0;
     [SerializeField]
     private int expiriense = 0;
     [SerializeField]
@@ -22,11 +22,11 @@ public class PlayerData : MonoBehaviour
     [SerializeField]
     public int armor = 1;
     [SerializeField]
-    public float magnetRadius = 2.0f;
+    public float magnetRadius = 0.8f;
 
     [Space(10)]
     [SerializeField]
-    public float regenerationCooldownSec = 2.0f;
+    public float regenerationCooldownSec = 4.0f;
     [SerializeField]
     public int healthRegenerationPower = 2;
 
