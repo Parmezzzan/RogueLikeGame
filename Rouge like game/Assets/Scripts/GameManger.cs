@@ -11,11 +11,9 @@ public class GameManger : MonoBehaviour
 
     private bool gameEnded = false;
 
-    private void Awake()
+    private void Start()
     {
-        var nameKitten = KittenChoiseMem.nameKitten;
-        if (nameKitten == KittenChoiseMem.kittenName.none) nameKitten = KittenChoiseMem.kittenName.Warior;
-        print(nameKitten);
+        print(KittenChoiseMem.nameKitten);
     }
     void FixedUpdate()
     {

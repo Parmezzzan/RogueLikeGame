@@ -11,7 +11,7 @@ public class KittenSelect : MonoBehaviour
     float s = 2;
 
     public GameObject target;
-    public KittenChoiseMem.kittenName nameTarget;
+    public string nameTarget;
     public void UpdateframeTarget(GameObject newTarget)
     {
         StopAllCoroutines();
