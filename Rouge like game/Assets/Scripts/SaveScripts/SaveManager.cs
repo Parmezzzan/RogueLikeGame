@@ -28,8 +28,12 @@ public static class SaveManager
         }
         else
         {
-            Save(new SaveFile() { money = 100 });
-            return new SaveFile() { money = 100 };
+            return new SaveFile()
+            {
+                money = 100,
+                volume = 0.8f,
+                FXvolume = 0.6f
+            };
         }
     }
 
@@ -49,6 +53,10 @@ public static class SaveManager
 public class SaveFile
 {
     public int money;
+
+    //options
+    public float volume;
+    public float FXvolume;
 
     //common powwer stats level
     public int MaxHealth;
