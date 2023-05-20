@@ -32,6 +32,8 @@ public class Enemy_HP : MonoBehaviour
 
     public void Die()
     {
+        FXAudioController.PlayDeath();
+
         if (!isPolledMonster)
             Destroy(gameObject);
         else

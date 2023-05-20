@@ -5,9 +5,17 @@ using UnityEngine;
 public class FXAudioController : MonoBehaviour
 {
     [SerializeField] MusicPlayer deathPlayer;
+    static MusicPlayer _deathPlayer;
     [SerializeField] MusicPlayer hitPlayer;
+    static MusicPlayer _hitPlayer;
 
-    public static void PlayHit()
+    private void Awake()
     {
+        _deathPlayer = deathPlayer;
+        _hitPlayer = hitPlayer;
     }
+
+    public static void PlayHit() => _hitPlayer.playSound();
+
+    public static void PlayDeath() => _deathPlayer.playSound();
 }
