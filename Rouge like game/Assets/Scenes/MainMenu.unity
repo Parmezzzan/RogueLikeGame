@@ -2362,7 +2362,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &668092608
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4474,7 +4474,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1389552827
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4986,7 +4986,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 30362663daaa4a4409b5b90b7cd2d85e, type: 2}
-  m_audioClip: {fileID: 8300000, guid: fcd88b81dcd5a2d4bbaf9ebc3af5ffc4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: aadac2a33606b38408d2bcb857fe3e21, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -6474,7 +6474,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7498543085239141579, guid: 8b53708a4d67ed04aa125b40701ee8b5, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7498543085851948407, guid: 8b53708a4d67ed04aa125b40701ee8b5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -6486,7 +6486,7 @@ PrefabInstance:
       objectReference: {fileID: 592569613}
     - target: {fileID: 7498543086170029849, guid: 8b53708a4d67ed04aa125b40701ee8b5, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7498543086476573823, guid: 8b53708a4d67ed04aa125b40701ee8b5, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
@@ -6494,7 +6494,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7498543086791391277, guid: 8b53708a4d67ed04aa125b40701ee8b5, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7498543086797330048, guid: 8b53708a4d67ed04aa125b40701ee8b5, type: 3}
       propertyPath: m_Pivot.x
@@ -6584,9 +6584,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: OptionsMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 7498543086797330049, guid: 8b53708a4d67ed04aa125b40701ee8b5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7498543086939893608, guid: 8b53708a4d67ed04aa125b40701ee8b5, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b53708a4d67ed04aa125b40701ee8b5, type: 3}

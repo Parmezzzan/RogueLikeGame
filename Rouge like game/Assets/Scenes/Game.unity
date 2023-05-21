@@ -10868,7 +10868,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixerGroup: {fileID: 24300002, guid: 30362663daaa4a4409b5b90b7cd2d85e, type: 2}
   audioClips:
-  - {fileID: 8300000, guid: b065e61a569d6154ca37c9f912a045f9, type: 3}
+  - {fileID: 8300000, guid: aadac2a33606b38408d2bcb857fe3e21, type: 3}
+  - {fileID: 8300000, guid: 40e28d4e62c4e09439f37122e8d46ee5, type: 3}
   playRandomFirstTrack: 1
 --- !u!1 &1899890773
 GameObject:
