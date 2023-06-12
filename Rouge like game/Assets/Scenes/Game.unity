@@ -1152,8 +1152,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mute: 0
   audioMixerGroup: {fileID: -2860406786488348279, guid: 30362663daaa4a4409b5b90b7cd2d85e, type: 2}
-  audioClips: []
-  pitching: 0
+  audioClips:
+  - {fileID: 8300000, guid: df3f437def3938746957bc77c77ed81b, type: 3}
+  pitching: 1
   pitchRange: 0.25
 --- !u!82 &169042556
 AudioSource:
@@ -5835,7 +5836,7 @@ GameObject:
   - component: {fileID: 994373273}
   - component: {fileID: 994373272}
   m_Layer: 0
-  m_Name: FX_controller
+  m_Name: FXaudio_controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11246,11 +11247,11 @@ MonoBehaviour:
   - {fileID: 2234651043012772983, guid: 37f943baf4a609b4885a34d8c51e4d4f, type: 3}
   - {fileID: 290223870701032407, guid: 5cbe2060eef455146bc4e72557f88425, type: 3}
   - {fileID: 7294878928616424256, guid: c8e13ede05704e040af3c2862916cd6c, type: 3}
-  poolsSize: 10
+  poolsSize: 30
   root: {fileID: 12046524}
-  distance: 3
+  distance: 4
   tryingNum: 1000
-  itemNum: 10
+  itemNum: 20
   enableObstaclePoolReference: 1
   obstacleGen: {fileID: 1915491056}
 --- !u!114 &1915491056
@@ -11293,7 +11294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 317430831}
-  windowsSize: {x: 31, y: 25}
+  windowsSize: {x: 11, y: 7}
   scrollRoots:
   - {fileID: 724419090}
   - {fileID: 1492627234}
@@ -11321,7 +11322,7 @@ MonoBehaviour:
   monsterPrefab: {fileID: 1074902583411596309, guid: 06bf14df3f52991499330f90333e99da, type: 3}
   IsMonstersPoolCycled: 1
   expirienseRoot: {fileID: 2011168290}
-  expPoolSize: 40
+  expPoolSize: 150
   IsExpPoolCycled: 1
   expItem: {fileID: 290223870701032407, guid: 34ef9369fd198e8419b0a69da728c631, type: 3}
 --- !u!114 &1915491059
@@ -12914,6 +12915,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1538222874050342968, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: musicPlayer
+      value: 
+      objectReference: {fileID: 169042555}
     - target: {fileID: 2803398505867354520, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -13038,6 +13043,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2803398506396595016, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: musicPlayer
+      value: 
+      objectReference: {fileID: 169042555}
     - target: {fileID: 2803398506396595039, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: m_Name
       value: Player
@@ -13051,6 +13060,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4710431653940053629, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: musicPlayer
+      value: 
+      objectReference: {fileID: 169042555}
+    - target: {fileID: 4710431653940053629, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 6348529544546483862, guid: df3bceab2ccb4dd49b41805c3d1b350a, type: 3}
@@ -13062,6 +13075,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5239712926052101152, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
+      propertyPath: musicPlayer
+      value: 
+      objectReference: {fileID: 169042555}
     - target: {fileID: 6998258543944456119, guid: 3898631256ad7734b9687d7ecbcbd2e8, type: 3}
       propertyPath: m_Enabled
       value: 1

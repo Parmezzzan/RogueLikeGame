@@ -13,6 +13,7 @@ public class PointBullet : MonoBehaviour
     [SerializeField]
     private int damage = 15;
 
+    MusicPlayer musicPlayer;
      private void Update()
     {
         transform.position = transform.position + (targetNarrow * speed * Time.deltaTime);
@@ -25,24 +26,17 @@ public class PointBullet : MonoBehaviour
     {
         if (collision.CompareTag(tagEnemy))
         {
+            musicPlayer.playSound();
             collision.GetComponent<Enemy_HP>().TakeDamage(damage);
             gameObject.SetActive(false);
         }
     }
-    public void SetTargetPoint(Vector3 newTargetPoin)
-    {
-        targetNarrow = newTargetPoin;
-    }
-    public void SetDemage(int newDemage)
-    {
-        damage = newDemage;
-    }
-    public void SetSpeed(float newSpeed)
-    {
-        speed = newSpeed;
-    }
-    public void SetLifeTime(float newLifeTime)
-    {
-        lifeTime = newLifeTime;
-    }
+    public void MusicHitFx(MusicPlayer mp) => musicPlayer = mp;
+    public void SetTargetPoint(Vector3 newTargetPoin) => targetNarrow = newTargetPoin;
+    
+    public void SetDemage(int newDemage)=>damage = newDemage;
+
+    public void SetSpeed(float newSpeed)=>speed = newSpeed;
+
+    public void SetLifeTime(float newLifeTime)=>lifeTime = newLifeTime;
 }

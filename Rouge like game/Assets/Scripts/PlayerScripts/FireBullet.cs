@@ -11,6 +11,7 @@ public class FireBullet : MonoBehaviour
     [SerializeField]
     private float speed = 2f;
 
+    MusicPlayer musucPlayer;
     private float angle = 0f;
     private GameObject targetAround;
     void Update()
@@ -28,10 +29,9 @@ public class FireBullet : MonoBehaviour
     {
         damage = newGamage;
     }
-    public void SetSpeed(float newSpeed)
-    {
-        speed = newSpeed;
-    }
+    public void SetSpeed(float newSpeed)=> speed = newSpeed;
+
+    public void MusicHitFx(MusicPlayer mp) => musucPlayer = mp;
     public void SetStartAngle(float a) 
     {
         angle = a;
@@ -39,6 +39,9 @@ public class FireBullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag(tagEnemy))
+        {
+            musucPlayer.playSound();
             collision.GetComponent<Enemy_HP>().TakeDamage(damage);
+        }
     }
 }

@@ -14,6 +14,8 @@ public class PlayerPointAttack : MonoBehaviour
     private int poolSize = 20;
     [SerializeField]
     private Transform poolRoot;
+    [SerializeField]
+    private MusicPlayer musicPlayer;
 
     private string enemyTag = "Enemy";
     private ObjectPool objectPool;
@@ -27,8 +29,7 @@ public class PlayerPointAttack : MonoBehaviour
             InvokeRepeating("Fire", 0.5f, 1.0f/ (weaponData.commonStats.FireRate + weaponData.weaponStats[2].FireRate));
     }
     public void UpdateWeaponData()
-    {
-
+    { 
         if (weaponData.weaponStats[2].level > 0)
         {
             CancelInvoke();
@@ -66,6 +67,7 @@ public class PlayerPointAttack : MonoBehaviour
                 pb.SetDemage((int)weaponData.commonStats.Might + (int)weaponData.weaponStats[2].Might);
                 pb.SetLifeTime(3.0f);
                 pb.SetSpeed(weaponData.commonStats.BulletSpeed + weaponData.weaponStats[2].BulletSpeed);
+                pb.MusicHitFx(musicPlayer);
             }
         }
     }

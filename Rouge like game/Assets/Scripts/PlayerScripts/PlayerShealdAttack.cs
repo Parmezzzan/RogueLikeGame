@@ -10,6 +10,8 @@ public class PlayerShealdAttack : MonoBehaviour
     private int poolSize = 20;
     [SerializeField]
     private Transform poolRoot;
+    [SerializeField]
+    private MusicPlayer musicPlayer;
 
     private ObjectPool objectPool;
     private float spawnBulletDistanse = 1.2f;
@@ -40,6 +42,7 @@ public class PlayerShealdAttack : MonoBehaviour
                 fb.SetStartAngle(angle);
                 fb.SetDamage((int)(weaponData.commonStats.Might + weaponData.weaponStats[1].Might));
                 fb.SetSpeed(weaponData.commonStats.BulletSpeed + weaponData.weaponStats[1].BulletSpeed);
+                fb.MusicHitFx(musicPlayer);
             }
         }
     }

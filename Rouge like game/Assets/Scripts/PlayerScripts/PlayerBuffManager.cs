@@ -79,7 +79,6 @@ public class PlayerBuffManager : MonoBehaviour
                     var wd2 = weaponData.weaponStats[buff.weaponNum];
                     weaponData.weaponStats[buff.weaponNum].Might += increaseValue ? buff.AddedValue : -buff.AddedValue;
                     weaponData.weaponStats[buff.weaponNum].level += increaseValue ? 1 : -1;
-                    weaponData.weaponStats[buff.weaponNum].Print();
                     weaponData.DataHasUpdated?.Invoke();
                     return;
                 case PlayerBuff.WeaponBuffType.BulletSpeed:

@@ -5,23 +5,24 @@ using UnityEngine;
 public class PlayerAttack2 : MonoBehaviour
 {
     [SerializeField]
-    private WeaponData weaponData;
+    WeaponData weaponData;
     [SerializeField]
-    private Transform poolRoot;
+    Transform poolRoot;
     [SerializeField]
-    private GameObject bulletPrefab;
+     GameObject bulletPrefab;
     [SerializeField]
-    private int poolSize = 20;
+    int poolSize = 20;
     [SerializeField]
     public Transform firePont;
     [SerializeField]
-    private PoolManager fxPool;
+    PoolManager fxPool;
+    [SerializeField]
+    MusicPlayer musicPlayer;
 
-    private Transform target;
-    private ObjectPool bulletPool;
-    private string enemyTag = "Enemy";
+    Transform target;
+    ObjectPool bulletPool;
+    string enemyTag = "Enemy";
 
-    // Start is called before the first frame update
     void Start()
     {
         bulletPool = new ObjectPool();
@@ -69,6 +70,7 @@ public class PlayerAttack2 : MonoBehaviour
             bullet.PoolFX(fxPool);
             bullet.damage = (int)(weaponData.weaponStats[0].Might + weaponData.commonStats.Might);
             bullet.speed = weaponData.commonStats.BulletSpeed +  weaponData.weaponStats[0].BulletSpeed;
+            bullet.MusicHitFx(musicPlayer);
         }
 	}
 

@@ -5,18 +5,20 @@ using UnityEngine;
 public class PlayerBombAttack : MonoBehaviour
 {
     [SerializeField]
-    private WeaponData weaponData;
+    WeaponData weaponData;
     [SerializeField]
-    private GameObject bulletPrefab;
+    GameObject bulletPrefab;
     [SerializeField]
-    private Transform instancePoint;
+    public Transform instancePoint;
     [SerializeField]
-    private int poolSize = 20;
+    int poolSize = 20;
     [SerializeField]
-    private Transform poolRoot;
+    Transform poolRoot;
+    [SerializeField]
+    MusicPlayer musicPlayer;
 
-    private string enemyTag = "Enemy";
-    private ObjectPool objectPool;
+    string enemyTag = "Enemy";
+    ObjectPool objectPool;
 
     private void Start()
     {
@@ -49,6 +51,7 @@ public class PlayerBombAttack : MonoBehaviour
                     bb.SetTargetPoint(item.transform.position);
                     bb.SetDamage((int)weaponData.commonStats.Might + (int)weaponData.weaponStats[3].Might);
                     bb.SetSpeed(weaponData.commonStats.BulletSpeed + weaponData.weaponStats[3].BulletSpeed);
+                    bb.MusicHitFx(musicPlayer);
                     return;
                 }
             }

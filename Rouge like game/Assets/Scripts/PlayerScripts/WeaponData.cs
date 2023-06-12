@@ -52,14 +52,6 @@ public class WeaponData : MonoBehaviour
             FireRate = 0.0f;
             BulletSpeed = 0.0f;
         }
-        public void Print()
-        {
-            print(level);
-            print(WeaponRange);
-            print(Might);
-            print(FireRate);
-            print(BulletSpeed);
-        }
     }
 }
 

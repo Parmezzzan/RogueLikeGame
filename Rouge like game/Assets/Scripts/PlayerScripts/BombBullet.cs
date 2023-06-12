@@ -15,7 +15,8 @@ public class BombBullet : MonoBehaviour
     [SerializeField]
     private static float ExplodeToPointRange = 0.4f;
 
-    private Vector3 targetPoint;
+    Vector3 targetPoint;
+    MusicPlayer musicPlayer;
 
     private void Update()
     {
@@ -24,31 +25,28 @@ public class BombBullet : MonoBehaviour
         if(Vector3.Distance(transform.position, targetPoint) < ExplodeToPointRange)
             Explode();
     }
-    public void SetDamage(int newDamage)
-    {
-        damage = newDamage;
-    }
-    public void SetSpeed (float newSpeed)
-    {
-        speed = newSpeed;
-    }
+    public void SetDamage(int newDamage)=>damage = newDamage;
+    public void SetSpeed (float newSpeed)=>speed = newSpeed;
+    public void MusicHitFx(MusicPlayer mp) => musicPlayer = mp;
+    
     private void Explode()
     {
         var col = Physics2D.OverlapCircleAll(transform.position, explodeRange);
 
         foreach (var item in col)
             if (item.CompareTag(tagEnemy))
+            {
+                musicPlayer.playSound();
                 item.GetComponent<Enemy_HP>().TakeDamage(damage);
-
+            }
         gameObject.SetActive(false);
     }
+   
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, explodeRange);
     }
-    public void SetTargetPoint(Vector3 target)
-    {
-        targetPoint = target;
-    }
+
+    public void SetTargetPoint(Vector3 target) => targetPoint = target;
 }

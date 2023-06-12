@@ -10,27 +10,18 @@ public class Bullet : MonoBehaviour
     public float lifeTime = 2f;
     public int damage = 30;
 
+    MusicPlayer musicPlayer;
     PoolManager poolHitFX;
 
-    public void UpdateLifeTime(float newLifeTime)
-    {
-        lifeTime = newLifeTime;
-    }
+    public void UpdateLifeTime(float newLifeTime) => lifeTime = newLifeTime;
 
-    public void Seek(Transform _target)
-    {
-        target = _target;
-    }
+    public void Seek(Transform _target) => target = _target;
 
-    public void PoolFX(PoolManager newPoolFx)
-    {
-        poolHitFX = newPoolFx;
-    }
+    public void PoolFX(PoolManager newPoolFx) => poolHitFX = newPoolFx;
 
-	public void Start()
-	{
-        Invoke("HitTarget", lifeTime);
-	}
+    public void MusicHitFx(MusicPlayer mp) => musicPlayer = mp;
+
+	public void Start()=> Invoke("HitTarget", lifeTime);
 
 	// Update is called once per frame
 	void Update()
@@ -54,12 +45,11 @@ public class Bullet : MonoBehaviour
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
     }
 
-
-
 	void HitTarget()
     {
         if (target.gameObject.active == true)
         {
+            musicPlayer.playSound();
             var o = poolHitFX.GetObjectFromPool();
             o.transform.position = gameObject.transform.position;
             o.GetComponent<ParticleSystem>().Emit(100);
