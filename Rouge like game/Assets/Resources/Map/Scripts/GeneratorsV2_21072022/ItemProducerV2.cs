@@ -87,8 +87,7 @@ public class ItemProducerV2 : MonoBehaviour
     }
     public void GenerateInAria(Vector2 pos, Vector2 size)
     {
-        int itemAmount = itemNum; //10 -  is coifitient of map size
-        for (int i = 0; i < itemAmount; i++)
+        for (int i = 0; i < itemNum; i++)
         {
             var posX = Random.Range(pos.x, pos.x + size.x);
             var posY = Random.Range(pos.y - size.y, pos.y);
@@ -97,7 +96,6 @@ public class ItemProducerV2 : MonoBehaviour
             int num = Random.Range(0, items.Length);
             var obj = itemsPools[num].GetPoolObjectOrNull();
             obj.transform.position = position;
-            //Instantiate(items[num], position, Quaternion.identity, root);
         }
     }
 }
