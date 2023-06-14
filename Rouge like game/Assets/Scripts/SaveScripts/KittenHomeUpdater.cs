@@ -50,54 +50,57 @@ public class KittenHomeUpdater : MonoBehaviour
     }
     public void Upgrade()
     {
-        if (MoneyCounter.money > 100)
+        var saveFile = SaveManager.LoadSavefile();
+        int buffLevel = SaveExtantion.GetBuffLevel(saveFile, type);
+        int cost = (int)(buffLevel * 1.4f * 100);
+
+        if (MoneyCounter.money > cost)
         {
             MoneyCounter.increaseMoney(100);
 
-            var file = SaveManager.LoadSavefile();
             switch (type)
             {
                 case PlayerBuff.PlayerBuffType.Armor:
-                    file.Armor++;
-                    text.text = file.Armor.ToString();
+                    saveFile.Armor++;
+                    text.text = saveFile.Armor.ToString();
                     break;
                 case PlayerBuff.PlayerBuffType.BulletSpeed:
-                    file.BulletSpeed++;
-                    text.text = file.BulletSpeed.ToString();
+                    saveFile.BulletSpeed++;
+                    text.text = saveFile.BulletSpeed.ToString();
                     break;
                 case PlayerBuff.PlayerBuffType.FireRate:
-                    file.FireRate++;
-                    text.text = file.FireRate.ToString();
+                    saveFile.FireRate++;
+                    text.text = saveFile.FireRate.ToString();
                     break;
                 case PlayerBuff.PlayerBuffType.HealtRegen:
-                    file.HealtRegen++;
-                    text.text = file.HealtRegen.ToString();
+                    saveFile.HealtRegen++;
+                    text.text = saveFile.HealtRegen.ToString();
                     break;
                 case PlayerBuff.PlayerBuffType.MagnetRange:
-                    file.MagnetRange++;
-                    text.text = file.MagnetRange.ToString();
+                    saveFile.MagnetRange++;
+                    text.text = saveFile.MagnetRange.ToString();
                     break;
                 case PlayerBuff.PlayerBuffType.MaxHealth:
-                    file.MaxHealth++;
-                    text.text = file.MaxHealth.ToString();
+                    saveFile.MaxHealth++;
+                    text.text = saveFile.MaxHealth.ToString();
                     break;
                 case PlayerBuff.PlayerBuffType.MoveSpeed:
-                    file.MoveSpeed++;
-                    text.text = file.MoveSpeed.ToString();
+                    saveFile.MoveSpeed++;
+                    text.text = saveFile.MoveSpeed.ToString();
                     break;
                 case PlayerBuff.PlayerBuffType.Might:
-                    file.Might++;
-                    text.text = file.Might.ToString();
+                    saveFile.Might++;
+                    text.text = saveFile.Might.ToString();
                     break;
                 case PlayerBuff.PlayerBuffType.WeaponRange:
-                    file.WeaponArea++;
-                    text.text = file.WeaponArea.ToString();
+                    saveFile.WeaponArea++;
+                    text.text = saveFile.WeaponArea.ToString();
                     break;
                 default:
                     return;
             }
-            file.money -= 100;
-            SaveManager.Save(file);
+            saveFile.money -= cost;
+            SaveManager.Save(saveFile);
         }
     }
 }

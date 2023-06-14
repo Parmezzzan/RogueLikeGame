@@ -80,3 +80,33 @@ public class SaveFile
     public bool archerIsAvailable;
     public bool tankIsAvailable;
 }
+
+public static class SaveExtantion
+{
+    public static int GetBuffLevel(this SaveFile saveFile, PlayerBuff.PlayerBuffType type)
+    {
+        switch (type)
+        {
+            case PlayerBuff.PlayerBuffType.MaxHealth:
+                return saveFile.MaxHealth;
+            case PlayerBuff.PlayerBuffType.HealtRegen:
+                return saveFile.HealtRegen;
+            case PlayerBuff.PlayerBuffType.Armor:
+                return saveFile.Armor;
+            case PlayerBuff.PlayerBuffType.MoveSpeed:
+                return saveFile.MoveSpeed;
+            case PlayerBuff.PlayerBuffType.MagnetRange:
+                return saveFile.MagnetRange;
+            case PlayerBuff.PlayerBuffType.Might:
+                return saveFile.Might;
+            case PlayerBuff.PlayerBuffType.WeaponRange:
+                return saveFile.WeaponArea;
+            case PlayerBuff.PlayerBuffType.FireRate:
+                return saveFile.FireRate;
+            case PlayerBuff.PlayerBuffType.BulletSpeed:
+                return saveFile.BulletSpeed;
+            default:
+                return 0;
+        }
+    }
+}

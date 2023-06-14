@@ -42,21 +42,14 @@ public class GameManger : MonoBehaviour
         SceneManager.LoadScene(scene.name);
         Time.timeScale = 1.0f;
     }
-    public void ResumeTime()
-    {
-        Time.timeScale = 1.0f;
-    }
-    public void PauseTime()
-    {
-        Time.timeScale = 0.0f;
-    }
+    public void ResumeTime() => Time.timeScale = 1.0f;
+    
+    public void PauseTime() => Time.timeScale = 0.0f;
+
     public void ToMenu()
     {
         SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1.0f;
     }
-    private void StopTime()
-    {
-        Time.timeScale = 0.0f;
-    }
+    private void StopTime() => Time.timeScale = 0.0f;
 }
